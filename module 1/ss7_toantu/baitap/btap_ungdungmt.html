@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Caculator</th>
+    </tr>
+    <tr>
+      <td>
+        <input id="number1" type="number" placeholder="Nhập số thứ 1" >
+        <input id="number2" type="number" placeholder="Nhập số thứ 2" >
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button onclick="addition()">Addition(+)</button>
+        <button onclick="subtraction()">Subtraction(-)</button>
+        <button onclick="multiplication()">Multiplication(x)</button>
+        <button onclick="division()">Division(/)</button>
+      </td>
+    </tr>
+  </table>
+<p id="result">Result Division: </p>
+<script>
+  let num,nom;
+  let result;
+  function addition(){
+    num = +document.getElementById('number1').value;
+    nom = +document.getElementById('number2').value;
+    result = num  + nom;
+    document.getElementById('result').innerText ="Result Division: " + result;
+  }
+  function subtraction(){
+    num = +document.getElementById('number1').value;
+    nom = +document.getElementById('number2').value;
+    result = num  - nom;
+    document.getElementById('result').innerText ="Result Division: " + result;
+  }
+  function multiplication(){
+    num = +document.getElementById('number1').value;
+    nom = +document.getElementById('number2').value;
+    result = num  * nom;
+    document.getElementById('result').innerText ="Result Division: " + result;
+  }
+  function division(){
+    num = +document.getElementById('number1').value;
+    nom = +document.getElementById('number2').value;
+    result = num  / nom;
+    document.getElementById('result').innerText ="Result Division: " + result;
+  }
+</script>
+</body>
+</html>

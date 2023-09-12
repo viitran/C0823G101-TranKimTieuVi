@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm trung bình và tổng</title>
+</head>
+<body>
+    <label>Nhập điểm Toán</label><input type="number" id="Math">
+    <br>
+    <label>Nhập điểm Lý</label><input type="number" id="Physc">
+    <br>
+    <label>Nhập điểm Hoá</label><input type="number" id="Chemisc">
+    <br>
+    <button onclick="dtb()">Tính điểm Trung Bình</button>
+    <button onclick="sum()">Tính điểm Tổng</button>
+    <p id="dtb">Điểm trung bình : </p>
+    <p id="sum">Điểm Tổng : </p>
+    <script >
+        function dtb()
+        {
+            a = +document.getElementById("Math").value;
+            b = +document.getElementById("Physc").value;
+            c = +document.getElementById("Chemisc").value;document.getElementById("dtb").innerText = "Điểm trung bình : " + (a + b + c)/ 3;
+        }
+        function sum()
+        {
+            a = +document.getElementById("Math").value;
+            b = +document.getElementById("Physc").value;
+            c = +document.getElementById("Chemisc").value;
+            document.getElementById("sum").innerText = "Điểm Tổng : " + (a + b + c);
+        }
+    </script>
+</body>
+</html>
