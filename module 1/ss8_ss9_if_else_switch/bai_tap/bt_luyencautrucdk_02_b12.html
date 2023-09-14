@@ -20,16 +20,16 @@
     function tinhLaiNganHang() {
         let soTienBanDau = parseFloat(document.getElementById("inputMoney").value);
         let soThangChoVay = parseInt(document.getElementById("inputMonth").value);
-        let laiXuatHangThang = parseFloat(document.getElementById("intputTaxMonth").value);
+        let laiSuatHangThang = parseFloat(document.getElementById("intputTaxMonth").value);
         let laiNganHang = 0;
         if (soThangChoVay <= 0) {
             laiNganHang = 0;
         } else if (soThangChoVay <= 3) {
-            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay;
+            laiNganHang = soTienBanDau * laiSuatHangThang / 100 * soThangChoVay;
         } else if (soThangChoVay <= 6) {
-            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay * 1.5;
+            laiNganHang = soTienBanDau * laiSuatHangThang / 100 * soThangChoVay * 1.5;
         } else {
-            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay * 2;
+            laiNganHang = soTienBanDau * laiSuatHangThang / 100 * soThangChoVay * 2;
         }
         document.getElementById("laiNganHang").innerHTML = `Lãi ngân hàng: ${laiNganHang} VND`;
     }
