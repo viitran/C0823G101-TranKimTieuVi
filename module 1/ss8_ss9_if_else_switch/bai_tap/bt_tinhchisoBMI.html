@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính chỉ số cân nặng (BMI)</h1>
+<label>Nhập cân nặng (kg):</label>
+<input id="weight" type="number">
+<br>
+<label>Nhập chiều cao (m):</label>
+<input id="height" type="number">
+<br>
+<button onclick="review()">Kiểm tra</button>
+<p id="result"></p>
+</body>
+<script>
+    function review(){
+        let weight,height;
+        let bmi,result;
+        weight = +document.getElementById("weight").value;
+        height = +document.getElementById("height").value;
+        result=""
+        bmi = weight/(height*height);
+        if (bmi < 18.5){
+            result = ". Thiếu cân!!"
+        }else if(bmi < 25){
+            result=". Bình thường "
+        }else if(bmi < 30){
+            result = ". Thừa cân"
+        }else if(bmi > 30){
+            result = ". Béo phì!"
+        }
+        document.getElementById("result").innerText ="Chỉ số BMI là: " + bmi + result;
+    }
+</script>
+</html>

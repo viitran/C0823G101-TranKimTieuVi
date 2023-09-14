@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế</title>
+</head>
+<body>
+<h1>Tính thuế cá nhân</h1>
+<label>Số lương nhận =</label>
+<input type="number" id="luong">
+<br>
+<button onclick="tax()">Check</button>
+<p id="thue"></p>
+</body>
+<script>
+    function tax() {
+        let a = document.getElementById("luong").value;
+        let result;
+        // dữ liệu tính thuế em lấy trên gu gồ
+        if (a >= 15000000) { // trên 15 triệu 30%
+          result = a * 0.3;
+        } else if (a >= 7000000) { // từ 7 đến 15 triệu 20%
+          result = a * 0.2;
+        } else { //dưới 7 triệu 10%
+          result = a * 0.1;
+        }
+        document.getElementById("thue").innerText = `Số thuế phải đóng là ${result} VND`;
+    }
+</script>
+</html>

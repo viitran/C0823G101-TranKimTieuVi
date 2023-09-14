@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính Phương trình Bậc 1</h2>
+<input type="number" id="a">
+<input type="number" id="b">
+<button onclick="printf()">Tìm nghiệm</button>
+<p id="ketqua"></p>
+</body>
+<script>
+  function printf() {
+  let numberA = document.getElementById("a").value;
+  let numberB = document.getElementById("b").value;
+  let result;
+  let equation = numberA + "x" + "+" + numberB;
+  if(numberA == 0 && numberB == 0){
+    result = "Phương trình Vô số nghiệm";
+  } else if (numberA === 0 && numberB !== 0){
+    result = "Phương trình Vô nghiệm";
+  } else {
+    result = -(numberB)/numberA;
+  } document.getElementById("ketqua").innerText ="Phương trình có dạng F(x)=" + equation + " Và Nghiệm của phương trình là: " + result;
+  }
+</script>
+</html>

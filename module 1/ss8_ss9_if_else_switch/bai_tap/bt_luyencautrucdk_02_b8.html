@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Check tuổi </h1>
+<label>Nhập tuổi của bạn</label>
+<input type="number" id="age">
+<button onclick="checkAge()">Check</button>
+<p id="yourAge"></p>
+</body>
+<script>
+    function checkAge(){
+        let numberAge = document.getElementById("age").value;
+        if (120 > numberAge && numberAge > 0 ) {
+            document.getElementById("yourAge").innerText = `Tuổi của bạn đang là: ${numberAge}`;
+        } else {
+            document.getElementById("yourAge").innerText = `Số tuổi bạn nhập không hợp lệ!! Vui lòng nhập lại`;
+        }
+    }
+</script>
+</html>

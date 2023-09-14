@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính giá tiền điện</h1>
+<p>Nhập số điện của bạn để tính giá tiền:</p>
+<input type="number" id="inputSoDien" placeholder="Nhập số điện bạn đã sử dụng">
+<button onclick="tinhGiaTienDien()">Tính giá tiền</button>
+<p id="ketQua"></p>
+<script>
+    function tinhGiaTienDien() {
+        let  elecNumber= parseFloat(document.getElementById("inputSoDien").value);
+        let price;
+        if (elecNumber < 10) {
+            price = elecNumber * 2;
+        } else if (10 <= elecNumber <= 20) {
+            price = elecNumber * 3;
+        } else if (20 <= elecNumber <= 30) {
+            price = elecNumber * 4;
+        } else if (elecNumber > 40){
+            price = elecNumber * 5;
+        }
+        document.getElementById("ketQua").innerHTML = "Giá tiền điện của bạn là: " + price + "k";
+    }
+</script>
+</body>
+</html>

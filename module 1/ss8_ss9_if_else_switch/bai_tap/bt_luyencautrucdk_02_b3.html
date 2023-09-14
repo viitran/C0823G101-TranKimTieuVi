@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hv</title>
+  <style>
+    input{
+      width: 60px;
+      height: 15px;
+    }
+  </style>
+</head>
+<body>
+<h1>Tính diện tích hình vuông</h1>
+<table>
+  <tr>
+    <td>Cạnh a = </td>
+    <td> <input type="number" id="adgeA"></td>
+    <td>
+      <button onclick="tinh()">Tính Diện tích </button>
+    </td>
+  </tr>
+</table>
+<p id="result"></p>
+</body>
+<script>
+  function tinh() {
+    let a = +document.getElementById("adgeA").value;
+    let result;
+    if (a > 0 ){
+      result = a * a ;
+      document.getElementById("result").innerText = `Diện tích hình vuông là ${result}`
+    } else if (a < 0){
+      document.getElementById("result").innerText = ` Không thể tính được vì số bạn nhập không hợp lệ!`
+    }
+  }
+</script>
+
+</body>
+</html>

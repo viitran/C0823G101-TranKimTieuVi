@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải ptrinh bậc 2</title>
+</head>
+<body>
+<h2>Tính Phương trình Bậc 2</h2>
+<input type="number" id="a">
+<input type="number" id="b">
+<input type="number" id="c">
+<button onclick="searchEqa()">Tìm nghiệm</button>
+<p id="ketqua"></p>
+</body>
+<script>
+  function searchEqa() {
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+    let delta = Math.pow(b,2) - 4 * a * c;
+    console.log(delta);
+    let x1,x2,x;
+    if (delta > 0){
+      x1 = (- b + Math.sqrt(delta)) / (2 * a);
+      x2 = (- b - Math.sqrt(delta)) / (2 * a); // tham khảo Math.sqrt(căn bậc) tren gg
+      document.getElementById("ketqua").innerText = `Phương trình có 2 nghiệm x1 = ${x1} và x2 = ${x2}`;
+    } else if (delta < 0){
+      document.getElementById("ketqua").innerText = `Phương trình vô nghiệm`;
+    } else {
+      x = -b / 2 * a;
+      document.getElementById("ketqua").innerText = `Phương trình có nghiệm kép x1 = x2 = ${x}`;
+    }
+  }
+</script>
+</html>

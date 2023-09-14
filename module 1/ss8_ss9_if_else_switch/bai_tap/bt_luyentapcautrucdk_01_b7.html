@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính cước điện thoại</title>
+</head>
+<body>
+<h1>Tính giá tiền điện thoại</h1>
+<label>Số phút gọi nội mạng của gia đình:</label>
+<input type="number" id="minute1">
+<br>
+<label>Số phút gọi ngoại mạng của gia đình:</label>
+<input type="number" id="minute2">
+<br>
+<button onclick="price()">Tính giá tiền phải trả</button>
+<p id="result"></p>
+</body>
+<script>
+  function price() {
+    let minuteA = +document.getElementById("minute1").value;
+    let minuteB = +document.getElementById("minute2").value;
+    let defaultPrice = 2500;
+    let price;
+    if (minuteA >= 0 && minuteB >= 0){
+      price = (minuteA * defaultPrice) + (minuteB * defaultPrice);
+        document.getElementById("result").innerText = `Giá tiền phải trả: ${price}`;
+    } else{
+      document.getElementById("result").innerText = "Số phút bạn nhập không hợp lệ! Vui lòng nhập lại!"
+    }
+  }
+</script>
+</html>

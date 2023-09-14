@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi nhiệt độ</title>
+</head>
+<body>
+<h1>Đổi nhiệt độ (C - F)</h1>
+<table>
+    <tr>
+        <td>
+            <input type="number" id="numb" placeholder="Nhập độ C cần đổi">
+        </td>
+        <td>
+            <select id="fromTemperature">
+                <option value="doC">Độ C</option>
+                <option value="doF">Độ F</option>
+            </select>
+        </td>
+        <td>
+            <select id="toTemperature">
+                <option value="doF">Độ F</option>
+                <option value="doC">Độ C</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="changed()">Đổi</button>
+        </td>
+    </tr>
+    <tr>
+        <th id="ketQua"></th>
+    </tr>
+</table>
+</body>
+<script>
+    function changed() {
+        let from = document.getElementById("fromTemperature").value;
+        let to = document.getElementById("toTemperature").value;
+        let number = document.getElementById("numb").value;
+        let result;
+        if (from == "doC" && to == "doF"){
+            result = (number * 1.8)  + 32;
+        }else if(from == "doF" && to == "doC"){
+            result = ( number - 32) /1.8;
+        }else {
+            result = number;
+        }
+        document.getElementById("ketQua").innerText = `${result} độ`
+    }
+</script>
+</html>

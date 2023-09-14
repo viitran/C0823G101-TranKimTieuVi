@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính diện tích hình chữ nhật</h1>
+<h6>Khi biết 2 cạnh</h6>
+<hr>
+<label>Nhập chiều rộng :</label>
+<input type="number" id="weight">
+<br>
+<br>
+<label>Nhập chiều dài :</label>
+<input type="number" id="height">
+<br>
+<br>
+<button onclick="sHinhChuNhat()">Tính diện tích hình chữ nhật</button>
+<p id="ketqua"></p>
+</body>
+<script>
+    function sHinhChuNhat() {
+        let a = +document.getElementById("weight").value;
+        let b = +document.getElementById("height").value;
+        let S;
+        if (a <= 0 || b <= 0) {
+            document.getElementById("ketqua").innerText = "Chiều dài hoặc chiều rộng không hợp lệ";
+        } else {
+            S = a * b;
+            document.getElementById("ketqua").innerText = `S hình chữ nhật = ${S}`;
+        }
+    }
+</script>
+</html>

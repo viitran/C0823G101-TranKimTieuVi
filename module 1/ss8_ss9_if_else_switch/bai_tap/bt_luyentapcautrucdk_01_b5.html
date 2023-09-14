@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập điểm bài kiểm tra</label>
+<input type="number" id="text">
+<br>
+<label>Nhập điểm bài thi giữa kì</label>
+<input type="number" id="midText">
+<br>
+<label>Nhập điểm bài thi cuối kì</label>
+<input type="number" id="finalText">
+<br>
+<button onclick="review()" id="review">Nhấn để xem học lực gì</button>
+<p id="acedemic" style="font-weight: bold"></p>
+</body>
+<script>
+    function review() {
+        let text,midText,finalText;
+        text = +document.getElementById('text').value;
+        midText = +document.getElementById('midText').value;
+        finalText = +document.getElementById('finalText').value;
+        let point;
+        point = (text + midText * 2 + finalText * 3)/6;
+         console.log(point);
+        if (point >= 8){
+            document.getElementById("acedemic").innerText = "Học lực giỏi!";
+         } else if (point >= 6){
+            document.getElementById("acedemic").innerText = "Học lực khá!"
+        } else if (point < 5){
+            document.getElementById("acedemic").innerText = "Học lại!!"
+        }
+    }
+</script>
+</html>

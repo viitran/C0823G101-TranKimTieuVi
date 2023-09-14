@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra tam giác</title>
+</head>
+<body>
+<h1>Kiểm tra tam giác</h1>
+<!--Nhập ba số thực a, b, c kiểm tra xem chúng có phải là cạnh của một tam giác-->
+<input type="number" id="inputA" placeholder="Nhập a">
+<input type="number" id="inputB" placeholder="Nhập b">
+<input type="number" id="inputC" placeholder="Nhập c">
+<button onclick="kiemTraTamGiac()">Kiểm tra</button>
+
+<p id="ketQua"></p>
+
+<script>
+  function kiemTraTamGiac() {
+    let a = parseFloat(document.getElementById("inputA").value);
+    let b = parseFloat(document.getElementById("inputB").value);
+    let c = parseFloat(document.getElementById("inputC").value);
+    if (a > 0 && b > 0 && c > 0 && (a + b > c) && (b + c > a) && (a + c > b)) {
+      document.getElementById("ketQua").innerHTML = "Đây là cạnh của một tam giác.";
+    } else {
+      document.getElementById("ketQua").innerHTML = "Đây không phải là cạnh của một tam giác.";
+    }
+  }
+</script>
+</body>
+</html>

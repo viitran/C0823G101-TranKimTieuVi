@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  //Nhập tuổi và in ra kết quả nếu tuổi hs đ ko đủ đk vào lớp 10
+  let age,recomfirm;
+  age = prompt("Nhập tuổi của bạn");
+  recomfirm = confirm("Bạn đã nhập đúng tuổi chưa?");
+  if (recomfirm == false){
+    age = prompt("Nhập lại tuổi của bạn");
+  } else {
+  alert("Bạn đang "+ age + " tuổi!");
+  } if (age < 15){
+    document.write("Rất tiếc, bạn không đủ điều kiện vào lớp 10!");
+  } else  {
+    document.write("Chúc mừng, bạn đã đủ điều kiện vào lớp 10!");
+  }
+</script>
+</body>
+</html>

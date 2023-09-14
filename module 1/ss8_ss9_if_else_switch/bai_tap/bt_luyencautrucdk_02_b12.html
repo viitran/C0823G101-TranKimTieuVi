@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tính lãi</title>
+</head>
+<body>
+<h1>Tính lãi suất ngân hàng (lãi kép)</h1>
+<label>Số tiền ban đầu (VND): </label>
+<input type="number" id="inputMoney"><br>
+<label>Số tháng cho vay: </label>
+<input type="number" id="inputMonth"><br>
+<label>Lãi xuất hàng tháng (%): </label>
+<input type="number" id="intputTaxMonth"><br>
+<button onclick="tinhLaiNganHang()">Tính lãi</button>
+<p id="laiNganHang"></p>
+</body>
+<script>
+    // dữ liệu em lấy trong vở cũ của em
+    function tinhLaiNganHang() {
+        let soTienBanDau = parseFloat(document.getElementById("inputMoney").value);
+        let soThangChoVay = parseInt(document.getElementById("inputMonth").value);
+        let laiXuatHangThang = parseFloat(document.getElementById("intputTaxMonth").value);
+        let laiNganHang = 0;
+        if (soThangChoVay <= 0) {
+            laiNganHang = 0;
+        } else if (soThangChoVay <= 3) {
+            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay;
+        } else if (soThangChoVay <= 6) {
+            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay * 1.5;
+        } else {
+            laiNganHang = soTienBanDau * laiXuatHangThang / 100 * soThangChoVay * 2;
+        }
+        document.getElementById("laiNganHang").innerHTML = `Lãi ngân hàng: ${laiNganHang} VND`;
+    }
+</script>
+</html>

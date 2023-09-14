@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Máy tính</title>
+    <style>
+        button {
+            background-color: #98e397;
+            width: 40px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body style="text-align: right">
+<h1 style="color: red; text-align: left !important;">Máy tính</h1>
+<table style="background: black" border="1" cellspacing="40" cellpadding="0">
+    <tr style="background: white">
+        <td colspan="4" height="35">
+            <span id="number"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="getNumber('1')">1</button>
+        </td>
+        <td>
+            <button onclick="getNumber('2')">2</button>
+        </td>
+        <td>
+            <button onclick="getNumber('3')">3</button>
+        </td>
+        <td>
+            <button onclick="getNumber('+')">+</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="getNumber('4')">4</button>
+        </td>
+        <td>
+            <button onclick="getNumber('5')">5</button>
+        </td>
+        <td>
+            <button onclick="getNumber('6')">6</button>
+        </td>
+        <td>
+            <button onclick="getNumber('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="getNumber('7')">7</button>
+        </td>
+        <td>
+            <button onclick="getNumber('8')">8</button>
+        </td>
+        <td>
+            <button onclick="getNumber('9')">9</button>
+        </td>
+        <td>
+            <button onclick="getNumber('*')">x</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="getNumber('AC')">AC</button>
+        </td>
+        <td>
+            <button onclick="getNumber('0')">0</button>
+        </td>
+        <td>
+            <button onclick="getNumber('=')">=</button>
+        </td>
+        <td>
+            <button onclick="getNumber('/')">÷</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    function getNumber(x) {
+        let result;
+        result = document.getElementById("number").innerText
+        switch (x) {
+            case '0' :
+            case '1' :
+            case '2' :
+            case '3' :
+            case '4' :
+            case '5' :
+            case '6' :
+            case '7' :
+            case '8' :
+            case '9' :
+            case "+":
+            case "-" :
+            case "*" :
+            case "/" :
+                result = result + x;
+                // console.log(result)
+                break;
+            case "=" :
+                result = eval(result);
+                break;
+            case "AC":
+                result = ""
+        }
+        document.getElementById("number").innerText = result;
+    }
+</script>
+</html>

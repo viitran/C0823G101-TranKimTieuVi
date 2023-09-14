@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+  <img id="myImage" src="https://lh3.googleusercontent.com/pw/AIL4fc9uYtx7_bQVPIN5DuoU4B-Wfh08ZAa_Q-G9gg5jkRdZdnJncEPi-aSm-rRy7KkDwd5AbjKv690AF-gZb50cVSR0wd3Nd-Tp90ofB0vs0QRflYAfiYbIxk1d21M7OxZxdVpmQJyA9M9W2OxtLYoTAqDgTYuYZzqVnoH0RUwwG-O8t2s6de-7Bot7FvmOezlA_wjOpzFhxF18xiXqUkWGWEB3VU6EmIJ51Ewc3GkSTAAcHkf1dmLkCSE-0r54XFB1Bi7Ts8XBeWJvfwGUiL4XwKJ4JVI608MEeIRiEiUk8cYP7NE4JLVUc5Tz3SQErQGeci0peBe21A3Hjw1jXxorbhW9DMZy7Tk880W_bx5hl0HxE-7cYicuiWnhFAqfjQhlAnT7P_34gn4UdsiXyY30Pj7Zp49cghKbnlXSJuIjHxPOadb58CkYuh2wb9zdqMxdb52yCs3ojHa96Q5BHH2vl2MhLd1XTVV-YZQkLXDiA2M16QJoqYbJssw8dtOn6oKF9chN9qdKIXYQlFNA9mOR0WuK3rzLyXMMYB2a_X_V1GbticBvJxILNdDmZPo5U4MNtnPJ2zM0Dp2W9Whi49QfPF4rb-3nRt96lKoZH3A73BWamFMt-CkOof09bh02tWoZeSiSsMfLFXQxDD6moIiMx2AfV8_s04PAF8n7JrYcPUnxdSx1J7lOExFmhSo6s0pTSc5jtwnFCRLmoxmgQ8BF_n3s0MCaZjA2tdJn_TIUZRLABUnTzIraTnR7Se8ws6YN1ta11gZtXvBNkLbRaKGRJENTpMZhpDYLoEtXVocSzxbwX3pUCS7qGx2SLVcmMAfy__1Fptrh38jJylVVvSBaK0NXeMtsGbfB1n9Il_h9QNNbg1ombc3l2e4PHvYIcVten5ZIcTychb6KeVaOANoXDfCzM9n6LB3GpBE6RhtPrLka8__FhZ3ncAxpRC16fQ=w512-h512-s-no?authuser=0" style = "width: 30%"/>
+  <p>Click button below to move the image to right</p>
+  <input type="button" value="Click Me" onclick="moveRight();" />
+</form>
+<script>
+  let imgObj = null;
+  imgObj = document.getElementById('myImage');
+  function init() {
+    imgObj = document.getElementById('myImage');
+    imgObj.style.position = 'relative';
+    imgObj.style.left = '0px';
+  }
+  function moveRight() {
+    imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+  }
+  window.onload = init;
+</script>
+</body>
+</html>

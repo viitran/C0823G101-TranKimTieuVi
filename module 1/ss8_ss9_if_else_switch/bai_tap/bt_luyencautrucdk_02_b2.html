@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đổi mét sang ft</title>
+</head>
+<body>
+<h1>Đổi đơn vị ( m - ft )</h1>
+<table>
+    <tr>
+        <td>
+            <input type="number" id="numb" placeholder="Nhập số cần đổi">
+        </td>
+        <td>
+            <select id="fromUnit">
+                <option value="m">Mét</option>
+                <option value="ft">Feet</option>
+            </select>
+        </td>
+        <td>
+           <label>đổi sang</label> <select id="toUnit">
+                <option value="ft">Feet</option>
+                <option value="m">Mét</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="changedMet()">Đổi</button>
+        </td>
+    </tr>
+    <tr>
+        <th id="Result"></th>
+    </tr>
+</table>
+</body>
+<script>
+  function changedMet(){
+    let met = document.getElementById("fromUnit").value;
+    let feet = document.getElementById("toUnit").value;
+    let numberX = document.getElementById("numb").value;
+    let result;
+    if (met == "m" && feet == "ft" && numberX >= -273.15){
+      result = numberX * 3.2808;
+    }else if (met == "ft" && feet == "m" && numberX >= -273.15){
+      result = numberX / 3.2808;
+    } else {
+        result = "Không tồn tại";
+    }
+    document.getElementById("Result").innerText = result;
+  }
+</script>
+</html>
