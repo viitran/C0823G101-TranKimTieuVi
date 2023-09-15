@@ -23,11 +23,11 @@
     function sTamGiacVuong() {
         let a = +document.getElementById("adgeA").value;
         let b = +document.getElementById("adgeB").value;
-        let S;
+        let s;
         if (a <= 0 || b <= 0) {
             document.getElementById("ketqua").innerText = "Không hợp lệ";
         } else {
-             S = (a * b) / 2;
+             s = (a * b) / 2;
             document.getElementById("ketqua").innerText = `S tam giác vuông = ${S}`;
         }
     }
