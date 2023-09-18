@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số đầu tiên chia hết cho n fibonacci</title>
+</head>
+<body>
+<h1> Tìm số đầu tiên chia hết cho n trong dãy Fibonacci</h1>
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    let n = prompt("Nhập số để tìm ra số đầu tiên chia hết cho: ")
+    while (true){
+        c = a + b;
+        a = b;
+        b = c;
+        if(c % n === 0){
+            document.write(`${c} là số đầu tiên chia hết cho ${n}`);
+            break;
+        }
+        document.write(`${a} <br>`)
+    }
+</script>
+</html>

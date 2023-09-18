@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính Lãi Kép</h1>
+</body>
+<script>
+    // tính lãi kép khi biết số tiền ban đầu(initial amount),số tháng cho vay(loan month) và lãi xuất hàng tháng(tax)
+    let initialAmount = parseFloat(prompt(`Nhập số tiền ban đầu: `))
+    let month = parseInt(prompt(`Nhập số tháng cho vay: `))
+    let taxMonth = parseFloat(prompt(`Nhập lãi xuất hàng tháng (%): `))
+    while (month <= 0) {
+        alert(`Số tháng bạn nhập không hợp lệ!Vui lòng nhập lại!!`);
+        month = parseInt(prompt(`Nhập số tháng cho vay: `));
+    }
+    let tax = 0;
+    for (let i = 0; i < month; i++) {
+        tax = tax + (initialAmount * taxMonth / 100);
+        initialAmount = initialAmount + (initialAmount * taxMonth / 100);
+    }
+    document.write(`số tiền sau ${month} tháng là ${initialAmount} VND với lãi là ${tax} VND`);
+</script>
+</html>

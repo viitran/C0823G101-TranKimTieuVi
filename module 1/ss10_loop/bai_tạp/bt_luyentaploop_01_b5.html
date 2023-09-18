@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng</title>
+</head>
+<body>
+<h1>Tính tổng n số đầu tiên trong dãy Fibonacci</h1>
+</body>
+<script>
+    let a = 0;
+    let b = 1;
+    let c = 0;
+    let sum = 0;
+    let input = prompt("Bạn muốn tính tổng của bao nhiêu số đầu tiên trong dãy Fibonacci: ")
+    for (let i = 0; i < input; i++) {
+        c = a + b;
+        a = b;
+        b = c;
+        sum = sum + a;
+        document.write(`${a} <br>`);
+    }
+    document.write(`Tổng của ${input} số đầu tiên trong Fibonacci là ${sum}`);
+</script>
+</html>

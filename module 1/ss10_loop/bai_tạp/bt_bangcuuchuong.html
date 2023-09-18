@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Bảng Cửu Chương</h1>
+<div id="multiplicationTable"></div>
+<script>
+    let table = '<table border="1" cellspacing="3" cellpadding="2" style="text-align: center">';
+    let multiplication;
+    for (let i = 1; i <= 10; i++) {
+        table += '<tr>';
+        for (let j = 1; j <= 10; j++) {
+            multiplication = i * j;
+            table += `<td>${i} x ${j} = ${multiplication}</td>`;
+        }
+
+        table += '</tr>';
+    }
+    table += '</table>';
+    document.getElementById('multiplicationTable').innerHTML = table;
+</script>
+</body>
+</html>

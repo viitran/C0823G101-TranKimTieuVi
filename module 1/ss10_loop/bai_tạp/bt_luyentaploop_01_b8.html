@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="start()">Bắt đầu</button>
+</body>
+<script>
+    function start() {
+        let rangeMax = +prompt("Nhập vào khoảng tối thiểu bạn muốn đoán: ");
+        let random = Math.floor(Math.random() * rangeMax);
+        let guess;
+        let maxGuess = 3;
+        for (let i = 1; i <= maxGuess; i++) {
+            guess = +prompt(`Lần đoán thứ ${i} Nhập vào giá trị bạn đoán: `);
+            if (guess < random) {
+                alert(`Số bạn đoán lớn hơn.Hãy thử lại.`);
+            } else if (guess > random) {
+                alert(`Số bạn đoán bé hơn.Hãy thử lại.`);
+            } else {
+                alert(`Chúc mừng bạn đã đoán đúng!`);
+                break;
+            }
+            if (i >= maxGuess) {
+                alert(`Bạn đã hết số lần đoán! Số cần đoán là ${random}`);
+                break;
+            }
+        }
+    }
+</script>
+</html>

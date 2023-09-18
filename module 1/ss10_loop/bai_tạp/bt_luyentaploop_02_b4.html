@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> in hinh chu nhat</h1>
+</body>
+<script>
+  // debugger
+  let c = "*"
+  let b = "&nbsp&nbsp"
+    let weight = +prompt(`nhập chiều rộng:`)
+  let height = +prompt(`nhập chiều cao:`)
+  for (let i = 1; i <= weight ; i++) {
+      for (let j = 1; j <= height; j++) {
+          if (i == 1 || i == weight ){
+              document.write(c)
+          } else if (j == 1 || j == height){
+          document.write(c)
+          } else {
+              document.write(b)
+          }
+      }
+      document.write('<br>')
+  }
+
+</script>
+</html>

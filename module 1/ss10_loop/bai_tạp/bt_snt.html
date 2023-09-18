@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hiển thị các số nguyên tố</title>
+</head>
+<body>
+<h1>n snt dau tien</h1>
+</body>
+<script>
+    let number = parseInt(prompt(`Nhập n số nguyên tố:`));
+    let count = 0;
+    for (let i = 0; i < number; i++) {
+        if (check(i)) {
+            document.write(`${i} <br>`)
+        }
+    }
+    function check(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</html>

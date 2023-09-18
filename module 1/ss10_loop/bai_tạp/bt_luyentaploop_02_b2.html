@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Tính giai thừa của 1 số nguyên dương</h1>
+</body>
+<script>
+  let number = parseInt(prompt("Nhập vào số nguyên dương để tính giai thừa: "));
+  if (number < 0){
+    alert("Số bạn vừa nhập không phải là số nguyên dương!Vui lòng nhập lại");
+  } else {
+    let result = 1;
+    for (let i = 1; i <= number; i++) {
+      result = result * i;
+    }
+    document.write(`Giai thừa của ${number}! là ${result}`);
+  }
+</script>
+</html>
