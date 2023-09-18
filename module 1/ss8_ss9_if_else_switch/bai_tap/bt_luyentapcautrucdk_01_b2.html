@@ -10,7 +10,7 @@
     let age, recomfirm;
     age = prompt("Nhập tuổi của bạn");
     recomfirm = confirm("Bạn đã nhập đúng tuổi chưa?");
-    if (!recomfirm == false) {
+    if (!recomfirm) {
         age = prompt("Nhập lại tuổi của bạn");
     } else {
         alert("Bạn đang " + age + " tuổi!");
