@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let text = prompt("input...");
+    let arr = text.split("");
+    let count = 0;
+    let vowel = ["u", "e", "o", "a", "i"];
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < vowel.length; j++) {
+            if (arr[i] == vowel[j]) { //kk dung includes vi no tra ve true/false - note cho em chu y thui a
+                count++;
+            }
+        }
+    }
+    if (count) {
+        document.write(`co tat ca ${count} nguyen am trong noi dung ban vua nhap`)
+    } else {
+        document.write(`Khong co nguyen am nao trong noi dung ban vua nhap`)
+    }
+</script>
+</html>

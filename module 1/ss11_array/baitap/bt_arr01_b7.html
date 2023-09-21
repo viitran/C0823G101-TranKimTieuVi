@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let input = +prompt(`Enter number`);
+    let inputArray = []
+    for (let i = 0; i < input; i++) {
+        let c = parseInt(prompt(`nhap phan tu thu a[${i}]`))
+        inputArray.push(c);
+    }
+    let inputNumberSearch = +prompt(`Search Number`);
+    debugger
+    for (let i = 0; i < inputArray.length; i++) {
+        if (inputArray[i] === inputNumberSearch) {
+            for (let j = i; j < inputArray.length; j++) {
+                inputArray[j] = inputArray[j + 1];
+            }
+            inputArray[inputArray.length - 1] = 0
+        }
+    }
+    alert(inputArray);
+</script>
+</html>

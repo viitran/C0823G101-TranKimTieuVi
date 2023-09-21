@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let text = prompt("Nhập kí tự: ");
+    let count = 0;
+    for (let index = 0; index < text.length; index++) {
+        if (!isNaN(text[index])) {
+            count++;
+        }
+    }
+    document.write(count);
+</script>
+</html>

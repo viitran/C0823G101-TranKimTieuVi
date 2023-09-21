@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let number = prompt("Nhập số");
+    let arr = [];
+    let count = 0;
+    for (let i = 0; i < number; i++) {
+        let b = +prompt(`Nhap phan tu thu a[${i}]:`);
+        arr.push(b)
+    }
+    for (let i = 0; i < number; i++) {
+        if (arr[i] >= 10) {
+            count++
+        }
+    }
+    document.write(`cac so lon hon 10 trong mang a la ${count}`)
+</script>
+</html>

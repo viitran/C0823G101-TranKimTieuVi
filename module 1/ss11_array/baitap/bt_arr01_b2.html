@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let number = parseInt(prompt('Nhap cac so nguyen'));
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let b = parseInt(prompt(`Nhap phan tu thu a[${i}] : `))
+        arr.push(b);
+    }
+    let max = arr[0];
+    for (let i = 0; i < number; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    document.write(`mang a =[${arr}] `)
+    document.write(` co gia tri lon nhat trong mang la ${max}`)
+</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="dictionary">
+<button onclick="trans()">Dịch</button>
+<p id="translate"></p>
+</body>
+<script>
+    function trans() {
+        const arrEng = ['banana', 'apple', 'chicken', 'your'];
+        const arrVie = ['chuối', 'táo', 'gà', 'của bạn'];
+        let a = "";
+        let n = document.getElementById("dictionary").value;
+        for (let i = 0; i < arrEng.length; i++) {
+            if (n === arrEng[i]) {
+                a += arrVie[i];
+            } else if (n === arrVie[i]) {
+                a += arrEng[i];
+            }
+        }
+        if (a) {
+            document.getElementById("translate").innerHTML = a
+        } else {
+            document.getElementById("translate").innerHTML = "Khong co trong tu dien "
+        }
+    }
+</script>
+</html>

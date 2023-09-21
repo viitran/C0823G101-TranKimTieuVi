@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    debugger
+    let number = parseInt(prompt(`Nhap cac so nguyen`))
+    let arr = [];
+    for (let i = 0; i < number; i++) {
+        let c = parseInt(prompt(`nhap phan tu thu a[${i}]`))
+        arr.push(c);
+    }
+    let max = arr[0];
+    for (let i = 0; i < number; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    let sum = 0;
+    for (let i = 0; i < number; i++) {
+        sum += arr[i];
+    }
+    console.log(sum)
+    document.write(`Số lớn nhất của mảng là : ${max} <br/> `)
+    document.write(`Trung bình các phần tử trong mảng là : ${sum / number}`)
+</script>
+</html>

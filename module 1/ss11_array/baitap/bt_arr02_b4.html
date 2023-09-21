@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số từ trong chuỗi</title>
+</head>
+<body>
+<script>
+    // let text = prompt("enter text");
+    // let arrText = text.replaceAll(' ', '');
+    // let arr = arrText.length;
+    // alert(`Số từ trong chuỗi bạn vừa nhập trên là: ${arr}`);
+
+    const input = prompt(`input text`);
+    let count = 0;
+    let check = false;
+    for (let i = 0; i < input.length; i++) {
+        let inputText = input[i];
+        if (inputText === " " || inputText === "\n" || inputText === "\t") {
+            check = false;
+        } else if (!check) {
+            check = true;
+            count++;
+        }
+    }
+    alert(`Số từ trong chuỗi: ${count}`);
+</script>
+</body>
+</html>

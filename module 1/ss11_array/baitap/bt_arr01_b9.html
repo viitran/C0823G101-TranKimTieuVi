@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputText = +prompt(`nhap so luong phan tu mang a:`);
+    let arrA = [];
+    for (let indexA = 0; indexA < inputText; indexA++) {
+        let numberA = +prompt(`nhap phan tu thu a[${indexA}] :`);
+        arrA.push(numberA);
+    }
+    let inputB = +prompt(`nhap so luong phan tu mang b:`);
+    let arrB = [];
+    for (let indexB = 0; indexB < inputB; indexB++) {
+        let numberB = +prompt(`nhap so luong phan tu thu b[${indexB}]`);
+        arrB.push(numberB);
+    }
+    let arrC = [];
+    arrC.push(arrA, arrB);
+    alert(`cac phan tu trong mang A va B la C = [${arrC}]`);
+
+</script>
+</html>

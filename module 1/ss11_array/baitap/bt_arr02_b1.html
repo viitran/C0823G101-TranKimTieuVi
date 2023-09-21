@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputRow = +prompt(`nhap so hang: `);
+    let inputCol = +prompt(`nhap so cot : `);
+    let arr2D = [];
+    for (let i = 0; i < inputRow; i++) {
+        arr2D.push(new Array(inputCol));
+    }
+    for (let i = 0; i < arr2D.length; i++) {
+        for (let j = 0; j < arr2D[i].length; j++) {
+            arr2D[i][j] = Math.floor(Math.random() * 100);
+        }
+    }
+    console.log(arr2D);
+    let index = +prompt("Nhap phan tu trong cot muon xuan hien: ")
+    for (let i = 0; i < arr2D.length; i++) {
+        document.write(`${arr2D[i][index]} <br/>`)
+    }
+</script>
+</html>

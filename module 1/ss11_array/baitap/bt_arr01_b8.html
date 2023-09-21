@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let input = +prompt(`Nhap phan tu :`);
+    let inputArr = [];
+    for (let i = 0; i < input; i++) {
+        let number = +prompt(`Nhap phan tu thu a[${i}]`);
+        inputArr.push(number)
+    }
+    for (let i = 0; i < inputArr.length - 1; i++) {
+        for (let j = 0; j < inputArr.length - 1 - i; j++) {
+            if (inputArr[j] < inputArr[j + 1]) {
+                let temp = inputArr[j];
+                inputArr [j] = inputArr [j + 1];
+                inputArr[j + 1] = temp;
+            }
+        }
+    }
+    alert(`Mang da duoc sap xep theo thu tu giam dan: [${inputArr}]`)
+</script>
+</html>

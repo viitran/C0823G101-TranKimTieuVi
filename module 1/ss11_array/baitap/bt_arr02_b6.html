@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arr = prompt("Nhập mảng ký tự:").split("");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === "-") {
+            arr[i] = "_";
+        }
+    }
+    const result = arr.join("");
+    document.write("Chuỗi sau khi đã thay thế:", result);
+
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let input = +prompt("Enter number");
+    let inputNumber = [];
+    for (let i = 0; i < input; i++) {
+        let c = parseInt(prompt(`nhap phan tu thu a[${i}]`))
+        inputNumber.push(c);
+    }
+    for (let i = 0; i < (inputNumber.length / 2); i++) {
+        let temp = inputNumber[i]
+        inputNumber[i] = inputNumber[inputNumber.length - 1 - i];
+        inputNumber[inputNumber.length - 1 - i] = temp;
+    }
+    document.write(`mang duoc dao nguoc thanh: ${inputNumber}`);
+</script>
+</html>
