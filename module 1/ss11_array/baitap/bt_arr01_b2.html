@@ -14,12 +14,14 @@
         arr.push(b);
     }
     let max = arr[0];
+    let loca = 0;
     for (let i = 0; i < number; i++) {
         if (arr[i] > max) {
             max = arr[i]
+            loca = i;
         }
     }
     document.write(`mang a =[${arr}] `)
-    document.write(` co gia tri lon nhat trong mang la ${max}`)
+    document.write(` co gia tri lon nhat trong mang la ${max} va o vi tri ${loca}`)
 </script>
 </html>
