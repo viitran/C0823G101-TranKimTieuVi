@@ -8,44 +8,40 @@
 </body>
 <script>
     // bài 1 -
-    // let myColor = ["Red","Green","White","Black"];
-    // for (let value of myColor) {
-    //     document.write(`${value} `);
-    // }
-    //---------------
+    let myColor = ["Red", "Green", "White", "Black"];
+    for (let value of myColor) {
+        document.write(`${value} `);
+    }
 
 
     // bài 2 -
-    // let number = prompt("Nhập 1 dãy số");
-    // // let str = number.toString();
-    // let result ='';
-    // for (let i = 0; i < number.length; i++) {
-    //     if (number[i] % 2 === 0 && number[i + 1] % 2 === 0) {
-    //         result += number[i] + "-";
-    //     } else {
-    //         result += number[i];
-    //     }
-    // }
-    // document.write(`dãy số bạn vừa nhập ${number} được chèn thêm - ở giữa 2 số chẵn là ${result}`)
+    let number = prompt("Nhập 1 dãy số");
+    // let str = number.toString();
+    let result = '';
+    for (let i = 0; i < number.length; i++) {
+        if (number[i] % 2 === 0 && number[i + 1] % 2 === 0) {
+            result += number[i] + "-";
+        } else {
+            result += number[i];
+        }
+    }
+    document.write(`dãy số bạn vừa nhập ${number} được chèn thêm - ở giữa 2 số chẵn là ${result}`)
 
 
-    //----------------
-
-
-    //bài 3
-    // let text = prompt(`Nhập văn bản bạn muốn đổi chữ hoa thành thường và ngược lại`);
-    // let result =[];
-    //  let chuHoa = 'QWERTYUIOPASDFGHJKLZXCVBNM';
-    //  let chuThuong = 'qwertyuiopasdfghjklzxcvbnm';
-    // for (let i = 0; i < text.length; i++) {
-    //     if (chuHoa.indexOf(text[i])!== -1){
-    //         result.push(text[i].toLocaleLowerCase());
-    //     } else if (chuThuong.indexOf(text[i])!== -1){
-    //         result.push(text[i].toUpperCase());
-    //     } else {
-    //         result.push(text[i]);
-    //     }
-    // }
-    // document.write(result.join(""));
+    // bài 3
+    let text = prompt(`Nhập văn bản bạn muốn đổi chữ hoa thành thường và ngược lại`);
+    let result = [];
+    let chuHoa = 'QWERTYUIOPASDFGHJKLZXCVBNM';
+    let chuThuong = 'qwertyuiopasdfghjklzxcvbnm';
+    for (let i = 0; i < text.length; i++) {
+        if (chuHoa.indexOf(text[i]) !== -1) {
+            result.push(text[i].toLocaleLowerCase());
+        } else if (chuThuong.indexOf(text[i]) !== -1) {
+            result.push(text[i].toUpperCase());
+        } else {
+            result.push(text[i]);
+        }
+    }
+    document.write(result.join(""));
 </script>
 </html>
