@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feet sang Meter</title>
+</head>
+<body>
+</body>
+<script>
+    let meter = prompt(`enter meter`);
+    let foot = prompt(`enter feet`);
+    document.write(`${foot} foot = ${meterToFoot(meter)} meter <br/>`)
+    document.write(`${meter} meter = ${footToMeter(foot)} foot`);
+
+    function meterToFoot(meter) {
+        meter = 0.305 * foot;
+        return meter;
+    }
+
+    function footToMeter(foot) {
+        foot = 3.279 * meter;
+        return foot;
+    }
+</script>
+</html>

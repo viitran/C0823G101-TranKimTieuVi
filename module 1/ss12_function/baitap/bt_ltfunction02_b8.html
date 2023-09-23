@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    reverseArr();
+
+    function reverseArr(inputArr, temp) {
+        let arr = [];
+        inputArr = parseInt(prompt(`Nhập số lượng phần tử trong mảng:`));
+        for (let i = 0; i < inputArr; i++) {
+            let a = +prompt(`Nhap phan tu thu a[${i}]:`);
+            arr.push(a)
+        }
+        // console.log(arr);
+        for (let i = 0; i < arr.length / 2; i++) {
+            temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        alert(`Mảng đã được đảo ngược [${arr}]`)
+    }
+</script>
+</html>

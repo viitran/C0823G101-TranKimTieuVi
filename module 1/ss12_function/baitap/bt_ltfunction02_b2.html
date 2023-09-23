@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<label>Nhập bán kính</label>
+<input id="radius" type="number">
+<button onclick="acreage()" id="acreage">Tính Diện tích</button>
+<br>
+<label>Nhập chu vi </label>
+<input id='diameter' type="number">
+<button onclick="handlePerimeter()" id="perimeter">Tính Chu Vi</button>
+<p id="KQDT">Diện tích = </p>
+<p id="KQCV">Chu vi = </p>
+</body>
+<script>
+    function acreage() {
+        let radi;
+        const PI = 3.14;
+        radi = +document.getElementById('radius').value;
+        document.getElementById('KQDT').innerHTML = 'Diện tích = ' + PI * Math.pow(radi / 2, 2) + 'm^2';
+    }
+
+    function handlePerimeter() {
+        let peri;
+        const PI = 3.14;
+        peri = +document.getElementById('diameter').value;
+        document.getElementById('KQCV').innerHTML = 'Chu vi = ' + PI * peri;
+    }
+</script>

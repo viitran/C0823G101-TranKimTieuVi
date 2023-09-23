@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    changedInt();
+
+    function changedInt(numberA, numberB, temp) {
+        numberA = parseInt(prompt("Input number a:"));
+        numberB = parseInt(prompt("Input number b:"));
+        // console.log(numberA,numberB)
+        if (!isNaN(numberA) && !isNaN(numberB)) {
+            temp = numberA;
+            numberA = numberB;
+            numberB = temp;
+            alert(`Sau khi đổi chỗ, số thứ nhất là: ${numberA}`);
+            alert(`Số thứ hai là: ${numberB}`);
+        } else {
+            alert("Vui lòng nhập hai số nguyên hợp lệ.");
+        }
+    }
+
+</script>
+</html>

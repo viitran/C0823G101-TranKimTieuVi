@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    positiveInt();
+
+    function positiveInt(number) {
+        number = +prompt(`Input Number`);
+        if (number >= 0) {
+            alert('Đây là số nguyên dương!')
+            return true;
+        } else {
+            alert('Đây ko phải là số nguyên dương')
+            return false;
+        }
+    }
+</script>
+</html>

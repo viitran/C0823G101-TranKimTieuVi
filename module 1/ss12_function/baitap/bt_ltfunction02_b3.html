@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    alert(`Gia thừa = ${factorial()}`)
+
+    function factorial(number) {
+        number = +prompt(`Nhập số bạn muốn tính giai thừa:`);
+        if (number === 0 || number === 1) {
+            return 1;
+        } else {
+            let result = 1;
+            for (let i = 2; i <= number; i++) {
+                result *= i;
+            }
+            return result;
+        }
+    }
+</script>
+</html>

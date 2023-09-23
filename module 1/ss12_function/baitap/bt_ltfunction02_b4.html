@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+
+    let inputText = prompt(`Input Text`);
+    let result = check(inputText);
+    if (result) {
+        // alert(`${inputText} là ký tự số.`);
+        alert(true);
+    } else {
+        // alert(`${inputText} không phải là ký tự số.`);
+        alert(false);
+    }
+
+    function check(text) {
+        return !isNaN(text);
+    }
+
+
+</script>
+</html>

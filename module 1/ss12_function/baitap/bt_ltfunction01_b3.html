@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="compare()">Ấn để so sánh</button>
+</body>
+<script>
+    function compare() {
+        let numberA = +prompt(`Enter number a:`);
+        let numberB = +prompt(`Enter number b:`);
+        if (numberA > numberB) {
+            alert(`${numberA} lớn hơn ${numberB}`);
+        } else {
+            alert(`Vì a và b lớn hơn hoặc bằng nhau nên tổng của chúng là: ${numberA + numberB}`)
+            return numberA + numberB;
+        }
+    }
+</script>
+</html>

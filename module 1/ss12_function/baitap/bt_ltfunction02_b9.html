@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let input = prompt(`Input text`);
+    let search = prompt(`Nhập kí tự bạn muốn tìm trong văn bản trên`);
+    check(input, search);
+
+
+    function check(inputText, searchText) {
+        let count = 0;
+        for (let i = 0; i < inputText.length; i++) {
+            if (inputText[i] === searchText) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            return alert(`Ký tự ${searchText} xuất hiện ${count} lần trong mảng.`);
+        } else {
+            return alert("-1");
+        }
+    }
+
+</script>
+</html>

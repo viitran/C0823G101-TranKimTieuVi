@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="increaseAndShow()">Click here</button>
+</body>
+<script>
+    function increaseAndShow() {
+        let number = +prompt(`Nhap mot so ban muon tang`);
+        if (!isNaN(number)) {
+            let result = number + 1;
+            alert(`Gia tri sau khi tang them 1 la ${result}`)
+        } else {
+            alert(`So ban nhap khong hop le!`)
+        }
+    }
+</script>
+</html>

@@ -8,22 +8,23 @@
 </body>
 <script>
     let number = +prompt('Nhap mot so nguyen de kiem tra so nguyen to:');
-    if (isPrime(number)){
+    if (isPrime(number)) {
         alert(`So ${number} la so nguyen to`);
     } else {
         alert(`So ${number} khong phai la so nguyen to!`);
     }
-  function isPrime(number) {
-      if (number < 2 ){
-          return false;
-      } else {
-          for (let i = 2; i < number ; i++) {
-              if (number % i == 0){
-                  return false;
-              }
-          }
-          return true;
-      }
-  }
+
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        } else {
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
 </script>
 </html>

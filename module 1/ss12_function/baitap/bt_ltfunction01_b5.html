@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="searchStar()">Click to find Start</button>
+</body>
+<script>
+    let index = -1;
+    let starA = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dudhe', 'Regulus'];
+    let starB = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+    console.log(searchStart())
+
+    function searchStart() {
+        let input = prompt(`Enter name start`);
+        for (let i = 0; i < starA.length; i++) {
+            if (input === starA[i]) {
+                index = i;  // neu tim thay gan index = i - note chu y!!
+                break;
+            }
+        }
+        if (index !== -1) {
+            alert(`Ngôi sao có tên là ${starB[index]}`);
+        } else {
+            alert(`Không tìm thấy ngôi sao nào!`);
+        }
+    }
+
+</script>
+</html>

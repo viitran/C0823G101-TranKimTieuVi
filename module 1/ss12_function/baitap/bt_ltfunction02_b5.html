@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    int();
+
+    function int(numberA, numberB, numberC) {
+        numberA = +prompt(`Input Number a:`);
+        numberB = +prompt(`Input Number b:`);
+        numberC = +prompt(`Input Number c:`);
+        // console.log(numberA,numberB,numberC)
+        let min;
+        if (numberA <= numberB <= numberC) {
+            min = numberA;
+        } else if (numberB <= numberA < numberC) {
+            min = numberB;
+        } else {
+            min = numberC;
+        }
+        alert(`Số nguyên có giá trị nhỏ nhất là ${min}`);
+    }
+</script>
+</html>
