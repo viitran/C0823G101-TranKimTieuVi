@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h3>Vẽ Tam Giác Vuông (ruột rỗng)</h3>
+<label for="inputHeight">Height: </label><input type="number" placeholder="Nhập chiều cao" id="inputHeight">
+<button onclick="triangle()">Vẽ</button>
+<p id="draw"></p>
+</body>
+<script>
+
+    function triangle() {
+        let number = document.getElementById(`inputHeight`).value;
+        let draw = '';
+        for (let i = 0; i <= number - 1; i++) {
+            draw += '<br/>';
+            for (let j = 0; j < number; j++) {
+                if (j === 0 || i === j || i === number - 1) {
+                    draw += `*`;
+                } else {
+                    draw += `&nbsp&nbsp`;
+                }
+            }
+        }
+        document.getElementById(`draw`).innerHTML = draw;
+    }
+
+
+</script>
+</html>

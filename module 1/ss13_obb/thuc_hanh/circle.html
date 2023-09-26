@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+
+    class Circle {
+        constructor(radius) {
+            this._radius = radius;
+        }
+
+        setRadius(radius) {
+            this.radius = radius;
+        }
+
+        getRadius = function () {
+            return this.radius;
+        }
+        getArea = function () {
+            return Math.PI * this.radius * this.radius;
+        }
+    }
+
+    let circle = new Circle();
+    circle.setRadius(+prompt('Nhap ban kinh: '))
+    alert(`Dien tich hinh tron: `+ circle.getArea());
+</script>
+</html>
+
+

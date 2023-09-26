@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Vẽ Tam Giác Cân (ruột rỗng)</h3>
+<label for="inputHeight">Height: </label><input type="number" placeholder="Nhập chiều cao" id="inputHeight">
+<button onclick="triangle()">Vẽ</button>
+<p id="draw"></p>
+</body>
+<script>
+
+    function triangle() {
+        let number = document.getElementById(`inputHeight`).value;
+        let draw = '';
+        for (let i = 0; i <= number; i++) {
+            draw += '<br/>';
+            for (let j = 0; j < (number * 2) - 1; j++) {
+                if (j === number - 1 - i || j === number - 1 + i || i === number - 1) {
+                    draw += '*';
+                } else {
+                    draw += '&nbsp&nbsp;';
+                }
+            }
+        }
+        document.getElementById(`draw`).innerHTML = draw;
+    }
+</script>
+</html>

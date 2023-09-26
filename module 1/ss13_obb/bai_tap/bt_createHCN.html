@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    // bai nay anh P kiu chua quen thi ko can lam Canvas :D
+    class Rectangle {
+        constructor(height, width) {
+            this.height = height;
+            this.width = width;
+        }
+
+        setHeight(height) {
+            this.height = height;
+        }
+
+        setWidth(width) {
+            this.width = width;
+        }
+
+        getHeight() {
+            return this.height;
+        }
+
+        getWeight() {
+            return this.width;
+        }
+
+        getAcreage() {
+            return this.height * this.width;
+        }
+
+        getPerimeter() {
+            return 2 * (this.height + this.width);
+        }
+    }
+
+    let hinhChuNhat = new Rectangle()
+    hinhChuNhat.setWidth(+prompt("Nhap chieu rong: "));
+    hinhChuNhat.setHeight(+prompt(`Nhap chieu dai: `));
+    console.log(hinhChuNhat);
+    alert('Dien tich hcn la: ' + hinhChuNhat.getAcreage());
+    alert('Chu vi hcn la : ' + hinhChuNhat.getPerimeter());
+</script>
+</html>

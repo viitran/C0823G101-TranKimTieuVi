@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class Temperature {
+        constructor(Celsius, Fahrenheit, Kelvin) {
+            this.Celsius = Celsius;
+            this.Fahrenheit = Fahrenheit;
+        }
+
+        setCelsius(Celsius) {
+            this.Celsius = Celsius;
+        }
+
+        setFahrenheit(Fahrenheit) {
+            this.Fahrenheit = Fahrenheit;
+        }
+
+        setKelvin(Kelvin) {
+            this.Kelvin = Kelvin;
+        }
+
+        getCelsius() {
+            return this.Celsius
+        }
+
+        getFahrenheit() {
+            return this.Fahrenheit;
+        }
+
+        getKelvin() {
+            return this.Kelvin;
+        }
+
+        getCelsiusFahrenheit() {
+            if (this.Celsius < -273) {
+                alert('Nhiet do ko hop le')
+            } else {
+                return this.Celsius * 1.8 + 32;
+            }
+        }
+
+        getFahrenheitCelsius() {
+            return 5 / 9 - (this.Fahrenheit - 32)
+        }
+
+        getCelsiusKelvin() {
+            return this.Celsius + 273.15;
+        }
+    }
+
+    let temp = new Temperature();
+    temp.setCelsius(+prompt('Nhap do C: '));
+    // temp.setFahrenheit(+prompt('Nhap do F: '));
+    // temp.setKelvin(+prompt(`Nhap do K: `))
+    alert("Nhiệt độ F: " + temp.getCelsiusFahrenheit());
+    alert("Nhiệt độ K: " + temp.getCelsiusKelvin())
+</script>
+</html>
