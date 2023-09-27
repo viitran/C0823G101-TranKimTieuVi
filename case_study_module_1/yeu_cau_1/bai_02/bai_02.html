@@ -11,9 +11,25 @@
 <p id="result"></p>
 </body>
 <script>
-  function check() {
-      let vowel = ['u','e','o','a','i']
-    let inputText = document.getElementById(`inputText`).value;
-  }
+    function check() {
+        // debugger
+        let vowel = ['u', 'e', 'o', 'a', 'i', 'O', 'U', 'I', 'A', 'E']
+        let inputText = document.getElementById(`inputText`).value;
+        let arr = inputText.split('');
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = 0; j < vowel.length; j++) {
+                if (arr[i] === vowel[j]) {
+                    count++;
+                }
+            }
+        }
+        if (count) {
+            document.getElementById('result').innerHTML = `Có ${count} nguyên âm trong nội dung bạn vừa nhập`;
+        } else {
+            document.getElementById('result').innerHTML = `Không có nguyên âm nào trong nội dung bạn vừa nhập`;
+        }
+    }
+
 </script>
 </html>

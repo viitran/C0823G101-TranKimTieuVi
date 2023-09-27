@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = 10;
+        }
+
+        decrease() {
+            this.weight--;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getWeight() {
+            document.write('Cân nặng của' + this.name + ' là: ' + this.weight + ' đơn vị' + '<br/>');
+            // console.log(this.name + ' nặng ' + this.weight);
+            return this.weight;
+        }
+
+        say() {
+            console.log(`Hi keo, tui tên là ${this.name}. Zà tui là ${this.gender} nặng ${this.weight} Kg` + '<br/>')
+        }
+
+        eatApple(apple) {
+            if (apple.getWeight() > 0) {
+                // console.log(this.name + ' đang ăn' + '\n');
+                document.write('<br/>' + this.name + ' đang ăn táo' + '<br/>');
+                apple.decrease();
+                this.weight++;
+            } else if (apple.getWeight() === 0) {
+                // console.log('hết Táo mất rùi');
+                document.write('hết Táo mất rùi');
+            }
+        }
+
+        checkApple(apple) {
+            // console.log('Quả táo còn ' + apple.getWeight());
+            document.write('Quả táo còn: ' + '<br/>' + apple.getWeight() + ' Đơn vị' + '<br\>');
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        getGender() {
+            return this.gender;
+        }
+    }
+//em thay Adam & Eva thanh Vio
+    let vio = new Human("Vio", 'Nữ', 50);
+    let apple = new Apple();
+    vio.say();
+
+    while (apple.weight > 0) {
+        vio.eatApple(apple);
+        vio.checkApple(apple);
+        vio.getWeight();
+    }
+</script>
+</html>

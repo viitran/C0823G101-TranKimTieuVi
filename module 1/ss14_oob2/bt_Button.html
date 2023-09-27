@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    class SwitchButton {
+        constructor(status, lamp) {
+            this.status = true;
+            this.lamp = lamp;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getLamp() {
+            return this.lamp;
+        }
+
+        setLamp(lamp) {
+            this.lamp = lamp;
+        }
+
+        connectToLamp(electric) {
+            this.lamp = electric;
+        }
+
+        switchOff() {
+            return this.status = false;
+        }
+
+        switchOn() {
+            return this.status;
+        }
+
+        checkElectric() {
+            if (this.lamp > 0) {
+                this.lamp--;
+                document.write("Còn" + " " + this.lamp + "%")
+            } else {
+                document.write("Hết điện rui đừng bật nữa ")
+            }
+        }
+    }
+
+    class ElectricLamp {
+        constructor(status, switchButton) {
+            this.status = status;
+            this.switchButton = switchButton;
+        }
+
+        getStatus() {
+            return this.status;
+        }
+
+        setStatus(status) {
+            this.status = status;
+        }
+
+        getSwitchButton() {
+            return this.switchButton;
+        }
+
+        setSwitchButton(switchButton) {
+            this.switchButton = switchButton;
+        }
+
+        turnOn() {
+            return this.status = true
+        }
+
+        turnOff() {
+            return this.status = false
+        }
+
+        theLight() {
+            if (this.status) {
+                document.write("<br/>" + "Turn on" + "<br/>")
+            } else {
+                document.write("<br/>" + "Turn off" + "<br/>")
+            }
+        }
+    }
+
+    let switchButton = new SwitchButton(true, 10)
+    let electricLamp = new ElectricLamp(true, switchButton)
+    for (let i = 0; i <= 10; i++) {
+        electricLamp.turnOn();
+        electricLamp.theLight();
+        switchButton.checkElectric();
+        electricLamp.turnOff();
+        electricLamp.theLight();
+    }
+</script>
+</html>

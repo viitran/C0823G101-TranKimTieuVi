@@ -2,9 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tính Thuế Thu Nhập và Lương Ròng</title>
 </head>
 <body>
-
+<h3>Tính Thuế Thu Nhập và Lương Ròng</h3>
+<label for="pay">Nhập lương (VND):</label>
+<input type="number" placeholder="Nhập lương" id="pay">
+<button onclick="calculateTax()">Tính</button>
+<p id="incomeTax"></p>
+<p id="netTax"></p>
 </body>
+<script>
+    function calculateTax() {
+        let pay = parseFloat(document.getElementById(`pay`).value);
+        let incomeTax = 0; // thuế thu nhập
+        let netPay = 0; // lương ròng
+
+        if (pay <= 15000000) {
+            incomeTax = pay * 0.2;
+        } else if (pay <= 7000000) {
+            incomeTax = pay * 0.1;
+        } else {
+            incomeTax = pay * 0.05;
+        }
+
+        netPay = pay - incomeTax;
+
+        document.getElementById(`incomeTax`).innerHTML = `Thuế thu nhập là: ${incomeTax} VND`;
+        document.getElementById(`netTax`).innerHTML = `Lương Ròng là: ${netPay} VND`;
+    }
+</script>
 </html>

@@ -57,6 +57,8 @@
         }
 
         checkInbox(){
+            this.battery--
+            return this.inbox.length > 0;
         }
 
         setDraft(text){
@@ -101,10 +103,10 @@
         }
 
         checkTexting() {
+            this.battery--;
             if (!this.status) {
                 alert("Bạn chưa bật điện thoại!")
             }
-            this.battery--;
         }
 
         setStatus(status) {
@@ -126,9 +128,7 @@
     }
 
     let nokia = new Mobile();
-
-    console.log(nokia)
-    nokia.checkStatus()
+    nokia.checkStatus();
 
     function turnOn() {
         nokia.setStatus(true);
@@ -148,7 +148,7 @@
             let input = "<table>\n" +
                 "    <tr>\n" +
                 "        <td>\n" +
-                "            <textarea id='messenger'></textarea>\n" +
+                "            <textarea id='messenger' onchange='handleInputChange(event)' oninput='handleInputChange(event)'></textarea>\n" +
                 "        </td>\n" +
                 "    </tr>\n" +
                 "    <tr>\n" +
@@ -165,6 +165,10 @@
 
             console.log(nokia)
         }
+    }
+
+    function handleInputChange(event) {
+        console.log(event.target.value)
     }
 
     function send() {
@@ -184,6 +188,42 @@
     }
 
     function draft() {
+        // if (nokia.getStatus()) {
+        //     let drafts = nokia.getDraft();
+        //     if (drafts.length > 0) {
+        //         let draftText = "Các bản nháp trước đó: \n";
+        //         for (let i = 0; i < drafts.length; i++) {
+        //             draftText += i + 1 + " - " + drafts[i] + "\n";
+        //         }
+        //         alert(draftText);
+        //     } else {
+        //         alert("chưa có bản nháp nào.");
+        //     }
+        // } else {
+        //     alert("Bạn chưa bật điện thoại!");
+        // }
+    }
+
+    function charger() {
+        nokia.setStatus(true);
+        nokia.setCharger(true);
+        nokia.checkCharger();
+    }
+    console.log(nokia)
+
+    function inbox() {
+        //     if (nokia.checkInbox()) {
+        //         let inboxText = "Hộp thư đến: \n";
+        //         for (let i = 0; i < this; i++) {
+        //             inboxText += i+1 + "- "+this.inbox[i] + "\n";
+        //         }
+        //         alert(inboxText);
+        //     } else {
+        //         alert('Hộp thư trống không');
+        //     }
+        //
+        //     console.log(nokia)
+        // }
         if (nokia.getStatus()) {
             let drafts = nokia.getDraft();
             if (drafts.length > 0) {
@@ -198,28 +238,7 @@
         } else {
             alert("Bạn chưa bật điện thoại!");
         }
-        this.battery--;
     }
 
-    function charger() {
-        nokia.setStatus(true);
-        nokia.setCharger(true);
-        nokia.checkCharger();
-        console.log(nokia)
-    }
-
-    function inbox() {
-        if (this.inbox.length > 0){
-            let inboxText = "Hộp thư đến: \n";
-            for (let i = 0; i < this; i++) {
-                inboxText += i+1 + "- "+this.inbox[i] + "\n";
-            }
-            alert(inboxText);
-        } else {
-            alert('Hộp thư trống không');
-        }
-        this.battery--;
-    }
-    nokia.checkInbox();
 </script>
 </html>
