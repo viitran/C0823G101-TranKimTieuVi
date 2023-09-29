@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    matrix()
+
+    function matrix(row, column) {
+        row = +prompt(`Nhập chiều dài của hàng`);
+        column = +prompt(`Nhập chiều dọc của hàng`);
+        let arrMatrix = [];
+        for (let i = 0; i <= row; i++) {
+            arrMatrix.push(new Array(column));
+        }
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                // arrMatrix[i][j] = +prompt(`Nhập phần tử thứ [${i}][${j}]`);
+                arrMatrix[i][j] = Math.floor(Math.random() * 100);
+            }
+        }
+        let min = arrMatrix[0][0];
+        let max = arrMatrix[0][0];
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                if (max < arrMatrix[i][j]) {
+                    max = arrMatrix[i][j];
+                    break;
+                }
+                if (min <= arrMatrix) {
+                    min = arrMatrix;
+                    break;
+                }
+            }
+        }
+        alert(`Ma trận = [${arrMatrix}]`);
+        alert(`Giá trị lớn nhất trong ma trận trên là ${max}`);
+        alert(`Giá trị nhỏ nhất trong ma trận trên là ${min}`);
+        console.log(arrMatrix)
+        console.log(max)
+        console.log(min)
+    }
+</script>
+</html>
+
+
+
+

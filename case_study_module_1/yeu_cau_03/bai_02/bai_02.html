@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let arrA = +prompt(`Nhập độ dài của mảng a`);
+    let arrayA = [];
+    for (let i = 0; i < arrA; i++) {
+        let elementA = parseInt(prompt(`Nhập phần tử thứ a[${i}]`));
+        arrayA.push(elementA);
+    }
+
+    let arrB = +prompt(`Nhập độ dài của mảng b`);
+    let arrayB = [];
+    for (let i = 0; i < arrB; i++) {
+        let elementB = parseInt(prompt(`Nhập phần tử thứ b[${i}]`));
+        arrayB.push(elementB)
+    }
+
+    let arrTest = arrayB.slice();
+
+    for (let i = 0; i < arrayA.length; i++) {
+        for (let j = 0; j < arrayB.length; j++) {
+            if (arrayA[i] === arrayB[j]) {
+                arrayB.splice(j, 1);
+            }
+        }
+    }
+    alert(`Mảng a =[${arrayA}] và Mảng b = [${arrTest}]`);
+    alert(`MissingValue(a,b) = [${arrayB}]`);
+    // console.log(`Mảng A:`, arrayA);
+    // console.log(`Mảng B ban đầu:`, arrTest);
+    // console.log(`Mảng B sau khi xóa các phần tử trùng lặp từ mảng A và mảng B:`, arrayB);
+</script>
+</html>

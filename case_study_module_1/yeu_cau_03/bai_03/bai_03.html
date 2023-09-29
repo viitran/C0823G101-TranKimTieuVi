@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MaxFraction</title>
+</head>
+<body>
+</body>
+<script>
+
+    let inputNumerators = +prompt(`Nhập độ dài của tử số`);
+    let arrNumerators = [];
+    for (let i = 0; i < inputNumerators; i++) {
+        let elementN = parseInt(prompt(`Nhập phần tử thứ a[${i}] của tử số: `)); //ví mảng a
+        arrNumerators.push(elementN);
+        //elementN - N lấy từ numerators
+    }
+
+    let inputDenominators = +prompt(`Nhập độ dài của mẫu số`);
+    let arrDenominators = [];
+    for (let i = 0; i < inputDenominators; i++) {
+        let elementD = parseInt(prompt(`Nhập phần tử thứ b[${i}] của mẫu số: `))//ví mảng b
+        arrDenominators.push(elementD);
+    }
+
+    let index = 0;
+    let maxFraction = (arrNumerators[0] / arrDenominators[0]);
+    for (let i = 0; i < arrNumerators.length; i++) {
+        if (arrNumerators[i] / arrDenominators[i] > maxFraction) {
+            maxFraction = arrNumerators[i] / arrDenominators[i];
+            index = i;
+        }
+    }
+    alert(`Mảng tử số = [${arrNumerators}] và mảng mẫu số = [${arrDenominators}]`);
+    alert(`phân số lớn nhất có chỉ số là ${index}`);
+    // console.log(arrNumerators,arrDenominators);
+    // console.log(index)
+
+</script>
+</html>

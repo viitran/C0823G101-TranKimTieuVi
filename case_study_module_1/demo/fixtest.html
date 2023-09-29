@@ -1,279 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Document</title>
-  <style>
-    .box {
-      border: 1px solid black;
-      padding: 20px;
-      margin: 20px;
-      max-width: 500px;
-      display: inline-block;
-    }
-  </style>
-</head>
-<body>
-<!-- Iphone -->
-<div class="box">
-  <h2>Iphone</h2>
-  <div>
-    <button onclick="handleTurnOnMobile('Iphone')">Bật điện thoại</button>
-    <button onclick="handleTurnOffMobile('Iphone')">Tắt điện thoại</button>
-    <button onclick="handleCheckStatus('Iphone')">Kiểm tra trạng thái</button>
-    <button onclick="handleChangeBattery('Iphone')">Sạc pin</button>
-    <h4>Pin: <span id="iphonePin">100%</span></h4>
-  </div>
-  <input type="text" oninput="handleIphoneChange(event)"/>
-  <button onclick="handleSendMessage('Iphone')">Gửi tin nhắn</button>
-  <!-- Hiển thị tin nhắn đã gửi và đã nhận -->
-  <h4>Tin nhắn đã gửi:</h4>
-  <ul id="iphoneSentMessages"></ul>
-  <h4>Tin nhắn đã nhận:</h4>
-  <ul id="iphoneReceivedMessages"></ul>
-</div>
-<!-- Nokia -->
-<div class="box">
-  <h2>Nokia</h2>
-  <div>
-    <button onclick="handleTurnOnMobile('Nokia')">Bật điện thoại</button>
-    <button onclick="handleTurnOffMobile('Nokia')">Tắt điện thoại</button>
-    <button onclick="handleCheckStatus('Nokia')">Kiểm tra trạng thái</button>
-    <button onclick="handleChangeBattery('Nokia')">Sạc pin</button>
-    <h4>Pin: <span id="nokiaPin">100%</span></h4>
-  </div>
-  <input type="text" oninput="handleNokiaChange(event)"/>
-  <button onclick="handleSendMessage('Nokia')">Gửi tin nhắn</button>
-  <!-- Hiển thị tin nhắn đã gửi và đã nhận -->
-  <h4>Tin nhắn đã gửi:</h4>
-  <ul id="nokiaSentMessages"></ul>
-  <h4>Tin nhắn đã nhận:</h4>
-  <ul id="nokiaReceivedMessages"></ul>
-</div>
-<script>
-  class DienThoai {
-    constructor(pin, tinDangSoanThao, hopThuDen, tinDaGui, trangThai, ten) {
-      this.pin = pin;
-      this.tinDangSoanThao = tinDangSoanThao;
-      this.hopThuDen = hopThuDen;
-      this.tinDaGui = tinDaGui;
-      this.trangThai = trangThai;
-      this.ten = ten;
-    }
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8"/>-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+<!--  <title>Document</title>-->
+<!--  <style>-->
+<!--    .box {-->
+<!--      border: 1px solid black;-->
+<!--      padding: 20px;-->
+<!--      margin: 20px;-->
+<!--      max-width: 500px;-->
+<!--      display: inline-block;-->
+<!--    }-->
+<!--  </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash; Iphone &ndash;&gt;-->
+<!--<div class="box">-->
+<!--  <h2>Iphone</h2>-->
+<!--  <div>-->
+<!--    <button onclick="handleTurnOnMobile('Iphone')">Bật điện thoại</button>-->
+<!--    <button onclick="handleTurnOffMobile('Iphone')">Tắt điện thoại</button>-->
+<!--    <button onclick="handleCheckStatus('Iphone')">Kiểm tra trạng thái</button>-->
+<!--    <button onclick="handleChangeBattery('Iphone')">Sạc pin</button>-->
+<!--    <h4>Pin: <span id="iphonePin">100%</span></h4>-->
+<!--  </div>-->
+<!--  <input type="text" oninput="handleIphoneChange(event)"/>-->
+<!--  <button onclick="handleSendMessage('Iphone')">Gửi tin nhắn</button>-->
+<!--  &lt;!&ndash; Hiển thị tin nhắn đã gửi và đã nhận &ndash;&gt;-->
+<!--  <h4>Tin nhắn đã gửi:</h4>-->
+<!--  <ul id="iphoneSentMessages"></ul>-->
+<!--  <h4>Tin nhắn đã nhận:</h4>-->
+<!--  <ul id="iphoneReceivedMessages"></ul>-->
+<!--</div>-->
+<!--&lt;!&ndash; Nokia &ndash;&gt;-->
+<!--<div class="box">-->
+<!--  <h2>Nokia</h2>-->
+<!--  <div>-->
+<!--    <button onclick="handleTurnOnMobile('Nokia')">Bật điện thoại</button>-->
+<!--    <button onclick="handleTurnOffMobile('Nokia')">Tắt điện thoại</button>-->
+<!--    <button onclick="handleCheckStatus('Nokia')">Kiểm tra trạng thái</button>-->
+<!--    <button onclick="handleChangeBattery('Nokia')">Sạc pin</button>-->
+<!--    <h4>Pin: <span id="nokiaPin">100%</span></h4>-->
+<!--  </div>-->
+<!--  <input type="text" oninput="handleNokiaChange(event)"/>-->
+<!--  <button onclick="handleSendMessage('Nokia')">Gửi tin nhắn</button>-->
+<!--  &lt;!&ndash; Hiển thị tin nhắn đã gửi và đã nhận &ndash;&gt;-->
+<!--  <h4>Tin nhắn đã gửi:</h4>-->
+<!--  <ul id="nokiaSentMessages"></ul>-->
+<!--  <h4>Tin nhắn đã nhận:</h4>-->
+<!--  <ul id="nokiaReceivedMessages"></ul>-->
+<!--</div>-->
+<!--<script>-->
+<!--  class DienThoai {-->
+<!--    constructor(pin, tinDangSoanThao, hopThuDen, tinDaGui, trangThai, ten) {-->
+<!--      this.pin = pin;-->
+<!--      this.tinDangSoanThao = tinDangSoanThao;-->
+<!--      this.hopThuDen = hopThuDen;-->
+<!--      this.tinDaGui = tinDaGui;-->
+<!--      this.trangThai = trangThai;-->
+<!--      this.ten = ten;-->
+<!--    }-->
 
-    getPin() {
-      return this.pin;
-    }
+<!--    getPin() {-->
+<!--      return this.pin;-->
+<!--    }-->
 
-    setPin(pin) {
-      this.pin = pin;
-    }
+<!--    setPin(pin) {-->
+<!--      this.pin = pin;-->
+<!--    }-->
 
-    getTinDangSoanThao() {
-      return this.tinDangSoanThao;
-    }
+<!--    getTinDangSoanThao() {-->
+<!--      return this.tinDangSoanThao;-->
+<!--    }-->
 
-    setTinDangSoanThao(tinDangSoanThao) {
-      this.tinDangSoanThao = tinDangSoanThao;
-    }
+<!--    setTinDangSoanThao(tinDangSoanThao) {-->
+<!--      this.tinDangSoanThao = tinDangSoanThao;-->
+<!--    }-->
 
-    getHopThuDen() {
-      return this.hopThuDen;
-    }
+<!--    getHopThuDen() {-->
+<!--      return this.hopThuDen;-->
+<!--    }-->
 
-    setHopThuDen(hopThuDen) {
-      this.hopThuDen = hopThuDen;
-    }
+<!--    setHopThuDen(hopThuDen) {-->
+<!--      this.hopThuDen = hopThuDen;-->
+<!--    }-->
 
-    getTinDaGui() {
-      return this.tinDaGui;
-    }
+<!--    getTinDaGui() {-->
+<!--      return this.tinDaGui;-->
+<!--    }-->
 
-    setTinDaGui(tinDaGui) {
-      this.tinDaGui = tinDaGui;
-    }
+<!--    setTinDaGui(tinDaGui) {-->
+<!--      this.tinDaGui = tinDaGui;-->
+<!--    }-->
 
-    getTrangThai() {
-      return this.trangThai;
-    }
+<!--    getTrangThai() {-->
+<!--      return this.trangThai;-->
+<!--    }-->
 
-    setTrangThai(trangThai) {
-      this.trangThai = trangThai;
-    }
+<!--    setTrangThai(trangThai) {-->
+<!--      this.trangThai = trangThai;-->
+<!--    }-->
 
-    getTen() {
-      return this.ten;
-    }
+<!--    getTen() {-->
+<!--      return this.ten;-->
+<!--    }-->
 
-    setTen(ten) {
-      this.ten = ten;
-    }
+<!--    setTen(ten) {-->
+<!--      this.ten = ten;-->
+<!--    }-->
 
-    giamPin() {
-      if (this.pin > 0) {
-        this.pin--;
-        updateBatteryDisplay(this.ten, this.pin);
-      } else {
-        this.trangThai = false;
-        console.log(`Điện thoại ${this.ten} đã hết pin!`);
-      }
-    }
+<!--    giamPin() {-->
+<!--      if (this.pin > 0) {-->
+<!--        this.pin&#45;&#45;;-->
+<!--        updateBatteryDisplay(this.ten, this.pin);-->
+<!--      } else {-->
+<!--        this.trangThai = false;-->
+<!--        console.log(`Điện thoại ${this.ten} đã hết pin!`);-->
+<!--      }-->
+<!--    }-->
 
-    kiemTraTrangThai() {
-      if (this.trangThai) {
-        console.log(`Điện thoại ${this.ten} đang bật!`);
-      } else {
-        console.log(`Điện thoại ${this.ten} đang tắt!`);
-      }
-      this.giamPin();
-    }
+<!--    kiemTraTrangThai() {-->
+<!--      if (this.trangThai) {-->
+<!--        console.log(`Điện thoại ${this.ten} đang bật!`);-->
+<!--      } else {-->
+<!--        console.log(`Điện thoại ${this.ten} đang tắt!`);-->
+<!--      }-->
+<!--      this.giamPin();-->
+<!--    }-->
 
-    batDienThoai() {
-      this.giamPin();
-      if (this.trangThai) {
-        console.log(`Điện thoại ${this.ten} đang được bật rồi!`);
-      } else {
-        this.trangThai = true;
-        console.log(`Điện thoại ${this.ten} bật!`);
-      }
-    }
+<!--    batDienThoai() {-->
+<!--      this.giamPin();-->
+<!--      if (this.trangThai) {-->
+<!--        console.log(`Điện thoại ${this.ten} đang được bật rồi!`);-->
+<!--      } else {-->
+<!--        this.trangThai = true;-->
+<!--        console.log(`Điện thoại ${this.ten} bật!`);-->
+<!--      }-->
+<!--    }-->
 
-    tatDienThoai() {
-      this.giamPin();
-      if (!this.trangThai) {
-        console.log(`Điện thoại ${this.ten} đang tắt rồi!`);
-      } else {
-        this.trangThai = false;
-        console.log(`Điện thoại ${this.ten} tắt!`);
-      }
-    }
+<!--    tatDienThoai() {-->
+<!--      this.giamPin();-->
+<!--      if (!this.trangThai) {-->
+<!--        console.log(`Điện thoại ${this.ten} đang tắt rồi!`);-->
+<!--      } else {-->
+<!--        this.trangThai = false;-->
+<!--        console.log(`Điện thoại ${this.ten} tắt!`);-->
+<!--      }-->
+<!--    }-->
 
-    guiTinNhan(tinNhan, thietBiNhanTin) {
-      if (this.trangThai) {
-        this.tinDaGui.push(tinNhan);
-        thietBiNhanTin.getHopThuDen().push(tinNhan);
-        updateMessageDisplay(this.ten, tinNhan, `${thietBiNhanTin.getTen().toLowerCase()}ReceivedMessages`);
-        this.giamPin();
-      } else {
-        console.log(`${this.ten} chưa được bật!`);
-      }
-    }
+<!--    guiTinNhan(tinNhan, thietBiNhanTin) {-->
+<!--      if (this.trangThai) {-->
+<!--        this.tinDaGui.push(tinNhan);-->
+<!--        thietBiNhanTin.getHopThuDen().push(tinNhan);-->
+<!--        updateMessageDisplay(this.ten, tinNhan, `${thietBiNhanTin.getTen().toLowerCase()}ReceivedMessages`);-->
+<!--        this.giamPin();-->
+<!--      } else {-->
+<!--        console.log(`${this.ten} chưa được bật!`);-->
+<!--      }-->
+<!--    }-->
 
-    sacPin() {
-      if (this.pin >= 100) {
-        console.log(`${this.ten} đã đầy pin, không cần sạc nữa!`);
-      } else {
-        this.pin = 100;
-        console.log(`${this.ten} đã sạc đầy pin!`);
-        updateBatteryDisplay(this.ten, this.pin);
-      }
-    }
-  }
+<!--    sacPin() {-->
+<!--      if (this.pin >= 100) {-->
+<!--        console.log(`${this.ten} đã đầy pin, không cần sạc nữa!`);-->
+<!--      } else {-->
+<!--        this.pin = 100;-->
+<!--        console.log(`${this.ten} đã sạc đầy pin!`);-->
+<!--        updateBatteryDisplay(this.ten, this.pin);-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
 
-  let iphone = new DienThoai(100, "", [], [], false, "Iphone");
-  let nokia = new DienThoai(100, "", [], [], true, "Nokia");
+<!--  let iphone = new DienThoai(100, "", [], [], false, "Iphone");-->
+<!--  let nokia = new DienThoai(100, "", [], [], true, "Nokia");-->
 
-  function handleCheckStatus(tenDienThoai) {
-    switch (tenDienThoai) {
-      case "Iphone":
-        iphone.kiemTraTrangThai();
-        break;
-      case "Nokia":
-        nokia.kiemTraTrangThai();
-        break;
-      default:
-        break;
-    }
-  }
+<!--  function handleCheckStatus(tenDienThoai) {-->
+<!--    switch (tenDienThoai) {-->
+<!--      case "Iphone":-->
+<!--        iphone.kiemTraTrangThai();-->
+<!--        break;-->
+<!--      case "Nokia":-->
+<!--        nokia.kiemTraTrangThai();-->
+<!--        break;-->
+<!--      default:-->
+<!--        break;-->
+<!--    }-->
+<!--  }-->
 
-  function handleTurnOnMobile(tenDienthoai) {
-    switch (tenDienthoai) {
-      case "Iphone":
-        iphone.batDienThoai();
-        break;
-      case "Nokia":
-        nokia.batDienThoai();
-        break;
-      default:
-        break;
-    }
-  }
+<!--  function handleTurnOnMobile(tenDienthoai) {-->
+<!--    switch (tenDienthoai) {-->
+<!--      case "Iphone":-->
+<!--        iphone.batDienThoai();-->
+<!--        break;-->
+<!--      case "Nokia":-->
+<!--        nokia.batDienThoai();-->
+<!--        break;-->
+<!--      default:-->
+<!--        break;-->
+<!--    }-->
+<!--  }-->
 
-  function handleTurnOffMobile(tenDienthoai) {
-    switch (tenDienthoai) {
-      case "Iphone":
-        iphone.tatDienThoai();
-        break;
-      case "Nokia":
-        nokia.tatDienThoai();
-        break;
-      default:
-        break;
-    }
-  }
+<!--  function handleTurnOffMobile(tenDienthoai) {-->
+<!--    switch (tenDienthoai) {-->
+<!--      case "Iphone":-->
+<!--        iphone.tatDienThoai();-->
+<!--        break;-->
+<!--      case "Nokia":-->
+<!--        nokia.tatDienThoai();-->
+<!--        break;-->
+<!--      default:-->
+<!--        break;-->
+<!--    }-->
+<!--  }-->
 
-  function handleIphoneChange(event) {
-    if (iphone.getTrangThai()) {
-      let value = event.target.value;
-      iphone.setTinDangSoanThao(value);
-    } else {
-      event.target.value = "";
-      console.log(`${iphone.getTen()} chưa được bật!`);
-    }
-  }
+<!--  function handleIphoneChange(event) {-->
+<!--    if (iphone.getTrangThai()) {-->
+<!--      let value = event.target.value;-->
+<!--      iphone.setTinDangSoanThao(value);-->
+<!--    } else {-->
+<!--      event.target.value = "";-->
+<!--      console.log(`${iphone.getTen()} chưa được bật!`);-->
+<!--    }-->
+<!--  }-->
 
-  function handleNokiaChange(event) {
-    if (nokia.getTrangThai()) {
-      let value = event.target.value;
-      nokia.setTinDangSoanThao(value);
-    } else {
-      event.target.value = "";
-      console.log(`${nokia.getTen()} chưa được bật!`);
-    }
-  }
+<!--  function handleNokiaChange(event) {-->
+<!--    if (nokia.getTrangThai()) {-->
+<!--      let value = event.target.value;-->
+<!--      nokia.setTinDangSoanThao(value);-->
+<!--    } else {-->
+<!--      event.target.value = "";-->
+<!--      console.log(`${nokia.getTen()} chưa được bật!`);-->
+<!--    }-->
+<!--  }-->
 
-  function handleSendMessage(tenDienthoai) {
+<!--  function handleSendMessage(tenDienthoai) {-->
 
-    switch (tenDienthoai) {
-      case "Iphone":
-        let iphoneMessage = iphone.getTinDangSoanThao();
-        iphone.guiTinNhan(iphoneMessage, nokia);
-        break;
-      case "Nokia":
-        let nokiaMessage = nokia.getTinDangSoanThao();
-        nokia.guiTinNhan(nokiaMessage, iphone);
-        break;
-      default:
-        break;
-    }
-    console.log({nokia, iphone});
-  }
+<!--    switch (tenDienthoai) {-->
+<!--      case "Iphone":-->
+<!--        let iphoneMessage = iphone.getTinDangSoanThao();-->
+<!--        iphone.guiTinNhan(iphoneMessage, nokia);-->
+<!--        break;-->
+<!--      case "Nokia":-->
+<!--        let nokiaMessage = nokia.getTinDangSoanThao();-->
+<!--        nokia.guiTinNhan(nokiaMessage, iphone);-->
+<!--        break;-->
+<!--      default:-->
+<!--        break;-->
+<!--    }-->
+<!--    console.log({nokia, iphone});-->
+<!--  }-->
 
-  function handleChangeBattery(tenDienthoai) {
-    switch (tenDienthoai) {
-      case "Iphone":
-        iphone.sacPin();
-        break;
-      case "Nokia":
-        nokia.sacPin();
-        break;
-      default:
-        break;
-    }
-  }
+<!--  function handleChangeBattery(tenDienthoai) {-->
+<!--    switch (tenDienthoai) {-->
+<!--      case "Iphone":-->
+<!--        iphone.sacPin();-->
+<!--        break;-->
+<!--      case "Nokia":-->
+<!--        nokia.sacPin();-->
+<!--        break;-->
+<!--      default:-->
+<!--        break;-->
+<!--    }-->
+<!--  }-->
 
-  function updateMessageDisplay(tenDienThoai, message, elementId) {
-    let messageList = document.getElementById(elementId);
-    let listItem = document.createElement("li");
-    listItem.appendChild(document.createTextNode(`${tenDienThoai}: ${message}`));
-    messageList.appendChild(listItem);
-  }
+<!--  function updateMessageDisplay(tenDienThoai, message, elementId) {-->
+<!--    let messageList = document.getElementById(elementId);-->
+<!--    let listItem = document.createElement("li");-->
+<!--    listItem.appendChild(document.createTextNode(`${tenDienThoai}: ${message}`));-->
+<!--    messageList.appendChild(listItem);-->
+<!--  }-->
 
-  function updateBatteryDisplay(tenDienThoai, battery) {
-    let batteryElement = document.getElementById(`${tenDienThoai.toLowerCase()}Pin`);
-    batteryElement.textContent = `${battery}%`;
-  }
-</script>
-</body>
-</html>
+<!--  function updateBatteryDisplay(tenDienThoai, battery) {-->
+<!--    let batteryElement = document.getElementById(`${tenDienThoai.toLowerCase()}Pin`);-->
+<!--    batteryElement.textContent = `${battery}%`;-->
+<!--  }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->

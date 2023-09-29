@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Menu thức uống</h1>
+<h5>Danh sách các loại thức uống</h5>
+<ol>
+    <li>Cafe</li>
+    <li>Cam vắt</li>
+    <li>Nước ép cà rốt</li>
+    <li>Nước ép cà chua</li>
+    <li>Nước lọc</li>
+    <li>Nước dừa</li>
+    <li>Thoát gọi món</li>
+</ol>
+<button onclick="order()">Order</button>
+</body>
+<script>
+    function order() {
+        let totalAmount = 0;
+        do {
+            let choice = parseInt(prompt("Nhập số thức uống bạn muốn gọi [1-6] và ấn [7] để thoát ra và thanh toán:"));
+            if (choice >= 1 && choice <= 6) {
+                let quantity = parseInt(prompt("Bạn muốn gọi bao nhiêu suất: "));
+                let price = 0;
+
+                switch (choice) {
+                    case 1:
+                        price = 15000
+                        break;
+                    case 2:
+                        price = 20000
+                        break;
+                    case 3:
+                        price = 20000
+                        break;
+                    case 4:
+                        price = 20000
+                        break;
+                    case 5:
+                        price = 10000
+                        break;
+                    case 6:
+                        price = 20000
+                        break;
+                }
+                totalAmount += price * quantity;
+            } else if (choice === 7) {
+                break;
+            } else {
+                alert(`Bạn nhập lộn số ?! Vui lòng nhập lại để order!`)
+            }
+        } while (true);
+        alert("Tổng số tiền cần trả: " + totalAmount + " VND");
+
+    }
+</script>
+</html>

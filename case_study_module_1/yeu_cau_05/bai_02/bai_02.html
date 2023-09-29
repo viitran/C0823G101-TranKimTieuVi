@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    array();
+
+    function isPrime(num) {
+        if (num <= 1) return false;
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function array() {
+        let inputRow = +prompt(`Nhập số hàng: `);
+        let inputCol = +prompt(`Nhập số cột : `);
+        let primeCount = 0;
+        let twoDimensionalArray = [];
+
+        for (let i = 0; i < inputRow; i++) {
+            twoDimensionalArray.push(new Array(inputCol));
+        }
+
+        for (let i = 0; i < twoDimensionalArray.length; i++) {
+            for (let j = 0; j < twoDimensionalArray[i].length; j++) {
+                twoDimensionalArray[i][j] = Math.floor(Math.random() * 100);
+            }
+        }
+
+        for (let i = 0; i < twoDimensionalArray.length; i++) {
+            for (let j = 0; j < twoDimensionalArray[i].length; j++) {
+                if (isPrime(twoDimensionalArray[i][j])) {
+                    // console.log(`Số nguyên tố tại vị trí [${i}][${j}]: ${twoDimensionalArray[i][j]}`);
+                    alert(`Số nguyên tố tại vị trí [${i}][${j}]: ${twoDimensionalArray[i][j]}`);
+                    primeCount++;
+                }
+            }
+        }
+
+        // console.log(`Tổng số lượng số nguyên tố trong mảng: ${primeCount}`);
+        alert(`Tổng số lượng số nguyên tố trong mảng: ${primeCount}`);
+    }
+</script>
+</body>
+</html>

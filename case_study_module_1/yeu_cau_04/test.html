@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputRow = +prompt("Nhập số hàng");
+    let inputCol = +prompt("Nhập số cột");
+    let arr = new Array(inputRow);
+    let result = 0;
+    console.log(arr)
+    for (let row = 0; row < arr.length; row++) {
+        arr[row] = new Array(inputCol)
+        for (let col = 0; col < arr[row].length; col++) {
+            let count = 0;
+            arr[row][col] = +prompt("input value at [" + row + "][" + col + "]: ");
+            document.write(arr[row][col] + " ");
+            for (let i = 1 ;i < arr[row].length; i++){
+                if (arr[row][col] % i ===0){
+                    count++
+                }
+            }
+            if (count === 2){
+                result += 1
+            }
+        }
+        document.write("</br>");
+        console.log(result)
+    }
+
+</script>
+</body>
+</html>

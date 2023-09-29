@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function capitalizeString(inputString) {
+        inputString = inputString.toLowerCase();
+        let words = inputString.split(" ");
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i]) {
+                let letters = words[i].split("");
+                letters[0] = letters[0].toUpperCase();
+                words[i] = letters.join("");
+            }
+        }
+
+        return words.join(" ");
+    }
+
+    function findLongestWord(inputString) {
+        let words = inputString.split(" ");
+        let longestWord = "";
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i].length > longestWord.length) {
+                longestWord = words[i];
+            }
+        }
+
+        return longestWord;
+    }
+
+    let inputString = prompt("Nhập xâu ký tự:");
+    let originalString = inputString;
+    let capitalizedString = capitalizeString(inputString);
+    let longestWord = findLongestWord(inputString);
+
+    alert("Xâu trước khi chuẩn hóa: " + originalString);
+    alert("Xâu sau khi chuẩn hóa: " + capitalizedString);
+    alert("Từ dài nhất trong xâu: " + longestWord);
+
+    console.log("Xâu trước khi chuẩn hóa: " + originalString);
+    console.log("Xâu sau khi chuẩn hóa: " + capitalizedString);
+    console.log("Từ dài nhất trong xâu: " + longestWord);
+</script>
+</body>
+</html>

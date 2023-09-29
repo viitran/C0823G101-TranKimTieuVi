@@ -1,244 +1,244 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h3>Nokia</h3>
-<table>
-    <tr>
-        <td>
-            <button onclick="turnOn()">On</button>
-        </td>
-        <td>
-            <button onclick="turnOff()">Off</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div id="text">
-                <button onclick="sent()">texting</button>
-            </div>
-        </td>
-        <td>
-            <button onclick="draft()">Draft Messenger</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="charger()">Charger Phone</button>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <button onclick="inbox()">Inbox</button>
-        </td>
-    </tr>
-</table>
-</body>
-<script>
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h3>Nokia</h3>-->
+<!--<table>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <button onclick="turnOn()">On</button>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <button onclick="turnOff()">Off</button>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <div id="text">-->
+<!--                <button onclick="sent()">texting</button>-->
+<!--            </div>-->
+<!--        </td>-->
+<!--        <td>-->
+<!--            <button onclick="draft()">Draft Messenger</button>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <button onclick="charger()">Charger Phone</button>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>-->
+<!--            <button onclick="inbox()">Inbox</button>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+<!--</body>-->
+<!--<script>-->
 
-    class Mobile {
-        constructor(status, texting, battery, draft, charger,inbox) {
-            this.status = status;
-            this.battery = battery = 100;
-            this.texting = texting;
-            this.draft = [];
-            this.charger = charger
-            this.inbox = [];
-        }
-        getInbox(){
-            return this.inbox;
-        }
+<!--    class Mobile {-->
+<!--        constructor(status, texting, battery, draft, charger,inbox) {-->
+<!--            this.status = status;-->
+<!--            this.battery = battery = 100;-->
+<!--            this.texting = texting;-->
+<!--            this.draft = [];-->
+<!--            this.charger = charger-->
+<!--            this.inbox = [];-->
+<!--        }-->
+<!--        getInbox(){-->
+<!--            return this.inbox;-->
+<!--        }-->
 
-        setInbox(){
-            this.inbox = [];
-        }
+<!--        setInbox(){-->
+<!--            this.inbox = [];-->
+<!--        }-->
 
-        checkInbox(){
-            this.battery--
-            return this.inbox.length > 0;
-        }
+<!--        checkInbox(){-->
+<!--            this.battery&#45;&#45;-->
+<!--            return this.inbox.length > 0;-->
+<!--        }-->
 
-        setDraft(text){
-            this.draft.push(text);
-        }
-        getDraft(){
-            return this.draft;
-        }
-        checkDraft(){
-            if (!this.status) {
-                alert("Bạn chưa bật điện thoại!")
-            }
-            this.battery--;
-        }
+<!--        setDraft(text){-->
+<!--            this.draft.push(text);-->
+<!--        }-->
+<!--        getDraft(){-->
+<!--            return this.draft;-->
+<!--        }-->
+<!--        checkDraft(){-->
+<!--            if (!this.status) {-->
+<!--                alert("Bạn chưa bật điện thoại!")-->
+<!--            }-->
+<!--            this.battery&#45;&#45;;-->
+<!--        }-->
 
-        setCharger(charger) {
-            this.charger = charger;
-        }
+<!--        setCharger(charger) {-->
+<!--            this.charger = charger;-->
+<!--        }-->
 
-        getCharger() {
-            return this.charger;
-        }
+<!--        getCharger() {-->
+<!--            return this.charger;-->
+<!--        }-->
 
-        checkCharger() {
-            if (confirm(`Xác nhận sạc pin`)) {
-                alert(`Bạn đang sạc điện thoại!`);
-                if (this.battery < 100) {
-                    this.battery = 100;
-                    alert('Bạn đã sạc thành công!')
-                }
-            } else {
-                alert(`Bạn chưa sạc điện thoại`);
-            }
-        }
+<!--        checkCharger() {-->
+<!--            if (confirm(`Xác nhận sạc pin`)) {-->
+<!--                alert(`Bạn đang sạc điện thoại!`);-->
+<!--                if (this.battery < 100) {-->
+<!--                    this.battery = 100;-->
+<!--                    alert('Bạn đã sạc thành công!')-->
+<!--                }-->
+<!--            } else {-->
+<!--                alert(`Bạn chưa sạc điện thoại`);-->
+<!--            }-->
+<!--        }-->
 
-        setTexting(texting) {
-            this.texting = texting;
-        }
+<!--        setTexting(texting) {-->
+<!--            this.texting = texting;-->
+<!--        }-->
 
-        getTexting() {
-            return this.texting;
-        }
+<!--        getTexting() {-->
+<!--            return this.texting;-->
+<!--        }-->
 
-        checkTexting() {
-            this.battery--;
-            if (!this.status) {
-                alert("Bạn chưa bật điện thoại!")
-            }
-        }
+<!--        checkTexting() {-->
+<!--            this.battery&#45;&#45;;-->
+<!--            if (!this.status) {-->
+<!--                alert("Bạn chưa bật điện thoại!")-->
+<!--            }-->
+<!--        }-->
 
-        setStatus(status) {
-            this.status = status;
-            this.battery--;
-        }
+<!--        setStatus(status) {-->
+<!--            this.status = status;-->
+<!--            this.battery&#45;&#45;;-->
+<!--        }-->
 
-        getStatus() {
-            return this.status;
-        }
+<!--        getStatus() {-->
+<!--            return this.status;-->
+<!--        }-->
 
-        checkStatus() {
-            if (this.status) {
-                alert("Điện thoại đang bật!")
-            } else {
-                alert("Điện thoại đang tắt!")
-            }
-        }
-    }
+<!--        checkStatus() {-->
+<!--            if (this.status) {-->
+<!--                alert("Điện thoại đang bật!")-->
+<!--            } else {-->
+<!--                alert("Điện thoại đang tắt!")-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
 
-    let nokia = new Mobile();
-    nokia.checkStatus();
+<!--    let nokia = new Mobile();-->
+<!--    nokia.checkStatus();-->
 
-    function turnOn() {
-        nokia.setStatus(true);
-        nokia.checkStatus()
-        console.log(nokia)
-    }
+<!--    function turnOn() {-->
+<!--        nokia.setStatus(true);-->
+<!--        nokia.checkStatus()-->
+<!--        console.log(nokia)-->
+<!--    }-->
 
-    function turnOff() {
-        nokia.setStatus(false)
-        nokia.checkStatus()
-        console.log(nokia)
-    }
+<!--    function turnOff() {-->
+<!--        nokia.setStatus(false)-->
+<!--        nokia.checkStatus()-->
+<!--        console.log(nokia)-->
+<!--    }-->
 
-    function sent() {
-        nokia.checkTexting(true);
-        if (nokia.getStatus()) {
-            let input = "<table>\n" +
-                "    <tr>\n" +
-                "        <td>\n" +
-                "            <textarea id='messenger' onchange='handleInputChange(event)' oninput='handleInputChange(event)'></textarea>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "    <tr>\n" +
-                "        <td>\n" +
-                "            <button onclick='send()'>Sent</button>\n" +
-                "        </td>\n" +
-                "        <td>\n" +
-                "            <button onclick='cancel()'>Cancel</button>\n" +
-                "        </td>\n" +
-                "    </tr>\n" +
-                "</table>";
-            nokia.setTexting(true)
-            document.getElementById(`text`).innerHTML = input;
+<!--    function sent() {-->
+<!--        nokia.checkTexting(true);-->
+<!--        if (nokia.getStatus()) {-->
+<!--            let input = "<table>\n" +-->
+<!--                "    <tr>\n" +-->
+<!--                "        <td>\n" +-->
+<!--                "            <textarea id='messenger' onchange='handleInputChange(event)' oninput='handleInputChange(event)'></textarea>\n" +-->
+<!--                "        </td>\n" +-->
+<!--                "    </tr>\n" +-->
+<!--                "    <tr>\n" +-->
+<!--                "        <td>\n" +-->
+<!--                "            <button onclick='send()'>Sent</button>\n" +-->
+<!--                "        </td>\n" +-->
+<!--                "        <td>\n" +-->
+<!--                "            <button onclick='cancel()'>Cancel</button>\n" +-->
+<!--                "        </td>\n" +-->
+<!--                "    </tr>\n" +-->
+<!--                "</table>";-->
+<!--            nokia.setTexting(true)-->
+<!--            document.getElementById(`text`).innerHTML = input;-->
 
-            console.log(nokia)
-        }
-    }
+<!--            console.log(nokia)-->
+<!--        }-->
+<!--    }-->
 
-    function handleInputChange(event) {
-        console.log(event.target.value)
-    }
+<!--    function handleInputChange(event) {-->
+<!--        console.log(event.target.value)-->
+<!--    }-->
 
-    function send() {
+<!--    function send() {-->
 
-    }
+<!--    }-->
 
-    function cancel() {
-        let messenger = document.getElementById('messenger').value;
-        if (messenger){
-            nokia.setDraft(messenger);
-            alert('Đã lưu vào bản nháp!');
-        }
-        document.getElementById('text').innerHTML = '<button onclick="sent()">texting</button>';
-        nokia.setTexting(false);
-        document.getElementById('messenger').value = "";
-        this.battery--;
-    }
+<!--    function cancel() {-->
+<!--        let messenger = document.getElementById('messenger').value;-->
+<!--        if (messenger){-->
+<!--            nokia.setDraft(messenger);-->
+<!--            alert('Đã lưu vào bản nháp!');-->
+<!--        }-->
+<!--        document.getElementById('text').innerHTML = '<button onclick="sent()">texting</button>';-->
+<!--        nokia.setTexting(false);-->
+<!--        document.getElementById('messenger').value = "";-->
+<!--        this.battery&#45;&#45;;-->
+<!--    }-->
 
-    function draft() {
-        // if (nokia.getStatus()) {
-        //     let drafts = nokia.getDraft();
-        //     if (drafts.length > 0) {
-        //         let draftText = "Các bản nháp trước đó: \n";
-        //         for (let i = 0; i < drafts.length; i++) {
-        //             draftText += i + 1 + " - " + drafts[i] + "\n";
-        //         }
-        //         alert(draftText);
-        //     } else {
-        //         alert("chưa có bản nháp nào.");
-        //     }
-        // } else {
-        //     alert("Bạn chưa bật điện thoại!");
-        // }
-    }
+<!--    function draft() {-->
+<!--        // if (nokia.getStatus()) {-->
+<!--        //     let drafts = nokia.getDraft();-->
+<!--        //     if (drafts.length > 0) {-->
+<!--        //         let draftText = "Các bản nháp trước đó: \n";-->
+<!--        //         for (let i = 0; i < drafts.length; i++) {-->
+<!--        //             draftText += i + 1 + " - " + drafts[i] + "\n";-->
+<!--        //         }-->
+<!--        //         alert(draftText);-->
+<!--        //     } else {-->
+<!--        //         alert("chưa có bản nháp nào.");-->
+<!--        //     }-->
+<!--        // } else {-->
+<!--        //     alert("Bạn chưa bật điện thoại!");-->
+<!--        // }-->
+<!--    }-->
 
-    function charger() {
-        nokia.setStatus(true);
-        nokia.setCharger(true);
-        nokia.checkCharger();
-    }
-    console.log(nokia)
+<!--    function charger() {-->
+<!--        nokia.setStatus(true);-->
+<!--        nokia.setCharger(true);-->
+<!--        nokia.checkCharger();-->
+<!--    }-->
+<!--    console.log(nokia)-->
 
-    function inbox() {
-        //     if (nokia.checkInbox()) {
-        //         let inboxText = "Hộp thư đến: \n";
-        //         for (let i = 0; i < this; i++) {
-        //             inboxText += i+1 + "- "+this.inbox[i] + "\n";
-        //         }
-        //         alert(inboxText);
-        //     } else {
-        //         alert('Hộp thư trống không');
-        //     }
-        //
-        //     console.log(nokia)
-        // }
-        if (nokia.getStatus()) {
-            let drafts = nokia.getDraft();
-            if (drafts.length > 0) {
-                let draftText = "Các bản nháp trước đó: \n";
-                for (let i = 0; i < drafts.length; i++) {
-                    draftText += i + 1 + " - " + drafts[i] + "\n";
-                }
-                alert(draftText);
-            } else {
-                alert("chưa có bản nháp nào.");
-            }
-        } else {
-            alert("Bạn chưa bật điện thoại!");
-        }
-    }
+<!--    function inbox() {-->
+<!--        //     if (nokia.checkInbox()) {-->
+<!--        //         let inboxText = "Hộp thư đến: \n";-->
+<!--        //         for (let i = 0; i < this; i++) {-->
+<!--        //             inboxText += i+1 + "- "+this.inbox[i] + "\n";-->
+<!--        //         }-->
+<!--        //         alert(inboxText);-->
+<!--        //     } else {-->
+<!--        //         alert('Hộp thư trống không');-->
+<!--        //     }-->
+<!--        //-->
+<!--        //     console.log(nokia)-->
+<!--        // }-->
+<!--        if (nokia.getStatus()) {-->
+<!--            let drafts = nokia.getDraft();-->
+<!--            if (drafts.length > 0) {-->
+<!--                let draftText = "Các bản nháp trước đó: \n";-->
+<!--                for (let i = 0; i < drafts.length; i++) {-->
+<!--                    draftText += i + 1 + " - " + drafts[i] + "\n";-->
+<!--                }-->
+<!--                alert(draftText);-->
+<!--            } else {-->
+<!--                alert("chưa có bản nháp nào.");-->
+<!--            }-->
+<!--        } else {-->
+<!--            alert("Bạn chưa bật điện thoại!");-->
+<!--        }-->
+<!--    }-->
 
-</script>
-</html>
+<!--</script>-->
+<!--</html>-->

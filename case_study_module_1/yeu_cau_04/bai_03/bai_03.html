@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    debugger
+    let inputStringA = prompt('Nhập chuỗi vào đây');
+    let inputStringB = prompt('Nhập chuỗi thứ hai vào đây')
+    let arrayStringA = inputStringA.split("");
+    let arrayStringB = inputStringB.split("")
+    let count = 0;
+    for (let i = 0; i < arrayStringA.length; i++) {
+        for (let j = 0; j < arrayStringB.length; j++) {
+            if (arrayStringA[i] === arrayStringB[j]) {
+                count++
+                arrayStringB.splice(j, 1);
+                break;
+            }
+        }
+    }
+    alert(`commonCharacterCount(${inputStringA},${inputStringB}) có ${count} ký tự chung`)
+</script>
+</body>
+</html>

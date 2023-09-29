@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    let inputString = prompt("Nhập chuỗi ký tự:");
+    let result = differentSymbolsNaive(inputString);
+    alert(`Số lượng ký tự khác nhau trong chuỗi là: ${result}`);
+    console.log(inputString,result)
+
+    function differentSymbolsNaive(text) {
+        let uniqueCharacters = new Set();
+
+        for (let i = 0; i < text.length; i++) {
+            uniqueCharacters.add(text[i]);
+        }
+        return uniqueCharacters.size;
+    }
+
+
+</script>
+</html>

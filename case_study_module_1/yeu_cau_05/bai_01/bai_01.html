@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    matrixSum()
+
+    function matrixSum(row, column) {
+        row = +prompt(`Nhập chiều dài của hàng`);
+        column = +prompt(`Nhập chiều dọc của hàng`);
+        let arrMatrix = [];
+        for (let i = 0; i < row; i++) {
+            arrMatrix.push(new Array(column));
+        }
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                arrMatrix[i][j] = +prompt(`Nhập phần tử thứ [${i}][${j}]`);
+            }
+        }
+        let sum = 0;
+        for (let i = 0; i < arrMatrix.length; i++) {
+            for (let j = 0; j < arrMatrix[i].length; j++) {
+                if (arrMatrix[i][j] % 2 === 0) {
+                    sum += arrMatrix[i][j];
+                }
+            }
+        }
+
+        console.log(sum)
+        console.log(arrMatrix)
+        alert(`Ma trận ${row}x${column} có tổng các số chẵn là ${sum}`)
+    }
+</script>
+</html>

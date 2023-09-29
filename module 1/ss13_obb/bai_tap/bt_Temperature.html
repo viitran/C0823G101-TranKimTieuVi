@@ -8,49 +8,50 @@
 </body>
 <script>
     class Temperature {
-        constructor(Celsius, Fahrenheit, Kelvin) {
-            this.Celsius = Celsius;
-            this.Fahrenheit = Fahrenheit;
+        constructor(celsius, fahrenheit, kelvin) {
+            this.celsius = celsius;
+            this.fahrenheit = fahrenheit;
+            this.kelvin = kelvin;
         }
 
-        setCelsius(Celsius) {
-            this.Celsius = Celsius;
+        setCelsius(celsius) {
+            this.celsius = celsius;
         }
 
-        setFahrenheit(Fahrenheit) {
-            this.Fahrenheit = Fahrenheit;
+        setFahrenheit(fahrenheit) {
+            this.fahrenheit = fahrenheit;
         }
 
-        setKelvin(Kelvin) {
-            this.Kelvin = Kelvin;
+        setKelvin(kelvin) {
+            this.kelvin = kelvin;
         }
 
         getCelsius() {
-            return this.Celsius
+            return this.celsius
         }
 
         getFahrenheit() {
-            return this.Fahrenheit;
+            return this.fahrenheit;
         }
 
         getKelvin() {
-            return this.Kelvin;
+            return this.kelvin;
         }
 
         getCelsiusFahrenheit() {
-            if (this.Celsius < -273) {
+            if (this.celsius < -273) {
                 alert('Nhiet do ko hop le')
             } else {
-                return this.Celsius * 1.8 + 32;
+                return this.celsius * 1.8 + 32;
             }
         }
 
         getFahrenheitCelsius() {
-            return 5 / 9 - (this.Fahrenheit - 32)
+            return 5 / 9 - (this.fahrenheit - 32)
         }
 
         getCelsiusKelvin() {
-            return this.Celsius + 273.15;
+            return this.celsius + 273.15;
         }
     }
 
