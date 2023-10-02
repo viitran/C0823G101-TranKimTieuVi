@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+<script>
+    // let luong = +prompt(`Nhập lương của bạn`);
+    // let thue = 0;
+    // let luongRong = 0;
+    // if (luong >=15000000){
+    //   thue = luong * 0.2;
+    // } else if (luong >= 7000000){
+    //   thue = luong * 0.1;
+    // } else {
+    //   thue = luong * 0.05;
+    // }
+    // luongRong = luong - thue;
+    // console.log(`luong cua ban la ${luong}, thue can phai tra la ${thue}, luong rong cua ban la ${luongRong}`)
+
+
+    // let nguyenAm = ['o', 'u', 'e', 'a', 'i', 'U', 'E', 'O', 'A', 'I'];
+    // let dem = 0;
+    // let vanBan = prompt(`Nhập văn bản cần kiểm tra có bao nhiêu nguyên âm`);
+    // let mang = vanBan.split('');
+    // for (let i = 0; i < mang.length; i++) {
+    //     for (let j = 0; j < nguyenAm.length; j++) {
+    //         if (mang[i] === nguyenAm[j]) {
+    //             dem++;
+    //         }
+    //     }
+    // }
+    // console.log(vanBan)
+    // if (dem) {
+    //     console.log(`co ${dem} nguyen am trong van ban tren`)
+    // } else {
+    //     console.log(`0 co nguyen am nao`)
+    // }
+
+
+    // let chieuCao = 5;
+    // let ve = '';
+    // for (let i = 0; i < chieuCao; i++) {
+    //     ve += '</br>';
+    //   for (let j = 0; j < chieuCao; j++) {
+    //     if (i === j || j === 0 || i === chieuCao-1){
+    //       ve += '*'
+    //     } else {
+    //       ve += '&nbsp&nbsp'
+    //     }
+    //   }
+    // }
+    // document.write(ve);
+
+
+    // let chieuCao = 5;
+    // let ve = '';
+    // debugger
+    // for (let i = 0; i <= chieuCao; i++) {
+    //     ve += '</br>';
+    //     for (let j = 0; j <= chieuCao * 2; j++) {
+    //         if (j - i <= chieuCao && i + j >= chieuCao  ) {
+    //             ve += '*';
+    //         } else {
+    //           ve += '&nbsp&nbsp';
+    //         }
+    //     }
+    // }
+    // document.write(ve)
+
+    let input = 5;
+    let ve = ' ';
+    for (let i = 0; i <= input; i++) {
+      ve += '</br>';
+      for (let j = 0; j <= input * 2; j++) {
+        if (i + j >= input || j - i <= input || i === j){
+          ve += '*'
+        } else {
+          ve += '&nbsp&nbsp'
+        }
+      }
+    }
+    document.write(ve)
+</script>
+</html>

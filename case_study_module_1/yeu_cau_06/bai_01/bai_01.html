@@ -70,55 +70,148 @@
     }
 
     function tableManager(studentList) {
-        let table = `<table border="1">
+        let table = `<br/> <table border="1px" cellspacing="0" style="text-align: center">
     <tr>
         <th>Mã sinh viên</th>
         <th>Tên</th>
-        <th>Lớp</th>
         <th>Email</th>
         <th>Ngày sinh</th>
+        <th>Lớp</th>
+        <th>Module</th>
         <th>Edit</th>
         <th>Delete</th>
     </tr>`;
-        // for (let i = 0; i < studentList.length; i++) {
-        //
-        // }
-        //
-        // <!--        <td><button onclick="handleEditStudent()">Sửa thông tin học viên</button>-->
-        //
-        // <!--        <td><button onclick="handleDeleteStudent()">Xóa học viên</button>-->
-        //
+        for (let i = 0; i < studentList.length; i++) {
+            table += `<tr>
+        <td> HV- ${studentList[i].code}</td>
+        <td>${studentList[i].student}</td>
+        <td>${studentList[i].email}</td>
+        <td>${studentList[i].birthday}</td>
+        <td>${studentList[i].classes}</td>
+        <td>${studentList[i].module}</td>
+        <td><button onclick="handleEditStudent(${i})">Sửa thông tin học viên</button>
+        <td><button onclick="handleDeleteStudent(${i})">Xóa học viên</button>`
+        }
         document.getElementById(`tableManager`).innerHTML = table;
     }
-
     let students = [];
-    let student = new Student();
+    let editIndex = -1;
 
 
+    //them sv
+    function handleEditStudent(index) {
+        editIndex = index;
+        let edit = confirm(`Bạn có muốn chỉnh sửa?`);
+        if (edit) {
+            let student = students[index];
+            let code = checkExistsId("Code");
+            let name = checkRequired("Name");
+            let email = checkRequired("Email")
+            let birthday = checkRequired("Birthday");
+            let classes = checkRequired("Classes");
+            let module = checkModule("Module")
+            students[index] = new Student(id, name, email, birthday, classes, module)
+            tableManager(students);
+            console.log(students)
+        } else {
+            alert(`hủy`)
+        }
+    }
 
-        student.setCode(+prompt(`Nhập MSS`))
-        student.setStudent(prompt(`Nhập họ và tên`))
-        student.setEmail(prompt(`Nhập email`))
-        student.setBirthday(prompt(`Nhập sinh nhật dưới dạng dd/mm/yyyy`))
-        student.setModule(+prompt(`Nhập module`))
-        student.setClasses(prompt(`Nhập lớp`))
-        students.push(student)
+    function checkModule(fieldName) {
+        let module = +checkRequired(fieldName);
+        while (true) {
+            if (module >= 1 && module <= 6) {
+                return module;
+            } else {
+                alert(`${fieldName} trung lap!`);
+                module = +checkRequired(fieldName);
+            }
+        }
+    }
+
+    //xoa sv
+    function handleDeleteStudent(index) {
+        let deleteStudent = confirm(`Bạn có chắc chắn xóa sinh viên này?`);
+        if (deleteStudent) {
+            students.splice(index, 1);
+            tableManager(students)
+        } else {
+            alert(`Hủy`)
+        }
+    }
+
+    function checkRequired(fieldName) {
+        let input = prompt(`Nhap ${fieldName}: `)
+        while (true) {
+            if (input !== "") {
+                return input;
+            } else {
+                alert(`${fieldName} khong duoc de trong!`);
+                input = prompt(`Nhap lai ${fieldName}: `)
+            }
+        }
+    }
+
+    function checkExistsId(fieldName) {
+        let code = +checkRequired(fieldName);
+        while (true) {
+            let index = students.findIndex(std => std.code === code);
+            if (index === -1) {
+                return code;
+            } else {
+                alert(`${fieldName} trung lap!`);
+                code = +checkRequired(fieldName);
+            }
+        }
+    }
+
+    function handleAddStudent() {
+        // nhập msv rùi ktra
+        let code = checkExistsId("Nhap Code (VD - 1234)");
+        // do {
+        //     let count = 0;
+        //     for (let i = 0; i < students.length; i++) {
+        //         if (students[i].code !== code) {
+        //             count++;
+        //         }
+        //     }
+        //     code = +prompt(`Nhập mã sinh viên (ví dụ - 1234): `)
+        //     //lặp lại lần 1 báo lỗi, lần 2 thì cho nhập ??
+        //     if (count === students.length && code >= 1000 && code <= 9999 && !isNaN(code)) {
+        //         break;
+        //     } else {
+        //         alert(`Nhập lại mã sinh viên (ví dụ - 1234)`)
+        //     }
+        // } while (true)
+        let name = checkRequired("Name");
+        // do {
+        //     name = prompt(`Nhập họ và tên: `);
+        //     if (name.length <= 50 && isNaN(name)) {
+        //         break;
+        //     } else {
+        //         alert(`Vui lòng nhập họ và tên dưới 50 kí tự!`)
+        //     }
+        // } while (true)
+        //vde max 50 ký tự , quá 50 -> false
+        let email = checkRequired("Email")
+        let birthday = checkRequired("Nhap Date (DD/MM/YYYY)");
+        //định dag ngày tháng năm , ngược lại thì false
+        let classes = checkRequired("Nhap Classes");
+        let module = checkModule("Nhap Module (1-6)");
+        // do {
+        //     module = +prompt(`Nhập module sinh viên đang học: `);
+        //     if (module >= 1 && module <= 6) {
+        //         break;
+        //     } else {
+        //         alert(`Vui lòng nhập lại module!`)
+        //     }
+        // } while (true)
+        //giải quyết vấn đề từ module 1 đến 6 , quá 6 false
+        let student = new Student(code, name, email, birthday, classes, module)
+        students.push(student);
+        tableManager(students)
         console.log(students)
-    // tableManager()
-    // let students = [];
-    // let tieuVi = new Student(1, "Vi Tieu", "C09", "tieuvi123@gmail.com", "1/1/1111", "1");
-    // students.push(tieuVi)
-    // console.log(students)
-    // function addMembers(){
-    //     let id = prompt();
-    //     let name = prompt();
-    //     let lop = prompt();
-    //     let email = prompt();
-    //     let birthday = prompt();
-    //     let module = prompt();
-    //     let student = new Student(id, name, lop, email, birthday, module)
-    //     students.push(student);
-    //     console.log(students)
-    // }
+    }
 </script>
 </html>
