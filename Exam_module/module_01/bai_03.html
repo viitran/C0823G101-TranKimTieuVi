@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let inputNumber = +prompt(`Nhập độ dài của mảng`);
+    let arr = [];
+
+    array()
+
+    function array(element) {
+        for (let i = 0; i < inputNumber; i++) {
+            element = +prompt(`Nhập phần tử thứ [${i}]`);
+            arr.push(element);
+        }
+        alert(`Mảng bạn vừa nhập [${arr}]`)
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 !== 0) {
+                alert(`Số nguyên đầu tiên chữ số đầu tiên là chữ số lẻ là ${arr[i]}`)
+                break;
+            }
+        }
+        return false;
+    }
+</script>
+</body>
+</html>

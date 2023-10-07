@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function isFibonacci(number) {
+        let a = 0;
+        let b = 1;
+        if (number === a || number === b)
+            return true;
+        let c = a + b;
+        while (c <= number) {
+            if (c === number)
+                return true;
+            a = b;
+            b = c;
+            c = a + b;
+        }
+        return false;
+    }
+
+    function findFibonacci(inputArrayString) {
+        inputArrayString = prompt("Nhập mảng các số, cách nhau bằng dấu phẩy (,)");
+        let inputArray = inputArrayString.split(',').map(Number);
+
+        let result = [];
+
+        for (let i = 0; i < inputArray.length; i++) {
+            if (isFibonacci(inputArray[i])) {
+                result.push(inputArray[i]);
+            }
+        }
+
+        result.sort(function (a, b) {
+            return a - b;
+        });//sx thứu tự từ a đến b
+        alert(`Các số [${result}] là số fibonacci được tìm thấy trong mảng [${inputArray}]`);
+    }
+
+    findFibonacci();
+
+</script>
+</body>
+</html>

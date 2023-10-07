@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let input = +prompt(`Nhap do dai cua mnag`)
+    let arr = [];
+    let count = 0;
+    let array = [];
+    let result = 0;
+    for (let i = 0; i < input; i++) {
+        let element = +prompt(`Nhap phan tu thu [${i}]`);
+        if (element <= 50) {
+            arr.push(element)
+        } else {
+            alert(`Phan tu thu ${i} ban vua nhap > 50 ! Vui long nhap lai!`);
+            element = +prompt(`Nhap lai phan tu thu [${i}]`);
+            arr.push(element);
+        }
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 5 === 0 && i % 3 === 0) {
+            count++;
+            result += arr[i];
+            array.push(i)
+        }
+    }
+
+    let avg = result / count;
+    document.write(`[${arr}] <br/>`)
+    document.write(`Ket qua trung binh cua cac phan tu chia het cho 5 la ${avg} o vi tri 3 la ${array}`)
+</script>
+</body>
+</html>

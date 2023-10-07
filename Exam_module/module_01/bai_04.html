@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="delete">
+    <button onclick="xoaChuyenBay()">Xóa chuyến bay</button>
+</div>
+<br>
+<div id="root"></div>
+
+<script>
+    class ChuyenBay {
+        constructor(ma, ngay, gio, noiDi, noiDen) {
+            this.ma = ma;
+            this.ngay = ngay;
+            this.gio = gio;
+            this.noiDi = noiDi;
+            this.noiDen = noiDen;
+        }
+
+        setNoiDen(noiDen) {
+            this.noiDen = noiDen;
+        }
+
+        getNoiDen() {
+            return this.noiDen;
+        }
+
+        setNoiDi(noiDi) {
+            this.noiDi = noiDi;
+        }
+
+        getNoiDi() {
+            return this.noiDi;
+        }
+
+        setGio(gio) {
+            this.gio = gio;
+        }
+
+        getGio() {
+            return this.gio;
+        }
+
+        setNgay(ngay) {
+            this.ngay = ngay;
+        }
+
+        getNgay() {
+            return this.ngay;
+        }
+
+        setMa(ma) {
+            this.ma = ma;
+        }
+
+        getMa() {
+            return this.ma;
+        }
+    }
+
+    let chuyenDauTien = new ChuyenBay(`101`, `10/05/2023`, `10AM`, `DN`, `HN`)
+    let chuyenThuHai = new ChuyenBay(`102`, `11/06/2023`, `1AM`, `HN`, `SG`)
+    let mangChuyenBay = [];
+    mangChuyenBay.push(chuyenDauTien, chuyenThuHai)
+
+    function danhSachChuyenBay() {
+        let bangDuLieu = `<table border="1" cellspacing="0.5" style="text-align: center">
+    <tr>
+        <td>Mã chuyến bay</td>
+        <td>Ngày bay</td>
+        <td>Giờ bay</td>
+        <td>Nơi đi</td>
+        <td>Nơi đến</td>
+    </tr>`;
+        for (let i = 0; i < mangChuyenBay.length; i++) {
+            bangDuLieu += `<tr>
+        <td>JV - ${mangChuyenBay[i].ma} </td>
+        <td>${mangChuyenBay[i].ngay}</td>
+        <td>${mangChuyenBay[i].gio}</td>
+        <td>${mangChuyenBay[i].noiDi}</td>
+        <td>${mangChuyenBay[i].noiDen}</td>
+    </tr>`;
+        }
+        bangDuLieu += `</table>`;
+        document.getElementById(`root`).innerHTML = bangDuLieu;
+    }
+
+
+    function xoaChuyenBay() {
+        let input = prompt(`Nhập mã chuyến bay bạn muốn xóa`);
+        for (let i = 0; i < mangChuyenBay.length; i++) {
+            if (input === mangChuyenBay[i].ma) {
+                mangChuyenBay.splice(1);
+                danhSachChuyenBay();
+            } else {
+                alert(`Không tìm thấy!`);
+            }
+        }
+    }
+
+    danhSachChuyenBay();
+</script>
+</body>
+</html>

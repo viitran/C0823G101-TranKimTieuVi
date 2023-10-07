@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button onclick="addComputer()">Them san pham</button>
+    <button onclick="arrangPrice()">Sap xep theo gia giam dan</button>
+
+</div>
+<br>
+<div id="root"></div>
+
+<script>
+    class Computer {
+        constructor(code, name, brand, price) {
+            this.code = code;
+            this.name = name;
+            this.brand = brand;
+            this.price = price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setBrand(brand) {
+            this.brand = brand;
+        }
+
+        getBrand() {
+            return this.brand;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setCode(code) {
+            this.code = code;
+        }
+
+        getCode() {
+            return this.code
+        }
+    }
+
+    let computer = new Computer(1, 'HP', 'Hewlett-Packard', '600');
+    let computer1 = new Computer(2, 'MSI', 'Micro-Star International', '900');
+    let computers = [];
+    computers.push(computer, computer1)
+
+    function displayComputer() {
+        let tableData = `<table border="1" cellspacing="0.5" style="text-align: center">
+                                <tr>
+                                    <th>Ma may</th>
+                                    <th>Ten may</th>
+                                    <th>Hang san xuat</th>
+                                    <th>Gia ban</th>
+                                </tr>`;
+        for (let i = 0; i < computers.length; i++) {
+            tableData += `<tr>
+                          <td>${computers[i].getCode()}</td>
+                          <td>${computers[i].getName()}</td>
+                          <td>${computers[i].getBrand()}</td>
+                          <td>${computers[i].getPrice()} $</td>
+                           </tr>`;
+        }
+        tableData += `</table>`;
+
+        document.getElementById('root').innerHTML = tableData;
+    }
+
+    function checkRequired(inputName) {
+        let input = prompt(`Nhap ${inputName}:`);
+        while (true) {
+            if (input !== "") {
+                return input;
+            } else {
+                alert(`Ban chua nhap ${inputName}`);
+                input = prompt(`Nhap lai ${inputName}:`)
+            }
+        }
+    }
+
+    function addComputer() {
+        let check = confirm(`Ban muon them san pham?`);
+        if (check) {
+            let code = +checkRequired(`Ma may`);
+            let name = checkRequired(`Ten may`);
+            let brand = checkRequired(`Hang san xuat`);
+            let price = +checkRequired(`Gia ban (USD)`);
+            let newComputer = new Computer(code, name, brand, price);
+            computers.push(newComputer);
+        } else {
+            return displayComputer()
+        }
+        displayComputer();
+    }
+
+    function arrangPrice() {
+        for (let i = 0; i < computers.length; i++) {
+            for (let j = 0; j < computers.length - i - 1; j++) {
+                if (computers[j].getPrice() < computers[j + 1].getPrice()) {
+                    let temp = computers[j];
+                    computers[j] = computers[j + 1];
+                    computers[j + 1] = temp;
+                }
+            }
+        }
+        displayComputer();
+
+    }
+
+    displayComputer();
+</script>
+</body>
+</html>

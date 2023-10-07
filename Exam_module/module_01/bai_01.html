@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt(`Nhap so`);
+    let arr = [];
+    let sum = 0;
+    if (input > 500) {
+        alert(`So ban nhap qua lon!Vui long nhap lai!`);
+        input = +prompt(`Nhap lai so`);
+    }
+
+    for (let i = 0; i <= input; i++) {
+        if (input % i === 0) {
+            arr.push(i);
+            sum += i;
+        }
+    }
+    alert(`cac uoc so cua ${input} la ${arr} co tong la ${sum}`);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let input = +prompt(`Nhập độ dài của mảng`);
+    let arrayA = [];
+    let arrayB = [];
+    let sum = 0;
+    if (input <= 100) {
+        for (let i = 0; i < input; i++) {
+            let element = +prompt(`Nhập phần tử thứ [${i}]`);
+            arrayA.push(element);
+        }
+    } else {
+        alert(`Độ dài của mảng phải dưới 100!`);
+        input = +prompt(`Nhập lại độ dài của mảng`);
+        for (let i = 0; i < input; i++) {
+            let element = +prompt(`Nhập phần tử thứ [${i}]`);
+            arrayA.push(element);
+        }
+    }
+
+    for (let i = 0; i < arrayA.length; i++) {
+        if (arrayA[i] === Math.pow(i, 2)) {
+            arrayB.push(i);
+        }
+        sum += arrayB[i];
+    }
+    alert(`tong cac so chinh phuong trong mang la ${sum}`);
+</script>
+</body>
+</html>

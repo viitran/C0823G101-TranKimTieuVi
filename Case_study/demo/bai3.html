@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkString() {
+        let str = prompt(`Input string`);
+        let words = str.split(' ');
+        let result = '';
+
+        if (words.length === 1) {
+            alert('Chuoi chi co 1 tu nen khong can viet tat')
+        } else {
+            for (let i = 0; i < words.length; i++) {
+                result += str[i].charAt(0).toUpperCase();
+            }
+        }
+        console.log(result)
+
+    }
+
+    checkString()
+
+</script>
+</body>
+</html>
