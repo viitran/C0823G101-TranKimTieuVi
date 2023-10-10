@@ -2,7 +2,7 @@ package ss3_array_method_java.exc;
 
 import java.util.Scanner;
 
-public class DeleteArray {
+public class AddElementArray {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size;
@@ -25,22 +25,29 @@ public class DeleteArray {
             System.out.print(array[i] + " ");
         }
 
-        int number;
-        System.out.print("Nhap so ban muon xoa trong mang tren: ");
-        number = Integer.parseInt(scanner.nextLine());
-        boolean found = false;
-        for (int i = 0; i < array.length; i++) {
-            if (number == array[i]) {
-                array[array.length - 1] = 0;
-                found = true;
-                break;
-            }
-        }
+        System.out.print("Nhap so ban muon them: ");
+        int inputNumber;
+        inputNumber = Integer.parseInt(scanner.nextLine());
 
-        if (!found) {
-            System.out.println("So ban muon xoa khong co trong mang tren!");
+        System.out.print("Nhap vi tri muon chen: ");
+        int inputElement;
+        inputElement = Integer.parseInt(scanner.nextLine());
+
+        if (inputElement < 0 || inputElement > array.length) {
+            System.out.println("Vi tri chen khong hop le!!");
         } else {
-            System.out.print("Mang sau khi xoa: ");
+            int[] newArray = new int[array.length + 1];
+            for (int i = 0, j = 0; i < newArray.length; i++) {
+                if (i == inputElement) {
+                    newArray[i] = inputNumber;
+                } else {
+                    newArray[i] = array[j];
+                    j++;
+                }
+            }
+            //upd lai mang
+            array = newArray;
+            System.out.print("Mang sau khi chen la: ");
             for (int i = 0; i < array.length; i++) {
                 System.out.print(array[i] + " ");
             }
