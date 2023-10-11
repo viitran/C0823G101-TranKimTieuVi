@@ -3,7 +3,7 @@ package ss2_loop_java.exc;
 import java.util.Scanner;
 
 
-public class PrimeNumber {
+public class CheckPrime {
 
     public static void main(String[] args) {
         System.out.println("Cac so nguyen to dau tien");
@@ -25,12 +25,11 @@ public class PrimeNumber {
         if (input < 2) {
             return false;
         }
-        for (int i = 2; i < input; i++) {
+        for (int i = 2; i <= Math.sqrt(input); i++) {
             if (input % i == 0) {
                 return false;
             }
         }
         return true;
-
     }
 }

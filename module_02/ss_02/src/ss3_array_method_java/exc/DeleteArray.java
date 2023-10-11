@@ -1,5 +1,6 @@
 package ss3_array_method_java.exc;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class DeleteArray {
@@ -7,6 +8,10 @@ public class DeleteArray {
         Scanner scanner = new Scanner(System.in);
         int size;
         int[] array;
+        int number;
+        int[] newArray;
+        int index = 0;
+
         System.out.print("Nhap do dai cua mang: ");
         size = Integer.parseInt(scanner.nextLine());
         if (size < 0) {
@@ -20,30 +25,22 @@ public class DeleteArray {
             System.out.print("Nhap phan tu thu [" + i + "]: ");
             array[i] = Integer.parseInt(scanner.nextLine());
         }
-        System.out.print("Mang cua ban la: ");
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        System.out.println("Mang cua ban la: ");
+        for (int value : array) {
+            System.out.print(value + " ");
         }
-
-        int number;
-        System.out.print("Nhap so ban muon xoa trong mang tren: ");
+        newArray = new int[size];
+        System.out.println("Nhap so ban muon xoa trong mang tren: ");
         number = Integer.parseInt(scanner.nextLine());
-        boolean found = false;
-        for (int i = 0; i < array.length; i++) {
-            if (number == array[i]) {
-                array[array.length - 1] = 0;
-                found = true;
-                break;
+        for (int k : array) {
+            if (number != k) {
+                newArray[index] = k;
+                index++;
             }
         }
-
-        if (!found) {
-            System.out.println("So ban muon xoa khong co trong mang tren!");
-        } else {
-            System.out.print("Mang sau khi xoa: ");
-            for (int i = 0; i < array.length; i++) {
-                System.out.print(array[i] + " ");
-            }
+        System.out.println("Mang sau khi da xoa phan tu" + number + "la: ");
+        for (int j : newArray) {
+            System.out.println(j + " ");
         }
     }
 }
