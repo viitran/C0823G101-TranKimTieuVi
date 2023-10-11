@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = "12346";
+    let a = array.split('');
+    console.log(a)
+    function check() {
+        for (let i = 0; i < a.length; i++) {
+            if (isNaN(a[i])) {
+                return 1;
+            } else {
+                return 0;
+            }
+        }
+    }
+    console.log(check())
+
+</script>
+</body>
+</html>
