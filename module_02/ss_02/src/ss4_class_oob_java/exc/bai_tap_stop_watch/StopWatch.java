@@ -1,27 +1,45 @@
 package ss4_class_oob_java.exc.bai_tap_stop_watch;
 
 public class StopWatch {
-    private double startTime;
-    private double endTime;
+    private long startTime;
+    private long endTime;
 
-    public StopWatch() {
-
-    }
-
-    public double getStartTime() {
+    public long getStartTime(long startTime) {
         return startTime;
     }
 
-    public double getEndTime() {
+    public long getEndTime(long endTime) {
         return endTime;
     }
 
-    public double start(){
-        return startTime;
+    StopWatch() {
+        startTime = System.currentTimeMillis();
     }
 
-    public double stop(){
-        return endTime;
+    public void start() {
+        this.startTime = System.currentTimeMillis();
+        getStartTime(startTime);
     }
 
+    public void stop() {
+        this.endTime = System.currentTimeMillis();
+        getEndTime(endTime);
+    }
+
+    public void getElapsedTime() {
+        long elaspedTime = this.endTime - this.startTime;
+        System.out.println("Số mili giây đếm đc:" + elaspedTime);
+    }
+
+
+    public static void main(String[] args) {
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
+        System.out.println("Đang đếm thời gian");
+        for (int i = 0; i < 1000000000; i++) {
+            i++;
+        }
+        stopWatch.stop();
+        stopWatch.getElapsedTime();
+    }
 }
