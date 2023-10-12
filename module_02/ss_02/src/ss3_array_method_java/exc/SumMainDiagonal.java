@@ -24,12 +24,9 @@ public interface SumMainDiagonal {
         System.out.println("Mang ban dau: " + Arrays.deepToString(matrix));
         System.out.print("Tong duong cheo chinh cua mang tren: ");
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix.length; j++) {
-                if (i == j) {
-                    sum += matrix[i][j];
-                }
-            }
+            sum += matrix[i][i];
         }
         System.out.print(sum);
     }
+    //note! chu y toi uu lai vong lap
 }

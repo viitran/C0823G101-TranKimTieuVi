@@ -6,14 +6,15 @@ import java.util.Scanner;
 import static java.lang.System.arraycopy;
 
 public class demo3 {
-    public static void main(String[] args) {
-//        int [] number = {1,2,3,4,5,6,7};
-//        for (int i = 0; i<number.length ; i++) {
-//            System.out.print(number[i]);
-//        }
-        int[][] matrix = new int[5][5];
-        Scanner input = new Scanner(System.in);
-        System.out.println("Enter " + matrix.length + " rows and " + matrix[0].length + " columns: ");
+}
+//    public static void main(String[] args) {
+////        int [] number = {1,2,3,4,5,6,7};
+////        for (int i = 0; i<number.length ; i++) {
+////            System.out.print(number[i]);
+////        }
+//        int[][] matrix = new int[5][5];
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Enter " + matrix.length + " rows and " + matrix[0].length + " columns: ");
 //        for (int row = 0; row < matrix.length; row++) {
 //            for (int column = 0; column < matrix[row].length; column++) {
 //                matrix[row][column] = input.nextInt();
@@ -72,5 +73,19 @@ public class demo3 {
 //            }
 //        }
 //    }
-    }
-}
+
+//        public class Test1 {
+//            static {
+//                System.out.println("Static");
+//            }
+//            {
+//                System.out.println("Instance");
+//            }
+//            public void Test1() {
+//                System.out.println("Constructor");
+//            }
+//            public void main(String[] args) {
+//                Test1 t = new Test1();
+//            }
+//        }
+//    }

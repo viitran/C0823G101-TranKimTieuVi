@@ -29,13 +29,9 @@ public class ColumnSumCalculator {
             System.out.println("Khong co cot ban muon tinh tong!");
         } else {
             for (int i = 0; i < matrix[0].length; i++) {
-                for (int j = 0; j < matrix.length; j++) {
-                    if (number == j) {
-                        total += matrix[i][j];
-                    }
-                }
+                total += matrix[i][number];
             }
-            System.out.println("Tong cac so o cot " + number + " la " + total);
         }
+        System.out.println("Tong cac so o cot " + number + " la " + total);
     }
 }
