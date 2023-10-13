@@ -67,7 +67,7 @@ public class TheFan {
         if (this.on) {
             return "speed: " + getSpeed() + ", radius: " + getRadius() + ", color: " + getColor() + ", status: fan is on";
         } else {
-            return "speed: " + getSpeed() + ", radius: " + getRadius() + ", color: " + getColor() + ", status: fan is off";
+            return " radius: " + getRadius() + ", color: " + getColor() + ", status: fan is off";
         }
     }
 }

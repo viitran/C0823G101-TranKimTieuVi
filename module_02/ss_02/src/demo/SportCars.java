@@ -1,12 +1,25 @@
 package demo;
 
-import java.util.Arrays;
-import java.util.Scanner;
+public class SportCars {
 
-import static java.lang.System.arraycopy;
+    static class Student {
+        int rollno;  //biến instance
+        String name;
+        static String college = "ITS";  //biến static
 
-public class demo3 {
+        //constructor
+        Student(int r, String n) {
+            rollno = r;
+            name = n;
+        }
+
+        //phương thức để hiển thị giá trị
+        void display() {
+            System.out.println(rollno + " " + name + " " + college);
+        }
+    }
 }
+
 //    public static void main(String[] args) {
 ////        int [] number = {1,2,3,4,5,6,7};
 ////        for (int i = 0; i<number.length ; i++) {
@@ -45,7 +58,7 @@ public class demo3 {
 //        }
 //    }
 //}
-        //tim dong co tong cac phan tu lon nhat
+//tim dong co tong cac phan tu lon nhat
 //        int maxRow = 0;
 //        int indexOfMaxRow = 0;
 //        for (int column = 0; column < matrix[0].length; column++) {
@@ -62,7 +75,7 @@ public class demo3 {
 //        }
 //        System.out.println("Row " + indexOfMaxRow + " has the maximum sum of " + maxRow);
 //    }
-        //xao tron mang
+//xao tron mang
 //        for (int i = 0; i < matrix.length; i++) {
 //            for (int j = 0; j < matrix[i].length; j++) {
 //                int i1 = (int) (Math.random() * matrix.length);

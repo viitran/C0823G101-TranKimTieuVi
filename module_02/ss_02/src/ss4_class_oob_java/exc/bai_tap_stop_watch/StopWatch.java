@@ -1,15 +1,16 @@
 package ss4_class_oob_java.exc.bai_tap_stop_watch;
 
 public class StopWatch {
+    //fix lại - bị dư 1 vài chỗ + NOTE: chú ý get/set
     private long startTime;
     private long endTime;
 
-    public long getStartTime(long startTime) {
-        return startTime;
+    public void setStartTime(long startTime) {
+        this.startTime = startTime;
     }
 
-    public long getEndTime(long endTime) {
-        return endTime;
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
     }
 
     StopWatch() {
@@ -18,12 +19,10 @@ public class StopWatch {
 
     public void start() {
         this.startTime = System.currentTimeMillis();
-        getStartTime(startTime);
     }
 
     public void stop() {
         this.endTime = System.currentTimeMillis();
-        getEndTime(endTime);
     }
 
     public void getElapsedTime() {

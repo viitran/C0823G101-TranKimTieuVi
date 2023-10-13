@@ -2,6 +2,7 @@ package ss4_class_oob_java.exc.bai_tap_fan;
 
 public class BuildTheFan {
     public static void main(String[] args) {
+        //NOTE : ĐỌC KỸ ĐỀ
         TheFan fan1 = new TheFan();
         fan1.setOn(true);
         fan1.setSpeed(fan1.getSLOW());
