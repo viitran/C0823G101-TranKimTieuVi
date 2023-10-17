@@ -5,7 +5,7 @@ public class Students {
     private String name;
     private static String college = "BBDIT";
 
-    public Students(int r, String n) {
+    Students(int r, String n) {
         this.rollno = r;
         this.name = n;
     }
@@ -15,6 +15,6 @@ public class Students {
     }
 
     void display() {
-        System.out.println("stt: " + rollno + " name: "  +  name + " college: " + college);
+        System.out.println("stt: " + rollno + " name: " + name + " college: " + college);
     }
 }
