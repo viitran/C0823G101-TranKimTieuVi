@@ -1,4 +1,4 @@
-package ss6_inheritance_java.exc.bai_tap_Circle_va_Cylinder;
+package ss6_inheritance_java.exc.bai_tap_circle_va_cylinder;
 
 public class Cylinder extends Circle {
     private double height;

@@ -1,4 +1,4 @@
-package ss6_inheritance_java.practice.thuc_hanh_Sup_va_Sub;
+package ss6_inheritance_java.practice.thuc_hanh_sup_va_sub;
 
 public class Rectangle extends Geometric {
     private double width;

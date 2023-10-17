@@ -1,15 +1,15 @@
-package ss6_inheritance_java.exc.bai_tap_Point_va_MoveablePoint;
+package ss6_inheritance_java.exc.bai_tap_point2D_va_point3D;
 
-public class Point {
+public class Point2D {
     private float x = 0.0f;
     private float y = 0.0f;
 
-    public Point(float x, float y) {
-        this.x = x;
-        this.y = y;
+    public Point2D() {
     }
 
-    public Point() {
+    public Point2D(float x, float y) {
+        this.x = x;
+        this.y = y;
     }
 
     public float getX() {
@@ -39,6 +39,6 @@ public class Point {
 
     @Override
     public String toString() {
-        return "(" + x + "," + y + ")";
+        return "Point: " + "x = " + x + ", y = " + y;
     }
 }
