@@ -3,16 +3,16 @@ package ss6_inheritance_java.practice.thuc_hanh_He_cac_doi_tuong_hinh_hoc;
 public class Circle extends Shape {
     private double radius = 1.0;
 
-    Circle() {
+    public Circle() {
 
     }
 
-    Circle(String color, boolean filled, double radius) {
+    public Circle(String color, boolean filled, double radius) {
         super(color, filled);
         this.radius = radius;
     }
 
-    Circle(String color, boolean filled) {
+    public Circle(String color, boolean filled) {
         super(color, filled);
     }
 

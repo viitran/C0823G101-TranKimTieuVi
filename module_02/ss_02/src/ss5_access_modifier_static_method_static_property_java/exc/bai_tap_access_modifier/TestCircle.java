@@ -1,6 +1,6 @@
 package ss5_access_modifier_static_method_static_property_java.exc.bai_tap_access_modifier;
 
-public class testCircle {
+public class TestCircle {
     public static void main(String[] args) {
         Circle circle = new Circle(5);
         //neu su dung public + default thi truy cap duoc cac phuong thuc cua no

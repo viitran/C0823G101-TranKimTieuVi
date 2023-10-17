@@ -4,12 +4,12 @@ public class Geometric {
     private String color;
     private String filled;
 
-    Geometric(String color, String filled) {
+    public Geometric(String color, String filled) {
         this.color = color;
         this.filled = filled;
     }
 
-    Geometric() {
+    public Geometric() {
     }
 
     public String getColor() {

@@ -4,7 +4,7 @@ public class Student {
     private String name = "John";
     private String classes = "C02";
 
-    Student() {
+    public Student() {
     }
 
     public void setName(String name) {

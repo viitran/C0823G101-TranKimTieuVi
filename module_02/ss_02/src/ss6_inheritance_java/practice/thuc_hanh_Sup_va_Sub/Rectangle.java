@@ -4,15 +4,15 @@ public class Rectangle extends Geometric {
     private double width;
     private double height;
 
-    Rectangle() {
+    public Rectangle() {
     }
 
-    Rectangle(double width, double height) {
+    public Rectangle(double width, double height) {
         this.width = width;
         this.height = height;
     }
 
-    Rectangle(String color, String filled, double width, double height) {
+    public Rectangle(String color, String filled, double width, double height) {
         super(color, filled);
         this.width = width;
         this.height = height;

@@ -3,14 +3,14 @@ package ss6_inheritance_java.practice.thuc_hanh_He_cac_doi_tuong_hinh_hoc;
 public class Shape {
     private String color = "Green";
     private boolean filled = true;
-    Shape(){}
+    public Shape(){}
 
-    Shape(String color, boolean filled) {
+    public Shape(String color, boolean filled) {
         this.color = color;
         this.filled = filled;
     }
 
-    String getColor() {
+    public String getColor() {
         return color;
     }
 

@@ -4,12 +4,12 @@ public class Circle {
     private double radius;
     private String color;
 
-    Circle(double radius, String color) {
+    public Circle(double radius, String color) {
         this.radius = radius;
         this.color = color;
     }
 
-    Circle(double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 

@@ -3,16 +3,16 @@ package ss6_inheritance_java.practice.thuc_hanh_Sup_va_Sub;
 public class Circle extends Geometric {
     private double radius;
 
-    Circle(String color, String filled, double radius) {
+    public Circle(String color, String filled, double radius) {
         super(color, filled);
         this.radius = radius;
     }
 
-    Circle(double radius) {
+    public Circle(double radius) {
         this.radius = radius;
     }
 
-    Circle() {
+    public Circle() {
     }
 
     public double getRadius() {

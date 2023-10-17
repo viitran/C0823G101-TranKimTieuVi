@@ -3,11 +3,11 @@ package ss6_inheritance_java.exc.bai_tap_thiet_ke_va_trien_khai_triangle;
 public class Shape {
     private String color;
 
-    Shape(String color) {
+    public Shape(String color) {
         this.color = color;
     }
 
-    Shape() {
+    public Shape() {
     }
 
     public String getColor() {

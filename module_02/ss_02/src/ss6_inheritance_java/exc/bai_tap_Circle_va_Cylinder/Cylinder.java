@@ -3,11 +3,11 @@ package ss6_inheritance_java.exc.bai_tap_Circle_va_Cylinder;
 public class Cylinder extends Circle {
     private double height;
 
-    Cylinder(double radius) {
+    public Cylinder(double radius) {
         super(radius);
     }
 
-    Cylinder(double radius, String color, double height) {
+    public Cylinder(double radius, String color, double height) {
         super(radius, color);
         this.height = height;
     }
