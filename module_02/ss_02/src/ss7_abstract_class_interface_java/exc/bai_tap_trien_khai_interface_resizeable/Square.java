@@ -2,7 +2,6 @@ package ss7_abstract_class_interface_java.exc.bai_tap_trien_khai_interface_resiz
 
 
 public class Square extends Rectangle implements Resizeable {
-    private double side = 1.0;
 
     public Square() {
     }
@@ -24,15 +23,6 @@ public class Square extends Rectangle implements Resizeable {
         setLength(side);
     }
 
-    @Override
-    public void setWidth(double width) {
-        setSide(width);
-    }
-
-    @Override
-    public void setLength(double length) {
-        setSide(length);
-    }
 
     @Override
     public String toString() {
