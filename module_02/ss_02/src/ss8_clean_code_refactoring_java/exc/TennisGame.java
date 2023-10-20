@@ -1,7 +1,6 @@
 package ss8_clean_code_refactoring_java.exc;
 
 public class TennisGame {
-    public static final char SUBTRACTION = '-';
     public static final int NUMBER_ZERO = 0;
     public static final int NUMBER_ONE = 1;
     public static final int NUMBER_TWO = 2;
@@ -11,6 +10,8 @@ public class TennisGame {
     public static final String VALUE_FIFTEEN = "Fifteen";
     public static final String VALUE_THIRTY = "Thirty";
     public static final String VALUE_FORTY = "Forty";
+    public static final char SUBTRACTION = "-";
+
 
 
     public static String getScore(String playerNameOne, String playerNameTwo, int scoreOne, int scoreTwo) {
