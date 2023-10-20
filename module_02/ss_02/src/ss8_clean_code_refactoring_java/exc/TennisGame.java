@@ -1,65 +1,76 @@
 package ss8_clean_code_refactoring_java.exc;
 
 public class TennisGame {
-    public static final char ZEROPOINT = 0;
-    public static final char ONEPOINT = 1;
-    public static final char TWOPOINT = 2;
-    public static final char THREEPOINT = 3;
+    public static final char SUBTRACTION = '-';
+    public static final int NUMBER_ZERO = 0;
+    public static final int NUMBER_ONE = 1;
+    public static final int NUMBER_TWO = 2;
+    public static final int NUMBER_THREE = 3;
+    public static final String ALL_VALUE = "ALL";
     public static final String VALUE_LOVE = "Love";
     public static final String VALUE_FIFTEEN = "Fifteen";
     public static final String VALUE_THIRTY = "Thirty";
     public static final String VALUE_FORTY = "Forty";
-    public static final String VALUE_ALL = "All";
 
 
     public static String getScore(String playerNameOne, String playerNameTwo, int scoreOne, int scoreTwo) {
-        String score = "";
-        int tempScore = 0;
         if (scoreOne == scoreTwo) {
-            score = getReceiveEqualScore(scoreOne);
+            return getReceiveEqualScore(scoreOne);
         } else if (scoreOne >= 4 || scoreTwo >= 4) {
-            score = getEndScore(scoreOne, scoreTwo);
+            return getEndScore(scoreOne, scoreTwo);
         } else {
-            score = getExtraScore(scoreOne, scoreTwo, score);
+            return getExtraScore(scoreOne, scoreTwo);
         }
-        return score;
     }
 
-    private static String getReceiveEqualScore(int scoreOne) {
-        String score;
-        score = switch (scoreOne) {
-            case ZEROPOINT -> VALUE_LOVE + " - " + VALUE_ALL;
-            case ONEPOINT -> VALUE_FIFTEEN + " - " + VALUE_ALL;
-            case TWOPOINT -> VALUE_THIRTY + " - " + VALUE_ALL;
-            case THREEPOINT -> VALUE_FORTY + " - " + VALUE_ALL;
-            default -> "Deuce";
-        };
-        return score;
+    private static String getReceiveEqualScore(int score) {
+        switch (score) {
+            case NUMBER_ZERO:
+                return VALUE_LOVE + " - " + ALL_VALUE;
+            case NUMBER_ONE:
+                return VALUE_FIFTEEN + " - " + ALL_VALUE;
+            case NUMBER_TWO:
+                return VALUE_THIRTY + " - " + ALL_VALUE;
+            case NUMBER_THREE:
+                return VALUE_FORTY + " - " + ALL_VALUE;
+            default:
+                return "Deuce";
+        }
     }
 
     private static String getEndScore(int scoreOne, int scoreTwo) {
-        String score;
         int minusResult = scoreOne - scoreTwo;
-        if (minusResult == 1) score = "Advantage player1";
-        else if (minusResult == -1) score = "Advantage player2";
-        else if (minusResult >= 2) score = "Win for player1";
-        else score = "Win for player2";
-        return score;
+        if (minusResult == 1) {
+            return "Advantage player1";
+        } else if (minusResult == -1) {
+            return "Advantage player2";
+        } else if (minusResult >= 2) {
+            return "Win for player1";
+        } else {
+            return "Win for player2";
+        }
     }
 
-    private static String getExtraScore(int scoreOne, int scoreTwo, String score) {
-        int tempScore;
+    private static String getExtraScore(int scoreOne, int scoreTwo) {
+        String score = "";
         for (int i = 1; i < 3; i++) {
-            if (i == 1) tempScore = scoreOne;
-            else {
-                score += "-";
-                tempScore = scoreTwo;
+            int tempScore = (i == 1) ? scoreOne : scoreTwo;
+            if (i == 2) {
+                score += SUBTRACTION;
             }
             switch (tempScore) {
-                case ZEROPOINT -> score += VALUE_LOVE;
-                case ONEPOINT -> score += VALUE_FIFTEEN;
-                case TWOPOINT -> score += VALUE_THIRTY;
-                case THREEPOINT -> score += VALUE_FORTY;
+                case NUMBER_ZERO:
+                    score += VALUE_LOVE;
+                    break;
+                case NUMBER_ONE:
+                    score += VALUE_FIFTEEN;
+                    break;
+                case NUMBER_TWO:
+                    score += VALUE_THIRTY;
+                    break;
+                case NUMBER_THREE:
+                    score += VALUE_FORTY;
+                    break;
             }
         }
         return score;
