@@ -10,7 +10,7 @@ public class TennisGame {
     public static final String VALUE_FIFTEEN = "Fifteen";
     public static final String VALUE_THIRTY = "Thirty";
     public static final String VALUE_FORTY = "Forty";
-    public static final char SUBTRACTION = "-";
+    public static final char SUBTRACTION = '-';
 
 
 
