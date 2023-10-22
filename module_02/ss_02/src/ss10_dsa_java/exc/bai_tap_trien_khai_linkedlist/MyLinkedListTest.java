@@ -22,6 +22,5 @@ public class MyLinkedListTest {
             People pp = myLinkedListPeople.get(i);
             System.out.println(pp.toString());
         }
-
     }
 }
