@@ -25,7 +25,7 @@ public class MyLinkedList<E> {
 
     public E remove(int index) {
         Node previous = head;
-        for (int i = 0; i < index; i++) {
+        for (int i = 0; i < index - 1; i++) {
             previous = previous.next;
         }
         Node current = previous.next;
