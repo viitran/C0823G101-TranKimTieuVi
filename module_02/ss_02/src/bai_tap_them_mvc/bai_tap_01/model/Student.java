@@ -1,4 +1,4 @@
-package ss8_clean_code_refactoring_java.mvc.model;
+package bai_tap_them_mvc.bai_tap_01.model;
 
 public class Student {
     private int id;

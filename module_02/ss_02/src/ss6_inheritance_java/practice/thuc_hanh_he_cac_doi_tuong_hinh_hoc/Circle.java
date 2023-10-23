@@ -16,6 +16,9 @@ public class Circle extends Shape {
         super(color, filled);
     }
 
+    public Circle(double radius) {
+    }
+
     public double getRadius() {
         return radius;
     }

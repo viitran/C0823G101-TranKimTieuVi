@@ -9,7 +9,6 @@ public class MyList<E> {
 
     public MyList() {
     }
-
     public MyList(int capacity) {
         element = new Object[capacity];
     }
