@@ -6,11 +6,12 @@ import java.util.Scanner;
 public class CovertDecimalToBinary {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        int result;
         LinkedList<Integer> stackNumber = new LinkedList<>();
         System.out.println("Nhap so muon chuyen doi: ");
         int number = Integer.parseInt(scanner.nextLine());
         while (number != 0) {
-            int result = number % 2;
+            result = number % 2;
             stackNumber.addFirst(result);
             number = number / 2;
         }

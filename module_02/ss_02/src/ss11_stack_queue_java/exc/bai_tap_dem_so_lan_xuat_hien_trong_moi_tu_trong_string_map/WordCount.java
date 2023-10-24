@@ -4,6 +4,7 @@ import java.util.TreeMap;
 
 public class WordCount {
     public static void main(String[] args) {
+        int count;
         String string = "tRuOnG tAN HAi";
         String lowerCaseString = string.toLowerCase();
         String[] arrayWord = lowerCaseString.split("");
@@ -11,14 +12,14 @@ public class WordCount {
         TreeMap<String, Integer> wordCount = new TreeMap<>();
         for (String word : arrayWord) {
             if (wordCount.containsKey(word)) {
-                int count = wordCount.get(word);
+                count = wordCount.get(word);
                 wordCount.put(word, count + 1);
             } else {
                 wordCount.put(word, 1);
             }
         }
         for (String word : wordCount.keySet()) {
-            int count = wordCount.get(word);
+            count = wordCount.get(word);
             System.out.println("Từ " + word + " xuất hiện " + ": " + count);
         }
     }
