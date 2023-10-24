@@ -6,6 +6,6 @@ public class Node {
 
     public Node(int data) {
         this.data = data;
-        link = new Node(this.data);
+        this.link = null;
     }
 }
