@@ -1,12 +1,11 @@
-package ss12_java_collection_framework.practice.thuc_hanh_phan_biet_hashmap_hashset;
+package ss12_java_collection_framework.practice.thuc_hanh_comparale_comparator;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private String name;
     private int age;
     private String address;
 
     public Student(String name, int age, String address) {
-        super();
         this.name = name;
         this.age = age;
         this.address = address;
@@ -38,6 +37,11 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student" + " name: " + name + ", age: " + age + ", address: " + address;
+        return "name: " + name + ", age: " + age + ", address: " + address;
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return this.getName().compareTo(o.getName());
     }
 }
