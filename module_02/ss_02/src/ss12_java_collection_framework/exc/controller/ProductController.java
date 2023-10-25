@@ -1,36 +1,45 @@
 package ss12_java_collection_framework.exc.controller;
 
-import ss12_java_collection_framework.exc.service.ProductService;
+
+import ss12_java_collection_framework.exc.model.Product;
+import ss12_java_collection_framework.exc.service.IProductService;
+import ss12_java_collection_framework.exc.service.impl.ProductService;
+
+import java.util.List;
 
 public class ProductController {
-    private final ProductService controller = (ProductService) new ProductService();
+    private IProductService productService = new ProductService();
 
-    public void display() {
-        controller.display();
+    public List<Product> getAll() {
+        return productService.getAll();
     }
 
-    public void addList() {
-        controller.addList();
+    public void addProduct(Product product) {
+        productService.addProduct(product);
     }
 
-    public void delete() {
-        controller.delete();
+    public Boolean removeProduct(int id) {
+        return productService.removeProduct(id);
     }
 
-    public void edit() {
-        controller.editProduct();
+    public Product findById(int id) {
+        return productService.findById(id);
     }
 
-    public void search() {
-        controller.search();
+    public void editProduct(Product product) {
+        productService.editProduct(product);
     }
 
-    public void sortAscending() {
-        controller.sortDescending();
+    public List<Product> searchProductByName(String productName, List<Product> allProducts) {
+        return productService.searchProductByName(productName, allProducts);
     }
 
-    public void sortDescending() {
-        controller.sortDescending();
+    public void sortAscendingProduct() {
+        productService.sortAscendingProduct();
+    }
+
+    public void sortDescendingProduct() {
+        productService.sortDescendingProduct();
     }
 
 }

@@ -1,6 +1,6 @@
-package ss12_java_collection_framework.exc.view;
+package bai_tap_them_mvc.bai_tap_02.view;
 
-import ss12_java_collection_framework.exc.controller.ProductController;
+import bai_tap_them_mvc.bai_tap_02.controller.ProductController;
 
 import java.util.Scanner;
 

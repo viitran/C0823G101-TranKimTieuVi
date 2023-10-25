@@ -1,6 +1,8 @@
-package ss12_java_collection_framework.exc.repository;
+package bai_tap_them_mvc.bai_tap_02.repository;
 
-import ss12_java_collection_framework.exc.model.Product;
+
+
+import bai_tap_them_mvc.bai_tap_02.model.Product;
 
 import java.util.ArrayList;
 import java.util.Objects;

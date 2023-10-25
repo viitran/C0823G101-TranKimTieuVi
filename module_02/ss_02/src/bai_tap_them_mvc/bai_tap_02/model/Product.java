@@ -1,22 +1,21 @@
-package ss12_java_collection_framework.exc.model;
+package bai_tap_them_mvc.bai_tap_02.model;
 
 public class Product {
     private int id;
     private String name;
-    private long price;
+    private double price;
 
-    public Product(int id, String name, long price) {
+    public Product(int id) {
+        this.id = id;
+    }
+
+    public Product(int id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
     public Product() {
-    }
-
-    public Product(String name, long price) {
-        this.name = name;
-        this.price = price;
     }
 
     public int getId() {
@@ -35,18 +34,16 @@ public class Product {
         this.name = name;
     }
 
-    public long getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(long price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
     @Override
     public String toString() {
-        return "id: " + id +
-                ", tên sản phẩm: " + name +
-                ", giá: " + price;
+        return "id: " + id + ", name: " + name + ", price: " + price;
     }
 }

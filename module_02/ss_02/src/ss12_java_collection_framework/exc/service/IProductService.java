@@ -1,13 +1,24 @@
 package ss12_java_collection_framework.exc.service;
 
+import ss12_java_collection_framework.exc.model.Product;
+
+import java.util.List;
+
 public interface IProductService {
-    void display();
+    List<Product> getAll();
 
-    void addList();
+    void addProduct(Product product);
 
-    void delete();
-    void editProduct();
-    void search();
-    void sortDescending();
-    void sortAscending();
+    Boolean removeProduct(int id);
+
+    Product findById(int id);
+
+    void editProduct(Product product);
+
+    List<Product> searchProductByName(String productName, List<Product> allProducts);
+
+    void sortAscendingProduct();
+
+    void sortDescendingProduct();
+
 }
