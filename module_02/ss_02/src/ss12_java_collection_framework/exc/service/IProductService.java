@@ -13,7 +13,7 @@ public interface IProductService {
 
     Product findById(int id);
 
-    void editProduct(Product product);
+    void editProduct(int id,Product product);
 
     List<Product> searchProductByName(String productName, List<Product> allProducts);
 

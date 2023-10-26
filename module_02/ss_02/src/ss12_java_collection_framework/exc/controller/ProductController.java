@@ -26,8 +26,8 @@ public class ProductController {
         return productService.findById(id);
     }
 
-    public void editProduct(Product product) {
-        productService.editProduct(product);
+    public void editProduct(int id, Product product) {
+        productService.editProduct(id,product);
     }
 
     public List<Product> searchProductByName(String productName, List<Product> allProducts) {

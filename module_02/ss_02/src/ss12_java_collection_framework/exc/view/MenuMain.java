@@ -13,7 +13,6 @@ public class MenuMain {
     public static void main(String[] args) {
         ProductController productController = new ProductController();
         int choice;
-        int id;
         do {
             System.out.println("----Menu quản lý sản phẩm----\n" +
                     "1. Hiển thị danh sách \n" +
@@ -56,11 +55,26 @@ public class MenuMain {
 
     private static void deleterProduct(ProductController productController) {
         int id;
+        int choice;
         System.out.println("---Bạn đã chọn xoá sản phẩm---");
         id = inputId();
         Boolean isSuccess = productController.removeProduct(id);
         if (isSuccess) {
-            System.out.println("Đã xoá thành công!");
+            System.out.println("Bạn có muốn xoá sản phẩm này?\n" +
+                    "1. Có\n" +
+                    "2. Không");
+            choice = Integer.parseInt(scanner.nextLine());
+            switch (choice) {
+                case 1:
+                    System.out.println("Đã xoá thành công!");
+                    break;
+                case 2:
+                    System.out.println("Xoá đã bị huỷ");
+                    break;
+                default:
+                    System.out.println("Không hợp lệ.Xoá đã bị huỷ!");
+                    break;
+            }
         } else {
             System.out.println("Không tìm thấy id!");
         }
@@ -139,32 +153,37 @@ public class MenuMain {
     private static void addProduct(ProductController productController) {
         System.out.println("---Bạn đã chọn thêm sản phẩm---");
         Product product;
-        int id = inputId();
-        Product existingProduct = productController.findById(id);
-        if (existingProduct != null) {
-            System.out.println("Id đã tồn tại. Vui lòng nhập lại!");
-        } else {
-            product = inputInformation();
-            product.setId(id);
-            productController.addProduct(product);
-            System.out.println("Thêm sản phẩm thành công!Kiểm tra lại ở mục danh sách các sản phẩm.");
+        int id;
+
+        while (true) {
+            id = inputId();
+            Product existingProduct = productController.findById(id);
+            if (existingProduct != null) {
+                System.out.println("Id đã tồn tại. Vui lòng nhập lại!");
+            } else {
+                break;
+            }
         }
+        product = inputInformation();
+        product.setId(id);
+        productController.addProduct(product);
+        System.out.println("Thêm sản phẩm thành công! Kiểm tra lại ở mục danh sách các sản phẩm.");
+
     }
 
     private static void editProduct(ProductController productController) {
         System.out.println("---Bạn đã chọn sửa sản phẩm---");
-        Product newProduct;
         Product productToEdit;
         int id = inputId();
         productToEdit = productController.findById(id);
         if (productToEdit != null) {
             System.out.println("Thông tin sản phẩm cần sửa: ");
             System.out.println(productToEdit);
-            newProduct = inputInformation();
-            newProduct.setId(id);
+            productController.editProduct(id, inputInformation());
             System.out.println("Đã sửa thành công!");
         } else {
             System.out.println("Id không tồn tại. Vui lòng nhập lại!");
         }
     }
+
 }
