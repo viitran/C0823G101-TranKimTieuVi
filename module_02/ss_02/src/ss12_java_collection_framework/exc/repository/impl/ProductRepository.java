@@ -63,7 +63,7 @@ public class ProductRepository implements IProductRepository {
     public List<Product> searchProductByName(String productName, List<Product> allProducts) {
         List<Product> foundProducts = new ArrayList<>();
         for (Product product : allProducts) {
-            if (product.getName().equalsIgnoreCase(productName)) {
+            if (product.getName().contains(productName)) {
                 foundProducts.add(product);
             }
         }
