@@ -5,10 +5,8 @@ import java.util.Scanner;
 public class CheckTriangleException {
     private static Scanner scanner = new Scanner(System.in);
 
-    private static void displayException(double a, double b, double c) throws Exception {
-        if (a <= 0 || b <= 0 || c <= 0) {
-            throw new IllegalTriangleException("Cạnh của tam giác không được bé hơn 1");
-        } else if (a + b <= c || a + c <= b || b + c <= a) {
+    private static void checkTriangle(double a, double b, double c) throws Exception {
+        if (a + b <= c || a + c <= b || b + c <= a) {
             throw new IllegalTriangleException("Cạnh của tam giác không hợp lệ!");
         }
         System.out.println("Tam giác hợp lệ");
@@ -41,7 +39,7 @@ public class CheckTriangleException {
                 b = checkNumber("b");
                 System.out.print("Nhập cạnh c: ");
                 c = checkNumber("c");
-                displayException(a, b, c);
+                checkTriangle(a, b, c);
             } catch (Exception e) {
                 System.out.println("Lỗi: " + e.getMessage());
             }
