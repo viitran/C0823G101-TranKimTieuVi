@@ -38,7 +38,7 @@ public class demo4 {
     }
 }
 
-//    public static void main(String[] args) {
+//    public static void main(Country[] args) {
 //        StopWatch stopWatch = new StopWatch();
 //        stopWatch.start();
 //        System.out.println("Đang đếm thời gian");

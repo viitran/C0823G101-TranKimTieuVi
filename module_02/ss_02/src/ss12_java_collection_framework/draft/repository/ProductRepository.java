@@ -50,7 +50,7 @@
 //    }
 //
 //    @Override
-//    public void search(String name) {
+//    public void search(Country name) {
 //        for (Product product : products) {
 //            if (product.getName().contains(name)) {
 //                System.out.println(name);

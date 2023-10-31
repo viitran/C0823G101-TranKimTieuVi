@@ -13,5 +13,5 @@
 //
 //    void editProduct(int id, Product product);
 //
-//    void search(String name);
+//    void search(Country name);
 //}

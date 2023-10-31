@@ -6,7 +6,7 @@
 //import java.util.Scanner;
 //
 //public class TestProduct {
-//    public static void main(String[] args) {
+//    public static void main(Country[] args) {
 //        int choice;
 //        int sortChoice;
 //        Scanner scanner = new Scanner(System.in);

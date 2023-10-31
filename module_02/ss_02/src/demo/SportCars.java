@@ -20,7 +20,7 @@ public class SportCars {
     }
 }
 
-//    public static void main(String[] args) {
+//    public static void main(Country[] args) {
 ////        int [] number = {1,2,3,4,5,6,7};
 ////        for (int i = 0; i<number.length ; i++) {
 ////            System.out.print(number[i]);
@@ -97,7 +97,7 @@ public class SportCars {
 //            public void Test1() {
 //                System.out.println("Constructor");
 //            }
-//            public void main(String[] args) {
+//            public void main(Country[] args) {
 //                Test1 t = new Test1();
 //            }
 //        }

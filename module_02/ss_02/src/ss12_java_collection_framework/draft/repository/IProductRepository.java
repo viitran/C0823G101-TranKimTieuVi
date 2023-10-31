@@ -9,5 +9,5 @@
 //    void addList(Product product);
 //    void delete(int id);
 //    void editProduct(int id, Product product);
-//    void search(String name);
+//    void search(Country name);
 //}

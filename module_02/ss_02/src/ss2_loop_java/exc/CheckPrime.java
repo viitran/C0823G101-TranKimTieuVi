@@ -9,6 +9,7 @@ public class CheckPrime {
         System.out.println("Cac so nguyen to dau tien");
         int input;
         int count = 0;
+//        int sum =0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ban muon hien thi bao nhieu so nguyen to dau tien: ");
         input = Integer.parseInt(scanner.nextLine());
@@ -16,8 +17,10 @@ public class CheckPrime {
             if (check(i)) {
                 System.out.println(i);
                 count++;
+//                sum += i;
             }
         }
+//        System.out.println(sum);
 
     }
 
