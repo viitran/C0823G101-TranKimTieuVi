@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class TestFile {
     public static void main(String[] args) throws IOException {
-        File f = new File("D:\\Codegym\\C0823G101-TranKimTieuVi\\module_02\\ss_02\\src\\ss16_file_java\\practice\\test");
+        File f = new File("D:\\Codegym\\C0823G101-TranKimTieuVi\\module_02\\ss_02\\src\\ss16_file_java\\practice\\ArrangeArray");
         try {
             FileReader fileReader = new FileReader(f);
             BufferedReader bufferedReader = new BufferedReader(fileReader);

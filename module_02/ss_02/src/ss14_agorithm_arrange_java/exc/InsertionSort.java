@@ -1,21 +1,22 @@
 package ss14_agorithm_arrange_java.exc;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] array = {12, 2, 8, 5, 1, 6, 4, 15};
-        int key;
-        int element;
-        for (int i = 1; i < array.length; i++) {
-            element = array[i];
-            key = i;
-            while (key > 0 && element < array[key - 1]) {
-                array[key] = array[key - 1];
-                key--;
+        int[] a = {-1, 150, 190, 170, -1, -1, 160, 180};
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a.length; j++) {
+                if (a[i] == -1 || a[j] == -1){
+                    break;
+                } else if (a[i] < a[j]){
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
             }
-            array[key] = element;
         }
-        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(a));
     }
 }
