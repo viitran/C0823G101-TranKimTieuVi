@@ -17,19 +17,22 @@ public class ReadFile {
             objectInputStream = new ObjectInputStream(fileInputStream);
             products = (LinkedList<Product>) objectInputStream.readObject();
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("a");
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            System.out.println("File khong co gi!");
+//            throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("null");
+//            throw new RuntimeException(e);
         } finally {
             try {
                 objectInputStream.close();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+            } catch (Exception e) {
+                System.out.println("null");
+//                throw new RuntimeException(e);
             }
         }
-        return products;
+        return products == null? new LinkedList<>() : products;
     }
 
 //    public static void readFile() {

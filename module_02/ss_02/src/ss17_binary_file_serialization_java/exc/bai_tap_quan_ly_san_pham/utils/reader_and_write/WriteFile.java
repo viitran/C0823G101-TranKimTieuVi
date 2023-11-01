@@ -24,14 +24,22 @@ public class WriteFile {
 //    }
 
     public static List<Product> writeToFileObj(List<Product> products) {
+        ObjectOutputStream objectOutputStream = null;
+        FileOutputStream fileOutputStream;
         try {
-            FileOutputStream fileOutputStream = new FileOutputStream(PATH);
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            fileOutputStream = new FileOutputStream(PATH);
+            objectOutputStream = new ObjectOutputStream(fileOutputStream);
             objectOutputStream.writeObject(products);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
+        } finally {
+            try {
+                objectOutputStream.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         return products;
     }
