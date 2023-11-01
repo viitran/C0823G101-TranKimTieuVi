@@ -2,7 +2,7 @@ package ss18_regex_java.exc.bai_tap_validate_name_class;
 
 import java.util.Scanner;
 
-public class NameValidateTest {
+public class TestValidateNameClass {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
