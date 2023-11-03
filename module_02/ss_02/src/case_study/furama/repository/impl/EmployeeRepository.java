@@ -11,27 +11,19 @@ import java.util.List;
 
 public class EmployeeRepository implements IEmployeeRepository {
 
-    //    private static List<Employee> employees = new LinkedList<>();
-    private static List<Employee> employees = ReadFile.readAndProcessFile();
-
-//    static {
-//        employees.add(new Employee("NV-0001", "nguyen van a", "12/12/2002", "Nu",
-//                "0123123123", "0921575817", "nguyenvana@gmail.com", "dai hoc", "phuc vu", 120000));
-//        employees.add(new Employee("NV-0002", "nguyen van b", "20/09/2009", "Nu",
-//                "12345678", "0920920904", "nguyenvanb20@gmail.com", "dai hoc", "le tan", 123123131));
-//    }
+    private static List<Employee> employees = ReadFile.readAndProcessFileEmployee();
 
     @Override
     public List<Employee> showList() {
-        List<Employee> employees = ReadFile.readAndProcessFile();
+        List<Employee> employees = ReadFile.readAndProcessFileEmployee();
         return employees;
     }
 
     @Override
     public void addEmployee(Employee employee) {
-        employees = ReadFile.readAndProcessFile();
+        employees = ReadFile.readAndProcessFileEmployee();
         employees.add(employee);
-        WriteFile.writeAndProcessFile(employees);
+        WriteFile.writeAndProcessFileEmployee(employees);
     }
 
     @Override
@@ -42,7 +34,7 @@ public class EmployeeRepository implements IEmployeeRepository {
                 break;
             }
         }
-        WriteFile.writeAndProcessFile(employees);
+        WriteFile.writeAndProcessFileEmployee(employees);
     }
 
     @Override
@@ -82,6 +74,6 @@ public class EmployeeRepository implements IEmployeeRepository {
                 break;
             }
         }
-        WriteFile.writeAndProcessFile(employees);
+        WriteFile.writeAndProcessFileEmployee(employees);
     }
 }

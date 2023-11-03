@@ -1,14 +1,12 @@
 package case_study.furama.model.model_person;
 
-import case_study.furama.model.model_person.Person;
-
 public class Customer extends Person {
     private String code;
     private String level;
     private String address;
 
-    public Customer(String name, String gender, String birthday, String idCard, String phoneNumber, String mail,
-                    String code, String level, String address) {
+    public Customer(String code, String name, String gender, String birthday, String idCard, String phoneNumber, String mail,
+                    String level, String address) {
         super(name, gender, birthday, idCard, phoneNumber, mail);
         this.code = code;
         this.level = level;
@@ -37,5 +35,12 @@ public class Customer extends Person {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "code:" + code + " | name:" + getName() + " | birthday: " + getBirthday() + " | gender: " + getGender() +
+                " | idCard: " + getIdCard() + " |\nphone number: " + getPhoneNumber() + " | email: " + getMail() +
+                " | level: " + level + " | address: " + getAddress();
     }
 }
