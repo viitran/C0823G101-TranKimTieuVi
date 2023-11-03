@@ -1,6 +1,6 @@
 package case_study.furama.service;
 
-import case_study.furama.model.Employee;
+import case_study.furama.model.model_person.Employee;
 
 import java.util.List;
 

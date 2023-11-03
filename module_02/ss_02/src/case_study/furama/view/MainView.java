@@ -1,9 +1,10 @@
 package case_study.furama.view;
 
 import case_study.furama.controller.EmployeeController;
-import case_study.furama.model.Employee;
+import case_study.furama.model.model_person.Employee;
 import case_study.furama.utils.common.EmployeeCondition;
 
+import java.sql.SQLOutput;
 import java.util.List;
 import java.util.Scanner;
 
@@ -15,12 +16,12 @@ public class MainView {
     private static String name;
     private static String birthday;
     private static String gender;
-    private static long idCard;
+    private static String idCard;
     private static String phoneNumber;
     private static String email;
     private static String level;
     private static String position;
-    private static double wage;
+    private static double salary;
     private static final Scanner scanner = new Scanner(System.in);
     private static Boolean isSuccess;
 
@@ -78,7 +79,7 @@ public class MainView {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    showList(employees);
+                    showList();
                     break;
                 case 2:
                     addEmployee(employees, code);
@@ -100,10 +101,16 @@ public class MainView {
         } while (true);
     }
 
-    private static void showList(List<Employee> employeeList) {
-        for (Employee e : employeeList) {
-            System.out.println(e);
+    private static void showList() {
+        List<Employee>employees = employeeController.showList();
+        if (!employees.isEmpty()){
+            for (Employee e : employees) {
+                System.out.println(e);
+            }
+        } else {
+            System.out.println("File has nothing!");
         }
+
     }
 
     private static void addEmployee(List<Employee> employees, String code) {
@@ -112,7 +119,7 @@ public class MainView {
             code = inputCode(employees, code);
             employee = employeeController.findByCode(code);
             if (employee != null) {
-                System.out.println("Employee code is exists!Please Re-enter employee code");
+                System.out.print("Employee code is exists!Please Re-enter employee code: ");
             } else {
                 break;
             }
@@ -132,6 +139,7 @@ public class MainView {
             System.out.println("wanna edit information this employee?\n" +
                     "1. Yes\n" +
                     "2. No");
+            System.out.print("Choice: ");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
@@ -211,8 +219,8 @@ public class MainView {
         System.out.print("Enter position(receptionist,server,specialist,supervisor,manager,director): ");
         position = scanner.nextLine();
         System.out.print("Enter wage($): ");
-        wage = Double.parseDouble(scanner.nextLine());
-        return new Employee(name, birthday, gender, idCard, phoneNumber, email, level, position, wage);
+        salary = EmployeeCondition.checkSalary();
+        return new Employee(name, gender, birthday, idCard, phoneNumber, email, level, position, salary);
     }
 
 

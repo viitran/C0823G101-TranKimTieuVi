@@ -1,6 +1,8 @@
 package ss13_algorithm_search_java.practice.thuc_hanh_optional_do_phuc_tap_cua_thuat_toan;
 
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class AlgorithmComplexityTest {
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package case_study.furama.service.impl;
 
-import case_study.furama.model.Employee;
+import case_study.furama.model.model_person.Employee;
 import case_study.furama.repository.IEmployeeRepository;
 import case_study.furama.repository.impl.EmployeeRepository;
 import case_study.furama.service.IEmployeeService;
