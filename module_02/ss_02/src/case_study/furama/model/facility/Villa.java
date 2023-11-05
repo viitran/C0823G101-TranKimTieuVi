@@ -1,20 +1,20 @@
 package case_study.furama.model.facility;
 
-public class Villa extends Facility{
+public class Villa extends Facility {
     private String stander;
     private String SwimmingPoolArea;
-    private String floor;
+    private int floor;
 
-    public Villa(String serviceCode, String serviceName, String usableArea, String expense, String people,
-                 String rentalType, String stander, String swimmingPoolArea, String floor) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
+    public Villa(String Code, String Name, Double usableArea, Long expense, int people, String rentalType) {
+        super(Code, Name, usableArea, expense, people, rentalType);
+    }
+
+    public Villa(String Code, String Name, Double usableArea, Long expense, int people, String rentalType,
+                 String stander, String swimmingPoolArea, int floor) {
+        super(Code, Name, usableArea, expense, people, rentalType);
         this.stander = stander;
         SwimmingPoolArea = swimmingPoolArea;
         this.floor = floor;
-    }
-
-    public Villa(String serviceCode, String serviceName, String usableArea, String expense, String people, String rentalType) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
     }
 
     public String getStander() {
@@ -33,17 +33,17 @@ public class Villa extends Facility{
         SwimmingPoolArea = swimmingPoolArea;
     }
 
-    public String getFloor() {
+    public int getFloor() {
         return floor;
     }
 
-    public void setFloor(String floor) {
+    public void setFloor(int floor) {
         this.floor = floor;
     }
 
     @Override
     public String toString() {
-        return "Villa has stander: " + stander + ", Area swimming pool : " + SwimmingPoolArea +
+        return super.toString() + "\nVilla has stander: " + stander + ", Area swimming pool : " + SwimmingPoolArea +
                 " , floor: " + floor;
     }
 }

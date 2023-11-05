@@ -2,16 +2,13 @@ package case_study.furama.model.facility;
 
 public class House extends Facility{
     private String standard;
-    private String floor;
+    private int floor;
 
-    public House(String serviceCode, String serviceName, String usableArea, String expense, String people, String rentalType, String standard, String floor) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
+    public House(String Code, String Name, Double usableArea, Long expense, int people, String rentalType,
+                 String standard, int floor) {
+        super(Code, Name, usableArea, expense, people, rentalType);
         this.standard = standard;
         this.floor = floor;
-    }
-
-    public House(String serviceCode, String serviceName, String usableArea, String expense, String people, String rentalType) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
     }
 
     public String getStandard() {
@@ -22,16 +19,16 @@ public class House extends Facility{
         this.standard = standard;
     }
 
-    public String getFloor() {
+    public int getFloor() {
         return floor;
     }
 
-    public void setFloor(String floor) {
+    public void setFloor(int floor) {
         this.floor = floor;
     }
 
     @Override
     public String toString() {
-        return "House has standard: " + standard + ", floor='" + floor;
+        return super.toString()+ "\nHouse has standard: " + standard + ", floor: " + floor;
     }
 }

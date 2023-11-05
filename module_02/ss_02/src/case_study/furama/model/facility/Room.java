@@ -3,14 +3,9 @@ package case_study.furama.model.facility;
 public class Room extends Facility{
     private String freeService;
 
-    public Room(String serviceCode, String serviceName, String usableArea, String expense, String people,
-                String rentalType, String freeService) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
+    public Room(String Code, String Name, Double usableArea, Long expense, int people, String rentalType, String freeService) {
+        super(Code, Name, usableArea, expense, people, rentalType);
         this.freeService = freeService;
-    }
-
-    public Room(String serviceCode, String serviceName, String usableArea, String expense, String people, String rentalType) {
-        super(serviceCode, serviceName, usableArea, expense, people, rentalType);
     }
 
     public String getFreeService() {
@@ -23,6 +18,6 @@ public class Room extends Facility{
 
     @Override
     public String toString() {
-        return "Room has freeService: " + freeService;
+        return super.toString()+ "\nRoom has freeService: " + freeService;
     }
 }

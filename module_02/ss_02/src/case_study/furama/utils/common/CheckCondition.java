@@ -3,13 +3,17 @@ package case_study.furama.utils.common;
 import case_study.furama.model.model_person.Customer;
 import case_study.furama.model.model_person.Employee;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Scanner;
 
 public class CheckCondition {
     private static final String REGEX_CODE_EMPLOYEE = "^NV-\\d{4}$";
+    private static final String REGEX_STRING = "^[A-Za-z].*$";
     private static final String REGEX_IDCARD = "^\\d{9,12}$";
-    private static final String REGEX_STRING = "^[A-Z][a-z\\s]{1,50}.*$";
+    private static final String REGEX_STRING_NAME = "^[A-Z][a-z\\s]{1,50}.*$";
     private static final String REGEX_FORMAT_BIRTHDAY = "^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
     private static final String REGEX_PHONE_NUMBER = "^0\\d{9}$";
     private static final String REGEX_MAIL_FORMAT = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
@@ -17,16 +21,49 @@ public class CheckCondition {
     private static Scanner scanner = new Scanner(System.in);
     private static String string;
 
+    public static int checkParseInteger() {
+        boolean isValiParseInt = false;
+        int value = 0;
+        do {
+            try {
+                value = Integer.parseInt(scanner.nextLine());
+                if (value > 0) {
+                    isValiParseInt = true;
+                } else {
+                    System.out.println("Your choice must be greater than 0. Re-enter again: ");
+                }
+            } catch (NumberFormatException e) {
+                System.err.print("Please enter number   : ");
+            }
+        } while (!isValiParseInt);
+        return value;
+    }
+
+    public static String checkString() {
+        do {
+            try {
+                string = scanner.nextLine();
+                if (string.matches(REGEX_STRING)) {
+                    return string;
+                } else {
+                    System.out.println("Please enter string. Re-enter again: ");
+                }
+            } catch (NumberFormatException e) {
+                System.err.print("Please enter string: ");
+            }
+        } while (true);
+    }
+
     public static double checkSalary() {
         boolean isValidSalary = false;
         double salary = 0;
         do {
             try {
                 salary = Double.parseDouble(scanner.nextLine());
-                if(salary > 0){
+                if (salary > 0) {
                     isValidSalary = true;
-                }else{
-                    System.out.println("Salary must be greater than 0. Re-enter again:");
+                } else {
+                    System.err.print("Salary must be greater than 0. Re-enter again:");
                 }
             } catch (NumberFormatException e) {
                 System.err.print("Wrong format!Re-enter again: ");
@@ -98,13 +135,13 @@ public class CheckCondition {
         do {
             try {
                 string = scanner.nextLine();
-                if (!string.matches(REGEX_STRING)) {
+                if (!string.matches(REGEX_STRING_NAME)) {
                     throw new NumberFormatException();
                 }
                 return string;
             } catch (NumberFormatException e) {
                 System.out.println("======note: Capitalize the first letters of each word======");
-                System.err.print("Do not enter number!Re-enter again: ");
+                System.out.print("Re-enter again: ");
             }
         } while (true);
     }
@@ -146,5 +183,30 @@ public class CheckCondition {
             }
         }
         return false;
+    }
+
+    public static String inputBirthday() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        String birthday = null;
+        boolean valid = false;
+        LocalDate today;
+        Period age;
+        LocalDate birthDate;
+        while (!valid) {
+            birthday = checkRegexBirthdayFormat().trim();
+            try {
+                birthDate = LocalDate.parse(birthday, formatter);
+                today = LocalDate.now();
+                age = Period.between(birthDate, today);
+                if (age.getYears() >= 18) {
+                    valid = true;
+                } else {
+                    System.err.print("You're not yet 18 age. Enter again: ");
+                }
+            } catch (Exception e) {
+                System.err.print("Wrong format!Re-enter again: ");
+            }
+        }
+        return birthday;
     }
 }

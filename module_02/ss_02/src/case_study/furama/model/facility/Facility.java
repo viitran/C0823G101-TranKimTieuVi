@@ -1,60 +1,60 @@
 package case_study.furama.model.facility;
 
 public class Facility {
-    private String serviceCode;
-    private String serviceName;
-    private String usableArea;
-    private String expense;
-    private String people;
+    private String Code;
+    private String Name;
+    private Double usableArea;
+    private Long expense;
+    private int people;
     private String rentalType;
 
-    public Facility(String serviceCode, String serviceName, String usableArea, String expense, String people,
+    public Facility(String Code, String Name, Double usableArea, Long expense, int people,
                     String rentalType) {
-        this.serviceCode = serviceCode;
-        this.serviceName = serviceName;
+        this.Code = Code;
+        this.Name = Name;
         this.usableArea = usableArea;
         this.expense = expense;
         this.people = people;
         this.rentalType = rentalType;
     }
 
-    public String getServiceCode() {
-        return serviceCode;
+    public String getCode() {
+        return Code;
     }
 
-    public void setServiceCode(String serviceCode) {
-        this.serviceCode = serviceCode;
+    public void setCode(String code) {
+        this.Code = code;
     }
 
-    public String getServiceName() {
-        return serviceName;
+    public String getName() {
+        return Name;
     }
 
-    public void setServiceName(String serviceName) {
-        this.serviceName = serviceName;
+    public void setName(String name) {
+        this.Name = name;
     }
 
-    public String getUsableArea() {
+    public Double getUsableArea() {
         return usableArea;
     }
 
-    public void setUsableArea(String usableArea) {
+    public void setUsableArea(Double usableArea) {
         this.usableArea = usableArea;
     }
 
-    public String getExpense() {
+    public Long getExpense() {
         return expense;
     }
 
-    public void setExpense(String expense) {
+    public void setExpense(Long expense) {
         this.expense = expense;
     }
 
-    public String getPeople() {
+    public int getPeople() {
         return people;
     }
 
-    public void setPeople(String people) {
+    public void setPeople(int people) {
         this.people = people;
     }
 
@@ -64,5 +64,15 @@ public class Facility {
 
     public void setRentalType(String rentalType) {
         this.rentalType = rentalType;
+    }
+
+    @Override
+    public String toString() {
+        return "Code: " + Code +
+                " | Name: " + Name +
+                " | usableArea: " + usableArea +
+                " | expense: " + expense +
+                " | people: " + people +
+                " | rentalType: " + rentalType;
     }
 }
