@@ -71,7 +71,7 @@ public class Facility {
         return "Code: " + Code +
                 " | Name: " + Name +
                 " | usableArea: " + usableArea +
-                " | expense: " + expense +
+                "m^2 | expense: " + expense +
                 " | people: " + people +
                 " | rentalType: " + rentalType;
     }

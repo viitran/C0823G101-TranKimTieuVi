@@ -9,15 +9,19 @@ import java.util.Map;
 public class FacilityController {
     private final IFacilityService iFacilityService = new FacilityService();
 
-    public Map<Facility,Integer> showList(){
-     return iFacilityService.showList();
+    public Map<Facility, Integer> showList() {
+        return iFacilityService.showList();
     }
 
-    public void addFacility(Facility facility,int value){
-        iFacilityService.addNewFacility(facility,value);
+    public void addFacility(Facility facility, int value) {
+        iFacilityService.addNewFacility(facility, value);
     }
 
-//    public Boolean removeFacility(String code){
-//        return iFacilityService.removeFacility(code);
-//    }
+    public void removeFacility(String code) {
+        iFacilityService.removeFacility(code);
+    }
+
+    public Boolean findByCode(String code) {
+        return iFacilityService.findByCode(code);
+    }
 }

@@ -15,5 +15,5 @@ public interface IEmployeeService {
 
     List<Employee> searchEmployeeByName(List<Employee> employees, String name);
 
-    void editEmployee(Employee employees,String code);
+    void editEmployee(Employee employees, String code);
 }

@@ -1,43 +1,20 @@
 package case_study.furama.utils.common;
 
-import case_study.furama.model.model_person.Customer;
-import case_study.furama.model.model_person.Employee;
-
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 import java.util.Scanner;
 
-public class CheckCondition {
-    private static final String REGEX_CODE_EMPLOYEE = "^NV-\\d{4}$";
+public class InformationCondition {
+    private static final String REGEX_CODE = "^(NV|KH)-\\d{4}$";
     private static final String REGEX_STRING = "^[A-Za-z].*$";
     private static final String REGEX_IDCARD = "^\\d{9,12}$";
     private static final String REGEX_STRING_NAME = "^[A-Z][a-z\\s]{1,50}.*$";
     private static final String REGEX_FORMAT_BIRTHDAY = "^(0?[1-9]|[12][0-9]|3[01])[\\/\\-](0?[1-9]|1[012])[\\/\\-]\\d{4}$";
     private static final String REGEX_PHONE_NUMBER = "^0\\d{9}$";
     private static final String REGEX_MAIL_FORMAT = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-    private static final String REGEX_CODE_CUSTOMER = "^KH-\\d{4}$";
     private static Scanner scanner = new Scanner(System.in);
     private static String string;
-
-    public static int checkParseInteger() {
-        boolean isValiParseInt = false;
-        int value = 0;
-        do {
-            try {
-                value = Integer.parseInt(scanner.nextLine());
-                if (value > 0) {
-                    isValiParseInt = true;
-                } else {
-                    System.out.println("Your choice must be greater than 0. Re-enter again: ");
-                }
-            } catch (NumberFormatException e) {
-                System.err.print("Please enter number   : ");
-            }
-        } while (!isValiParseInt);
-        return value;
-    }
 
     public static String checkString() {
         do {
@@ -72,16 +49,16 @@ public class CheckCondition {
         return salary;
     }
 
-    public static String checkRegexCodeCustomer(List<Customer> customerList, String code) {
+    public static String checkCode(String code) {
         do {
             try {
                 code = scanner.nextLine();
-                if (!code.matches(REGEX_CODE_CUSTOMER)) {
+                if (!code.matches(REGEX_CODE)) {
                     throw new NumberFormatException();
                 }
                 return code;
             } catch (NumberFormatException e) {
-                System.err.print("Require input KH-YYYY. Enter again: ");
+                System.out.println("Wrong Format.Re-enter again");
             }
         } while (true);
     }
@@ -116,7 +93,7 @@ public class CheckCondition {
         } while (true);
     }
 
-    public static String checkRegexBirthdayFormat() {
+    public static String checkFormatDate() {
         do {
             try {
                 string = scanner.nextLine();
@@ -125,13 +102,13 @@ public class CheckCondition {
                 }
                 return string;
             } catch (NumberFormatException e) {
-                System.out.print("Wrong format!Re-enter again: ");
+                System.out.print("Wrong format!Re-enter again ");
             }
         } while (true);
     }
 
 
-    public static String checkRegexString() {
+    public static String checkInputName() {
         do {
             try {
                 string = scanner.nextLine();
@@ -146,7 +123,7 @@ public class CheckCondition {
         } while (true);
     }
 
-    public static String checkRegexIdCard() {
+    public static String checkIdCard() {
         do {
             try {
                 string = scanner.nextLine();
@@ -161,31 +138,7 @@ public class CheckCondition {
 
     }
 
-
-    public static String checkRegexFormatCode(List<Employee> employees, String code) {
-        do {
-            try {
-                code = scanner.nextLine();
-                if (!code.matches(REGEX_CODE_EMPLOYEE)) {
-                    throw new NumberFormatException();
-                }
-                return code;
-            } catch (NumberFormatException e) {
-                System.err.print("Require input NV-XXXX. Enter again: ");
-            }
-        } while (true);
-    }
-
-    public static boolean checkExistsCode(List<Employee> employees, String code) {
-        for (Employee employee : employees) {
-            if (employee.getCode().equals(code)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static String inputBirthday() {
+    public static String checkAge() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String birthday = null;
         boolean valid = false;
@@ -193,7 +146,7 @@ public class CheckCondition {
         Period age;
         LocalDate birthDate;
         while (!valid) {
-            birthday = checkRegexBirthdayFormat().trim();
+            birthday = checkFormatDate().trim();
             try {
                 birthDate = LocalDate.parse(birthday, formatter);
                 today = LocalDate.now();
@@ -209,4 +162,6 @@ public class CheckCondition {
         }
         return birthday;
     }
+
+
 }

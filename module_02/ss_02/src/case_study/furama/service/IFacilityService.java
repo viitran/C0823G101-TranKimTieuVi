@@ -5,11 +5,13 @@ import case_study.furama.model.facility.Facility;
 import java.util.Map;
 
 public interface IFacilityService {
-    Map<Facility,Integer> showList();
+    Map<Facility, Integer> showList();
 
-    void addNewFacility(Facility facility,int value);
+    void addNewFacility(Facility facility, int value);
 
-//    Boolean removeFacility(String code);
+    void removeFacility(String code);
+
+    Boolean findByCode(String code);
 
 
 }

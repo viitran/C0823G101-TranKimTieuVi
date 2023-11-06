@@ -1,6 +1,6 @@
 package case_study.furama.model.facility;
 
-public class House extends Facility{
+public class House extends Facility {
     private String standard;
     private int floor;
 
@@ -29,6 +29,6 @@ public class House extends Facility{
 
     @Override
     public String toString() {
-        return super.toString()+ "\nHouse has standard: " + standard + ", floor: " + floor;
+        return super.toString() + "\nHouse has standard: " + standard + ", floor: " + floor;
     }
 }

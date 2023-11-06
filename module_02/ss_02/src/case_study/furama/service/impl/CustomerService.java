@@ -32,11 +32,11 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public void editCustomer(Customer customers, String code) {
-        iCustomerRepository.editCustomer(customers,code);
+        iCustomerRepository.editCustomer(customers, code);
     }
 
     @Override
     public List<Customer> searchCustomer(List<Customer> customers, String name) {
-        return iCustomerRepository.searchCustomer(customers,name);
+        return iCustomerRepository.searchCustomer(customers, name);
     }
 }

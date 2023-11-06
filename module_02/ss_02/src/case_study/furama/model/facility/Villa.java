@@ -2,7 +2,7 @@ package case_study.furama.model.facility;
 
 public class Villa extends Facility {
     private String stander;
-    private String SwimmingPoolArea;
+    private Double SwimmingPoolArea;
     private int floor;
 
     public Villa(String Code, String Name, Double usableArea, Long expense, int people, String rentalType) {
@@ -10,12 +10,13 @@ public class Villa extends Facility {
     }
 
     public Villa(String Code, String Name, Double usableArea, Long expense, int people, String rentalType,
-                 String stander, String swimmingPoolArea, int floor) {
+                 String stander, Double swimmingPoolArea, int floor) {
         super(Code, Name, usableArea, expense, people, rentalType);
         this.stander = stander;
         SwimmingPoolArea = swimmingPoolArea;
         this.floor = floor;
     }
+
 
     public String getStander() {
         return stander;
@@ -25,11 +26,11 @@ public class Villa extends Facility {
         this.stander = stander;
     }
 
-    public String getSwimmingPoolArea() {
+    public Double getSwimmingPoolArea() {
         return SwimmingPoolArea;
     }
 
-    public void setSwimmingPoolArea(String swimmingPoolArea) {
+    public void setSwimmingPoolArea(Double swimmingPoolArea) {
         SwimmingPoolArea = swimmingPoolArea;
     }
 
@@ -44,6 +45,6 @@ public class Villa extends Facility {
     @Override
     public String toString() {
         return super.toString() + "\nVilla has stander: " + stander + ", Area swimming pool : " + SwimmingPoolArea +
-                " , floor: " + floor;
+                "m^2 , floor: " + floor;
     }
 }

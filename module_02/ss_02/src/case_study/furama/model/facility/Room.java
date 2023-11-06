@@ -1,6 +1,6 @@
 package case_study.furama.model.facility;
 
-public class Room extends Facility{
+public class Room extends Facility {
     private String freeService;
 
     public Room(String Code, String Name, Double usableArea, Long expense, int people, String rentalType, String freeService) {
@@ -18,6 +18,6 @@ public class Room extends Facility{
 
     @Override
     public String toString() {
-        return super.toString()+ "\nRoom has freeService: " + freeService;
+        return super.toString() + "\nRoom has freeService: " + freeService;
     }
 }

@@ -8,13 +8,14 @@ import case_study.furama.repository.IFacilityRepository;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class FacilityRepository implements IFacilityRepository {
     private static final Map<Facility, Integer> facilityIntegerMap = new LinkedHashMap<>();
 
     static {
         facilityIntegerMap.put(new Villa("SVVL-0123", "Villa", 20.0, 23000L, 3,
-                "Holiday", "4.5 start", "5m", 3), 0);
+                "Holiday", "4.5 start", 5.0, 3), 0);
         facilityIntegerMap.put(new House("SVHO-1234", "House", 200.0, 6500L, 5,
                 "rental", "5start", 4), 0);
         facilityIntegerMap.put(new Room("SVRO-3456", "Room", 10.0, 500L, 2,
@@ -29,6 +30,28 @@ public class FacilityRepository implements IFacilityRepository {
     @Override
     public void addNewFacility(Facility facility, int value) {
         facilityIntegerMap.put(facility, value + 1);
+    }
+
+    @Override
+    public void removeFacility(String code) {
+        Set<Facility> set = facilityIntegerMap.keySet();
+        for (Facility facility : set) {
+            if (facility.getCode().equals(code)) {
+                set.remove(facility);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public Boolean findByCode(String code) {
+        Set<Facility> set = facilityIntegerMap.keySet();
+        for (Facility o : set) {
+            if (o.getCode().equals(code)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }

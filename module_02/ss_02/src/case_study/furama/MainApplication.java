@@ -1,4 +1,6 @@
-package case_study.furama.view;
+package case_study.furama;
+
+import case_study.furama.view.MainView;
 
 public class MainApplication {
     public static void main(String[] args) {

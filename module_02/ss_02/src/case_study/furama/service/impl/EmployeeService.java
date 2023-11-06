@@ -16,14 +16,14 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public void addEmployee( Employee employee) {
+    public void addEmployee(Employee employee) {
         iEmployeeRepository.addEmployee(employee);
     }
 
     @Override
     public Boolean removeEmployee(String code) {
         Employee employee = iEmployeeRepository.findByCode(code);
-        if (employee == null){
+        if (employee == null) {
             return false;
         } else {
             iEmployeeRepository.removeEmployeeCode(code);
@@ -38,12 +38,12 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public List<Employee> searchEmployeeByName(List<Employee> employees, String name) {
-        return iEmployeeRepository.searchEmployeeByName(employees,name);
+        return iEmployeeRepository.searchEmployeeByName(employees, name);
     }
 
     @Override
     public void editEmployee(Employee employees, String code) {
-        iEmployeeRepository.editEmployee(employees,code);
+        iEmployeeRepository.editEmployee(employees, code);
     }
 
 }

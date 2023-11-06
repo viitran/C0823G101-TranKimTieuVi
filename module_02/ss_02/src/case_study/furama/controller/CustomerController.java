@@ -10,27 +10,27 @@ public class CustomerController {
 
     private final ICustomerService iCustomerService = new CustomerService();
 
-    public List<Customer> showListCustomer(){
+    public List<Customer> showListCustomer() {
         return iCustomerService.showList();
     }
 
-    public void addCustomer(Customer customer){
+    public void addCustomer(Customer customer) {
         iCustomerService.add(customer);
     }
 
-    public Customer findByCode(String code){
+    public Customer findByCode(String code) {
         return iCustomerService.findByCode(code);
     }
 
-    public Boolean deleteCustomer(String code){
+    public Boolean deleteCustomer(String code) {
         return iCustomerService.deleteCustomer(code);
     }
 
-    public void editCustomer(Customer customers,String code){
-         iCustomerService.editCustomer(customers,code);
+    public void editCustomer(Customer customers, String code) {
+        iCustomerService.editCustomer(customers, code);
     }
 
-    public List<Customer> searchCustomer(List<Customer> customers,String name){
-        return iCustomerService.searchCustomer(customers,name);
+    public List<Customer> searchCustomer(List<Customer> customers, String name) {
+        return iCustomerService.searchCustomer(customers, name);
     }
 }
