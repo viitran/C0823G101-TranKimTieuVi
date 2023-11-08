@@ -52,6 +52,7 @@ public class InformationCondition {
     public static String checkCode(String code) {
         do {
             try {
+                System.out.println("\nFormat code is (NV-xxxx) or (KH-xxxx). X is a number");
                 code = scanner.nextLine();
                 if (!code.matches(REGEX_CODE)) {
                     throw new NumberFormatException();

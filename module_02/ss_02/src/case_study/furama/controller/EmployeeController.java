@@ -28,9 +28,35 @@ public class EmployeeController {
     public List<Employee> searchEmployeeByName(List<Employee> employees, String name) {
         return this.iEmployeeService.searchEmployeeByName(employees, name);
     }
-
     public void editEmployee(Employee employees, String code) {
         iEmployeeService.editEmployee(employees, code);
+    }
+    public void editNewName(String code, String newName) {
+        iEmployeeService.editNewName(code, newName);
+    }
+    public void editNewBirthday(String code, String newBirthday) {
+        iEmployeeService.editNewBirthday(code, newBirthday);
+    }
+    public void editNewGender(String code, String newGender) {
+        iEmployeeService.editNewGender(code, newGender);
+    }
+    public void editNewIdCard(String code, String newIdCard) {
+        iEmployeeService.editNewGender(code, newIdCard);
+    }
+    public void editNewPhoneNumber(String code, String newPhoneNumber) {
+        iEmployeeService.editNewPhoneNumber(code, newPhoneNumber);
+    }
+    public void editNewEmail(String code, String newEmail) {
+        iEmployeeService.editNewEmail(code, newEmail);
+    }
+    public void editNewPosition(String code, String newPosition) {
+        iEmployeeService.editNewPosition(code, newPosition);
+    }
+    public void editNewLevel(String code, String newLevel) {
+        iEmployeeService.editNewLevel(code, newLevel);
+    }
+    public void editNewSalary(String code, double newSalary) {
+        iEmployeeService.editNewSalary(code, newSalary);
     }
 
 }

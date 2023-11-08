@@ -8,6 +8,10 @@ public abstract class Person {
     private String idCard;
     private String phoneNumber;
 
+    public Person(String name) {
+        this.name = name;
+    }
+
 
     public Person(String name, String gender, String birthday, String idCard, String phoneNumber, String mail) {
         this.name = name;

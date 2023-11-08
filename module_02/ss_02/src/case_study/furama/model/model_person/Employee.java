@@ -9,6 +9,10 @@ public class Employee extends Person {
     private String level;
     private double salary;
 
+    public Employee(String name) {
+        super(name);
+    }
+
     public Employee(String code, String name, String gender, String birthday, String idCard, String phoneNumber
             , String mail, String position, String level, double salary) {
         super(name, gender, birthday, idCard, phoneNumber, mail);

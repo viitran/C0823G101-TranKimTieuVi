@@ -8,6 +8,7 @@ import case_study.furama.utils.file_handle.WriteFile;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 
 public class EmployeeRepository implements IEmployeeRepository {
 
@@ -60,20 +61,127 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public void editEmployee(Employee employee, String code) {
-        for (Employee e : employees) {
-            if (e.getCode().equals(code)) {
-                e.setName(employee.getName());
-                e.setBirthday(employee.getBirthday());
-                e.setGender(employee.getGender());
-                e.setIdCard(employee.getIdCard());
-                e.setPhoneNumber(employee.getPhoneNumber());
-                e.setMail(employee.getMail());
-                e.setLevel(employee.getLevel());
-                e.setPosition(employee.getPosition());
-                e.setSalary(employee.getSalary());
-                break;
+        List<Employee> employeeList = showList();
+        for (int i = 0; i < employeeList.size(); i++) {
+            if (employeeList.get(i).getCode().equals(code)) {
+                employeeList.get(i).setName(employee.getName());
+                employeeList.get(i).setBirthday(employee.getBirthday());
+                employeeList.get(i).setMail(employee.getMail());
+                employeeList.get(i).setGender(employee.getGender());
+                employeeList.get(i).setLevel(employee.getLevel());
+                employeeList.get(i).setIdCard(employee.getIdCard());
+                employeeList.get(i).setPosition(employee.getPosition());
+                employeeList.get(i).setSalary(employee.getSalary());
+                employeeList.get(i).setPhoneNumber(employee.getPhoneNumber());
             }
         }
-        WriteFile.writeAndProcessFileEmployee(employees);
+        ReadFile.readAndProcessFileEmployee();
+    }
+
+    @Override
+    public void editNewName(String code, String newName) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setName(newName);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewBirthday(String code, String newBirthday) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setBirthday(newBirthday);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+    @Override
+    public void editNewGender(String code, String newGender) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setGender(newGender);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewIdCard(String code, String newIdCard) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setIdCard(newIdCard);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewPhoneNumber(String code, String newPhoneNumber) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setPhoneNumber(newPhoneNumber);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewEmail(String code, String newEmail) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setMail(newEmail);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewPosition(String code, String newPosition) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setPosition(newPosition);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewLevel(String code, String newLevel) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setLevel(newLevel);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
+    }
+
+    @Override
+    public void editNewSalary(String code, double newSalary) {
+        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+        for (Employee employee : employees) {
+            if (employee.getCode().equals(code)) {
+                employee.setSalary(newSalary);
+                WriteFile.writeAndProcessFileEmployee(employeeList);
+                return;
+            }
+        }
     }
 }

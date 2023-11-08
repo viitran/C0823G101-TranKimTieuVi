@@ -102,9 +102,17 @@ public class EmployeeView {
             choice = ExceptionHandler.checkParseInteger();
             switch (choice) {
                 case 1:
-                    System.out.println("old information employee: ");
-                    System.out.println(employee);
-                    employeeController.editEmployee(inputInformation(), code);
+                    System.out.println("old information employee: " +
+                            "Name: " + employee.getName() + "\n" +
+                            "Birthday: " + employee.getBirthday() + "\n" +
+                            "Gender: " + employee.getGender() + "\n" +
+                            "Id card: " + employee.getIdCard() + "\n" +
+                            "Phone number: " + employee.getPhoneNumber() + "\n" +
+                            "Email: " + employee.getMail() + "\n" +
+                            "Position: " + employee.getPosition() + "\n" +
+                            "Level: " + employee.getLevel() + "\n" +
+                            "Salary: " + employee.getSalary());
+                    EditEachSelection();
                     break;
                 case 2:
                     System.out.println("cancel!");
@@ -116,6 +124,85 @@ public class EmployeeView {
             System.out.println("Cant found code employee");
         }
     }
+
+    private static void EditEachSelection() {
+        do {
+            System.out.println("------Choose information want to edit this employee: \n" +
+                    "1.Name\n" +
+                    "2.Birthday\n" +
+                    "3.Gender\n" +
+                    "4.Id Card\n" +
+                    "5.Phone Number\n" +
+                    "6.Email\n" +
+                    "7.Position\n" +
+                    "8.Level\n" +
+                    "9.Salary\n" +
+                    "0.Return");
+            choice = ExceptionHandler.checkParseInteger();
+            switch (choice) {
+                case 1:
+                    employeeController.editNewName(code, inputNewName());
+                    break;
+                case 2:
+                    employeeController.editNewBirthday(code, inputNewBirthday());
+                    break;
+                case 3:
+                    employeeController.editNewGender(code, inputGender());
+                    break;
+                case 4:
+                    employeeController.editNewIdCard(code, inputNewIdCard());
+                    break;
+                case 5:
+                    employeeController.editNewPhoneNumber(code, inputNewPhoneNumber());
+                    break;
+                case 6:
+                    employeeController.editNewEmail(code, inputNewEmail());
+                    break;
+                case 7:
+                    employeeController.editNewPosition(code, inputPosition());
+                    break;
+                case 8:
+                    employeeController.editNewLevel(code, inputLevel());
+                    break;
+                case 9:
+                    employeeController.editNewSalary(code, inputNewSalary());
+                    break;
+                case 0:
+                    return;
+            }
+        } while (true);
+    }
+
+    private static String inputNewPhoneNumber() {
+        System.out.print("Enter phone number(Ex: 0xxxxxxxxx): ");
+        return InformationCondition.checkPhoneNumber();
+    }
+
+    private static String inputNewEmail() {
+        System.out.print("Enter email: ");
+        return InformationCondition.checkFormatMail();
+    }
+
+    private static double inputNewSalary() {
+        System.out.print("Enter wage($): ");
+        return InformationCondition.checkSalary();
+    }
+
+    private static String inputNewIdCard() {
+        System.out.print("Enter idCard (at least 9 numbers and at most 12 numbers): ");
+        return InformationCondition.checkIdCard();
+    }
+
+    private static String inputNewName() {
+        System.out.print("Enter name employee: ");
+        return InformationCondition.checkInputName();
+    }
+
+    private static String inputNewBirthday() {
+        System.out.print("Enter birthday (dd/mm/yyyy):  ");
+        return InformationCondition.checkAge();
+    }
+
 
     private static void searchEmployeeByName(List<Employee> employees) {
         System.out.print("Enter name employee: ");
@@ -131,8 +218,8 @@ public class EmployeeView {
 
     private static void removeEmployee(String code) {
         code = inputCode(code);
-        isSuccess = employeeController.removeEmployee(code);
-        if (isSuccess) {
+        Employee employee = employeeController.findByCode(code);
+        if (employee != null) {
             System.out.println("Wanna remove employee ?\n" +
                     "1. Yes\n" +
                     "2. No");
@@ -140,6 +227,7 @@ public class EmployeeView {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
+                    employeeController.removeEmployee(code);
                     System.out.println("=====complete=====");
                     break;
                 case 2:
@@ -211,13 +299,14 @@ public class EmployeeView {
         return InformationCondition.checkCode(code);
     }
 
+
     private static Employee inputInformation() {
         System.out.print("Enter name employee: ");
         name = InformationCondition.checkInputName();
         System.out.print("Enter birthday (dd/mm/yyyy):  ");
         birthday = InformationCondition.checkAge();
         System.out.print("Enter gender: ");
-        gender = InformationCondition.checkString();
+        gender = inputGender();
         System.out.print("Enter idCard (at least 9 numbers and at most 12 numbers): ");
         idCard = InformationCondition.checkIdCard();
         System.out.print("Enter phone number(Ex: 0xxxxxxxxx): ");
@@ -231,5 +320,28 @@ public class EmployeeView {
         System.out.print("Enter wage($): ");
         salary = InformationCondition.checkSalary();
         return new Employee(name, gender, birthday, idCard, phoneNumber, email, level, position, salary);
+    }
+
+    private static String inputGender() {
+        do {
+            System.out.println("Choose your gender: \n" +
+                    "1. Female\n" +
+                    "2. Male\n" +
+                    "3. LGBT\n" +
+                    "4. Secret");
+            choice = ExceptionHandler.checkParseInteger();
+            switch (choice) {
+                case 1:
+                    return "Female";
+                case 2:
+                    return "Male";
+                case 3:
+                    return "LGBT";
+                case 4:
+                    return "Secret";
+                default:
+                    ExceptionHandler.checkParseInteger();
+            }
+        } while (true);
     }
 }
