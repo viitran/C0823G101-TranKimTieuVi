@@ -21,7 +21,6 @@ public class EmployeeView {
     private static String level;
     private static String position;
     private static double salary;
-    private static Boolean isSuccess;
 
     private static final Scanner scanner = new Scanner(System.in);
 
@@ -76,8 +75,8 @@ public class EmployeeView {
         Employee employee;
         while (true) {
             code = inputCode(code);
-            employee = employeeController.findByCode(code);
-            if (employee != null) {
+            Boolean isSuccess = employeeController.findByCode(code);
+            if (isSuccess) {
                 System.out.print("Employee code is exists!Please Re-enter employee code: ");
             } else {
                 break;
@@ -90,11 +89,12 @@ public class EmployeeView {
     }
 
     private static void editEmployee(String code) {
-        Employee employee;
+        Boolean isSuccess = false;
+        Employee employee = null;
         System.out.print("Enter code employee: ");
         code = InformationCondition.checkCode(code);
-        employee = employeeController.findByCode(code);
-        if (employee != null) {
+        isSuccess = employeeController.findByCode(code);
+        if (!isSuccess) {
             System.out.println("wanna edit information this employee?\n" +
                     "1. Yes\n" +
                     "2. No");
@@ -112,7 +112,7 @@ public class EmployeeView {
                             "Position: " + employee.getPosition() + "\n" +
                             "Level: " + employee.getLevel() + "\n" +
                             "Salary: " + employee.getSalary());
-                    EditEachSelection();
+                    EditEachSelection(code);
                     break;
                 case 2:
                     System.out.println("cancel!");
@@ -125,7 +125,7 @@ public class EmployeeView {
         }
     }
 
-    private static void EditEachSelection() {
+    private static void EditEachSelection(String code) {
         do {
             System.out.println("------Choose information want to edit this employee: \n" +
                     "1.Name\n" +
@@ -218,8 +218,8 @@ public class EmployeeView {
 
     private static void removeEmployee(String code) {
         code = inputCode(code);
-        Employee employee = employeeController.findByCode(code);
-        if (employee != null) {
+        Boolean isSuccess = employeeController.findByCode(code);
+        if (isSuccess) {
             System.out.println("Wanna remove employee ?\n" +
                     "1. Yes\n" +
                     "2. No");
@@ -227,7 +227,6 @@ public class EmployeeView {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:
-                    employeeController.removeEmployee(code);
                     System.out.println("=====complete=====");
                     break;
                 case 2:
@@ -239,6 +238,7 @@ public class EmployeeView {
         } else {
             System.out.println("Can't found employee code!");
         }
+
     }
 
     private static String inputLevel() {

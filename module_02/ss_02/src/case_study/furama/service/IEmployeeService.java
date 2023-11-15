@@ -8,7 +8,7 @@ public interface IEmployeeService {
     List<Employee> showList();
     void addEmployee(Employee employee);
     Boolean removeEmployee(String code);
-    Employee findByCode(String code);
+    Boolean findByCode(String code);
     List<Employee> searchEmployeeByName(List<Employee> employees, String name);
     void editEmployee(Employee employees, String code);
     void editNewName(String code,String newName);

@@ -7,7 +7,7 @@ import java.util.TreeMap;
 public class WordCount {
     public static void main(String[] args) {
         int count;
-        String string = "tRuOnG tAN HAi";
+        String string = "hhhhoooooooooocccsinhhhhhhhhhhhhhh";
         String lowerCaseString = string.toLowerCase();
         String[] arrayWord = lowerCaseString.split("");
 

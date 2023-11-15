@@ -22,8 +22,8 @@ public class EmployeeService implements IEmployeeService {
 
     @Override
     public Boolean removeEmployee(String code) {
-        Employee employee = iEmployeeRepository.findByCode(code);
-        if (employee == null){
+        Boolean employee = iEmployeeRepository.findByCode(code);
+        if (!employee){
             return false;
         } else {
             iEmployeeRepository.removeEmployeeCode(code);
@@ -32,7 +32,7 @@ public class EmployeeService implements IEmployeeService {
     }
 
     @Override
-    public Employee findByCode(String code) {
+    public Boolean findByCode(String code) {
         return iEmployeeRepository.findByCode(code);
     }
 

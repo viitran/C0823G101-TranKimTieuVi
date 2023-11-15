@@ -1,7 +1,7 @@
 package case_study.furama.repository;
 import java.util.List;
 
-public interface IGenericPerson<E>{
+public interface IGenericPersonRepository<E>{
     List<E> showList();
     void add(E e);
     void removeByCode(String code);

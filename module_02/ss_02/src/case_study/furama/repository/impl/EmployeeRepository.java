@@ -39,13 +39,13 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public Employee findByCode(String code) {
+    public boolean findByCode(String code) {
         for (Employee e : employees) {
             if (e.getCode().equals(code)) {
-                return e;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     @Override
@@ -80,11 +80,11 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public void editNewName(String code, String newName) {
-        List<Employee> employeeList = ReadFile.readAndProcessFileEmployee();
+
         for (Employee employee : employees) {
             if (employee.getCode().equals(code)) {
                 employee.setName(newName);
-                WriteFile.writeAndProcessFileEmployee(employeeList);
+                WriteFile.writeAndProcessFileEmployee(employees);
                 return;
             }
         }

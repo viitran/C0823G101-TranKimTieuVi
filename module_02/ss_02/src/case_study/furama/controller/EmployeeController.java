@@ -21,7 +21,7 @@ public class EmployeeController {
         return this.iEmployeeService.removeEmployee(code);
     }
 
-    public Employee findByCode(String code) {
+    public Boolean findByCode(String code) {
         return iEmployeeService.findByCode(code);
     }
 
