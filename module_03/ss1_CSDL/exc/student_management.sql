@@ -18,4 +18,7 @@ CREATE TABLE teacher (
 );
 insert into teacher(teacher_name,teacher_age,country)
 values ("CongNT",29,"Đà Nẵng");
-select * from teacher;
+SELECT 
+    *
+FROM
+    teacher;
