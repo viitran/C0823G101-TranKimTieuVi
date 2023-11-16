@@ -1,6 +1,6 @@
 create database student_database_management;
 CREATE TABLE class (
-    class_id int,
+    class_id INT,
     `name` VARCHAR(50)
 );
 CREATE TABLE teacher (
@@ -11,7 +11,7 @@ CREATE TABLE teacher (
 );
 drop table student;
 CREATE TABLE student (
-    id INT primary key auto_increment,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(50),
     age INT,
     gender BIT
@@ -20,5 +20,9 @@ insert into student(`name`,age,gender)
 values("Latt",14,0),
 	("N.Bảo",22,1),
 	("V.Độ",21,1);
-select * from student;
 
+SELECT 
+    *
+FROM
+    student;
+truncate table student;
