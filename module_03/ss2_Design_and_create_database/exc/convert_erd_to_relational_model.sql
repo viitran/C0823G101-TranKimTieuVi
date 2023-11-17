@@ -8,7 +8,7 @@ CREATE TABLE nha_cung_cap (
 );
 
 CREATE TABLE so_dien_thoai (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id INT PRIMARY KEY,
     phone VARCHAR(20),
     nha_cung_cap_id VARCHAR(20),
     FOREIGN KEY (nha_cung_cap_id)
