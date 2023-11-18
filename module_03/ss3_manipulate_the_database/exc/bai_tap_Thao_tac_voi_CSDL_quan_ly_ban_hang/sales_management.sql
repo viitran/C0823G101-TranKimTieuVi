@@ -16,15 +16,14 @@ CREATE TABLE `order` (
     id INT NOT NULL PRIMARY KEY,
     customer_id INT NOT NULL,
     `date` DATETIME,
-    total_price INT CHECK (total_price > 0),
     FOREIGN KEY (customer_id)
         REFERENCES customer (id)
 );
 
-INSERT INTO `order`(id,customer_id,`date`,total_price)
-	VALUES (1,1,"2016-03-21",NULL),
-		(2,2,"2016-03-23",NULL),
-		(3,1,"2016-03-16",NULL);
+INSERT INTO `order`(id,customer_id,`date`)
+	VALUES (1,1,"2016-03-21"),
+		(2,2,"2016-03-23"),
+		(3,1,"2016-03-16");
 
 CREATE TABLE product (
 	id INT NOT NULL PRIMARY KEY,
