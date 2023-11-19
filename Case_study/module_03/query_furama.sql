@@ -96,8 +96,14 @@ FROM
         JOIN
     loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
 WHERE
-    YEAR(hop_dong.ngay_lam_hop_dong) < 2021
-    group by dich_vu.ma_dich_vu;
+    YEAR(hop_dong.ngay_lam_hop_dong) = 2020
+        AND hop_dong.ma_dich_vu NOT IN (SELECT 
+            hop_dong.ma_dich_vu
+        FROM
+            hop_dong
+        WHERE
+            YEAR(hop_dong.ngay_lam_hop_dong) = 2021)
+GROUP BY dich_vu.ma_dich_vu;
     
     -- --8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
