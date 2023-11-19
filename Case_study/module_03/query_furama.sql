@@ -103,11 +103,21 @@ WHERE
 -- Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
 
 -- cách 1 
+
 SELECT 
     khach_hang.ho_ten
 FROM
     khach_hang
 GROUP BY ho_ten;
+
+-- cách 2
+
+SELECT 
+    ho_ten
+FROM
+    khach_hang; 
+    
+    -- cách 3 - chưa tìm ra  
 
 --  9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
 
@@ -125,9 +135,15 @@ ORDER BY MONTH(hop_dong.ngay_lam_hop_dong);
 
 -- 10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm.
 --  Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
-select hop_dong.ma_hop_dong,hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc,hop_dong.tien_dat_coc,sum(hop_dong_chi_tiet.so_luong)
-from hop_dong
-left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
-group by hop_dong.ma_hop_dong
 
-
+SELECT 
+    hop_dong.ma_hop_dong,
+    hop_dong.ngay_lam_hop_dong,
+    hop_dong.ngay_ket_thuc,
+    hop_dong.tien_dat_coc,
+    SUM(hop_dong_chi_tiet.so_luong) AS 'số lượng dịch vụ đi kèm'
+FROM
+    hop_dong
+        LEFT JOIN
+    hop_dong_chi_tiet ON hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong
+GROUP BY hop_dong.ma_hop_dong
