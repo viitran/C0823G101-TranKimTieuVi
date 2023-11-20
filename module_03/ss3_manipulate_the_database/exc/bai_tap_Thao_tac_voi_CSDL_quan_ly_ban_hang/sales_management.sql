@@ -13,7 +13,7 @@ INSERT INTO customer(id,`name`,age)
 			(3,"Hong Ha",50);
 
 CREATE TABLE `order` (
-    id INT NOT NULL PRIMARY KEY,
+    id INT PRIMARY KEY,
     customer_id INT NOT NULL,
     `date` DATETIME,
     FOREIGN KEY (customer_id)
@@ -26,8 +26,8 @@ INSERT INTO `order`(id,customer_id,`date`)
 		(3,1,"2016-03-16");
 
 CREATE TABLE product (
-	id INT NOT NULL PRIMARY KEY,
-    product_name VARCHAR(25) NOT NULL,
+	id INT PRIMARY KEY,
+    product_name VARCHAR(25),
     price INT NOT NULL CHECK (price > 0)
 );
 
@@ -39,9 +39,9 @@ INSERT INTO product(id,product_name,price)
 		(5,"Bep Dien",2);
  
 CREATE TABLE order_details (
-    order_id INT NOT NULL,
-    product_id INT NOT NULL,
-    quantity INT NOT NULL DEFAULT 1,
+    order_id INT,
+    product_id INT,
+    quantity INT DEFAULT 1,
     PRIMARY KEY (order_id , product_id),
     FOREIGN KEY (order_id)
         REFERENCES `order` (id),

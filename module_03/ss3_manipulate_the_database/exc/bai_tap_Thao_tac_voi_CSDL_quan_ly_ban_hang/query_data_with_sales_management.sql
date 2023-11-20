@@ -32,20 +32,20 @@ SET GLOBAL sql_mode	=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 SELECT 
     *
 FROM
-    order_details
+    customer c
+		LEFT JOIN
+    `order` o ON c.id = o.customer_id
 WHERE
-    order_id IS NULL;
+    o.customer_id IS NULL;
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
 -- (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn.
 --  Giá bán của từng loại được tính = odQTY*pPrice)
  
 SELECT 
-    c.`name`,
-    p.product_name,
-    o.id,
+	o.id as 'mã hoá đơn',
     o.`date`,
-    p.price * od.quantity AS 'Giá bán'
+    SUM(p.price * od.quantity) AS 'Tổng tiền'
 FROM
     customer c
         JOIN
@@ -54,4 +54,6 @@ FROM
     order_details od ON o.id = od.order_id
         JOIN
     product p ON od.product_id = p.id
+	GROUP BY
+		o.id;
  

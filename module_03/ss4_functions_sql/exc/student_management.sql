@@ -75,4 +75,4 @@ CREATE TABLE subject_transcript (
 INSERT INTO subject_transcript(student_name,sub_name,mark,mark_id,student_id,sub_id)
 VALUES("Hung","CF",8,1,1,1),
 ("Hoa","CF",10,2,2,1),
-("Hung","C",12,3,3,2);
+("Hung","C",12,3,1,2);

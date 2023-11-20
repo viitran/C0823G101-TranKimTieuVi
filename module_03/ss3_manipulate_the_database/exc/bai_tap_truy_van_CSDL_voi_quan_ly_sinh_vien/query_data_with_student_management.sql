@@ -48,9 +48,10 @@ FROM
 --  Dữ liệu sắp xếp theo điểm thi (mark) giảm dần nếu trùng sắp theo tên tăng dần
 
 SELECT 
-    subject_transcript.student_name,
-    subject_transcript.sub_name,
-    mark
+    subtr.student_id,
+    subtr.student_name,
+    subtr.sub_name,
+    subtr.mark
 FROM
-    subject_transcript
-ORDER BY mark;
+    subject_transcript subtr
+ORDER BY subtr.mark DESC , subtr.student_name ASC;
