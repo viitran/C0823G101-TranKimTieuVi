@@ -184,4 +184,39 @@ from hop_dong hd
 join nhan_vien nv on hd.ma_nhan_vien = nv.ma_nhan_vien
 join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
 join dich_vu dv on hd.ma_dich_vu = dv.ma_dich_vu
-join hop_dong_chi_tiet hdct on 
+join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong;
+
+-- 13	Hiển thị thông tin các Dịch vụ đi kèm được sử dụng nhiều nhất bởi các Khách hàng đã đặt phòng.
+--  (Lưu ý là có thể có nhiều dịch vụ có số lần sử dụng nhiều như nhau).
+
+
+
+ -- cau 14:  	Hiển thị thông tin tất cả các Dịch vụ đi kèm chỉ mới được sử dụng một lần duy nhất.
+--  Thông tin hiển thị bao gồm ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).
+SELECT dich_vu_di_kem.ma_dich_vu_di_kem, dich_vu_di_kem.ten_dich_vu_di_kem, sum(hop_dong_chi_tiet.so_luong) AS so_lan_su_dung
+FROM hop_dong_chi_tiet 
+JOIN dich_vu_di_kem  ON  hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem
+GROUP BY dich_vu_di_kem.ma_dich_vu_di_kem, dich_vu_di_kem.ten_dich_vu_di_kem
+HAVING  sum(hop_dong_chi_tiet.so_luong) = (
+  SELECT MAX(so_lan_su_dung)
+  FROM (
+    SELECT sum(hop_dong_chi_tiet.so_luong)AS so_lan_su_dung
+    FROM hop_dong_chi_tiet
+    GROUP BY ma_dich_vu_di_kem
+  ) AS temp
+);
+-- 15.	Hiển thi thông tin của tất cả 
+-- nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, dia_chi mới chỉ lập được tối đa 3 hợp đồng từ năm 2020 đến 2021.
+SELECT 
+    nv.ma_nhan_vien,
+    nv.ho_ten,
+    nv.so_dien_thoai,
+    nv.dia_chi,
+    hd.ngay_lam_hop_dong
+FROM
+    nhan_vien AS nv
+        JOIN
+    hop_dong AS hd ON nv.ma_nhan_vien = hd.ma_nhan_vien
+GROUP BY nv.ma_nhan_vien
+HAVING COUNT(ma_hop_dong) <= 3
+    AND (hd.ngay_lam_hop_dong BETWEEN '2020-01-01' AND '2021-12-31');
