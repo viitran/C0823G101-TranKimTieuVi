@@ -44,9 +44,18 @@ CREATE INDEX idx_product_name_and_product_price ON products(product_name,product
  DROP INDEX 
 	idx_product_code ON products;
  
- -- So sánh câu truy vấn trước và sau khi tạo index, 
- -- trước khi tạo index posible_keys,key,key_len,ref = null,type = all
- -- sau khi tạo index posible_keys,key,key_len,ref có giá trị, type = const
+ -- trước khi tạo index 
+ 
+ SELECT * 
+ FROM products 
+ WHERE product_code = '04';
+
+ -- sau khi tạo index 
+
+EXPLAIN SELECT *
+FROM products
+WHERE product_code = '04';
+ 
  
  -- buoc 4 - Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products
 
