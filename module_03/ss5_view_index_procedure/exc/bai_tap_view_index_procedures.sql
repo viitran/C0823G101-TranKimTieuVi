@@ -75,60 +75,61 @@ DROP VIEW product_info;
  
  -- buoc 5 - Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
  
- DELIMITER //
+DELIMITER //
 CREATE PROCEDURE get_all_products()
 BEGIN
   SELECT * FROM products;
 END //
 DELIMITER ;
 
+CALL get_all_products();
+
 -- Tạo store procedure thêm một sản phẩm mới
 
 DELIMITER //
 CREATE PROCEDURE add_product(
-  IN p_product_code VARCHAR(20),
-  IN p_product_name VARCHAR(20),
-  IN p_product_price DOUBLE,
-  IN p_product_amount INT,
-  IN p_product_description VARCHAR(20),
-  IN p_product_status VARCHAR(10)
-)
-BEGIN
-  INSERT INTO products (product_code, product_name, product_price, product_amount, product_description, product_status)
-  VALUES (p_product_code, p_product_name, p_product_price, p_product_amount, p_product_description, p_product_status);
+		p_product_code VARCHAR(20),
+		p_product_name VARCHAR(20),
+		p_product_price DOUBLE,
+		p_product_status VARCHAR(10))
+BEGIN 
+	INSERT INTO products(product_code,product_name,product_price,product_status)
+	VALUE (p_product_code,p_product_name,p_product_price,p_product_status);
 END //
-DELIMITER ; 
+DELIMITER ;
+
+CALL add_product('04','samsung',2300,'new');
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id 
 
 DELIMITER //
-CREATE PROCEDURE update_product(
-  IN p_product_id INT,
-  IN p_product_name VARCHAR(20),
-  IN p_product_price DOUBLE,
-  IN p_product_amount INT,
-  IN p_product_description VARCHAR(20),
-  IN p_product_status VARCHAR(10)
+CREATE PROCEDURE update_product( 
+		p_id INT,
+		p_product_code VARCHAR(20),
+		p_product_name VARCHAR(20),
+		p_product_price DOUBLE,
+		p_product_status VARCHAR(10)
 )
-BEGIN
-  UPDATE products
-  SET product_name = p_product_name,
-      product_price = p_product_price,
-      product_amount = p_product_amount,
-      product_description = p_product_description,
-      product_status = p_product_status
-  WHERE id = p_product_id;
+BEGIN 
+	UPDATE products
+    SET product_code = p_product_code,
+		product_name = p_product_name,
+        product_price = p_product_price,
+        product_status = p_product_status
+	WHERE products.id = p_id;
 END //
 DELIMITER ;
+
+CALL update_product(6,'05','ss',390000,'cháy hàng');
 
 -- Tạo store procedure xoá sản phẩm theo id
 
 DELIMITER //
-CREATE PROCEDURE delete_product(
-  IN p_product_id INT
-)
-BEGIN
-  DELETE FROM products WHERE id = p_product_id;
+CREATE PROCEDURE delete_product(p_id INT)
+BEGIN 
+        DELETE FROM products
+        WHERE products.id = p_id;
 END //
 DELIMITER ;
- 
+
+CALL delete_product(6)

@@ -202,7 +202,7 @@ from
     khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
         join
     dich_vu dv ON hd.ma_dich_vu = dv.ma_dich_vu
-        LEFT join
+        left join
     hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
 where
     month(hd.ngay_lam_hop_dong) between 10 AND 12
@@ -274,4 +274,11 @@ WHERE nhan_vien.ma_nhan_vien NOT IN (select * from
     WHERE YEAR(hop_dong.ngay_lam_hop_dong) IN (2019,2020,2021)) as temp
 );
 -- 17. Cập nhật thông tin những khách hàng có ten_loai_khach 
--- từ Platinum lên Diamond, chỉ cập nhật những khách hàng đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ. 
+-- từ Platinum lên Diamond, chỉ cập nhật những khách hàng 
+-- đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ. 
+
+select hd.ma_hop_dong,kh.ho_ten,kh.ma_khach_hang,lk.ten_loai_khach
+from hop_dong hd
+join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
+join loai_khach lk on kh.ma_khach_hang = lk.ma_loai_khach
+where kh
