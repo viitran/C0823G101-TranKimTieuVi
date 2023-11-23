@@ -62,26 +62,19 @@ GROUP BY khach_hang.ma_khach_hang , hop_dong.ma_hop_dong;
 -- câu 6: 	Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue
 --  ten_loai_dich_vu của tất cả các loại dịch vụ chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
 
-SELECT 
-    dich_vu.ma_dich_vu,
-    dich_vu.ten_dich_vu,
-    dich_vu.dien_tich,
-    dich_vu.chi_phi_thue,
-    loai_dich_vu.ten_loai_dich_vu
-FROM
-    dich_vu
-        JOIN
-    hop_dong ON dich_vu.ma_dich_vu = hop_dong.ma_hop_dong
-        JOIN
-    loai_dich_vu ON dich_vu.ma_loai_dich_vu = loai_dich_vu.ma_loai_dich_vu
-WHERE
-    hop_dong.ngay_lam_hop_dong > '2021-01-01';
-    
+select dv.ma_dich_vu,dv.ten_dich_vu,dv.dien_tich,dv.chi_phi_thue,ldv.ten_loai_dich_vu,hd.ngay_lam_hop_dong
+from dich_vu as dv
+join loai_dich_vu as ldv on dv.ma_loai_dich_vu = ldv.ma_loai_dich_vu
+join hop_dong as hd on dv.ma_dich_vu = hd.ma_dich_vu
+
+;
+
+
 -- câu 7: 	Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich
 -- so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các loại dịch vụ đã 
 -- từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021.
     
-    SELECT 
+SELECT 
     dich_vu.ma_dich_vu,
     dich_vu.ten_dich_vu,
     dich_vu.dien_tich,
@@ -117,7 +110,7 @@ GROUP BY ho_ten;
 
 -- cách 2
 
-SELECT 
+SELECT DISTINCT
     ho_ten
 FROM
     khach_hang; 
@@ -137,8 +130,8 @@ FROM
 -- bao nhiêu khách hàng thực hiện đặt phòng.
 
 SELECT 
-    MONTH(hop_dong.ngay_lam_hop_dong) AS 'tháng',
-    COUNT(khach_hang.ho_ten) AS 'số lượng khách hàng'
+     MONTH(hop_dong.ngay_lam_hop_dong) AS 'tháng',
+   COUNT(khach_hang.ho_ten) AS 'số lượng khách hàng'
 FROM
     hop_dong
         JOIN
@@ -180,8 +173,8 @@ FROM
     loai_khach lk ON kh.ma_loai_khach = lk.ma_loai_khach
 WHERE
     lk.ten_loai_khach = 'Diamond'
-        AND kh.dia_chi LIKE '%Vinh%'
-        OR kh.dia_chi LIKE '%Quảng Ngãi%';
+        AND (kh.dia_chi LIKE '%Vinh%'
+        OR kh.dia_chi LIKE '%Quảng Ngãi%');
         
 -- 12.	Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu,
 --  so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch vụ đã từng được 
@@ -277,8 +270,85 @@ WHERE nhan_vien.ma_nhan_vien NOT IN (select * from
 -- từ Platinum lên Diamond, chỉ cập nhật những khách hàng 
 -- đã từng đặt phòng với Tổng Tiền thanh toán trong năm 2021 là lớn hơn 10.000.000 VNĐ. 
 
-select hd.ma_hop_dong,kh.ho_ten,kh.ma_khach_hang,lk.ten_loai_khach
-from hop_dong hd
-join khach_hang kh on hd.ma_khach_hang = kh.ma_khach_hang
-join loai_khach lk on kh.ma_khach_hang = lk.ma_loai_khach
-where kh
+
+-- 18.	Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
+
+	delete khach_hang.ma_khach_hang,khach_hang.ho_ten,hop_dong.ma_khach_hang
+	from hop_dong
+	join khach_hang on hop_dong.ma_khach_hang =  khach_hang.ma_khach_hang
+	where year(hop_dong.ngay_lam_hop_dong) <= 2020;
+    
+-- 19.	Cập nhật giá cho các dịch vụ đi kèm được sử dụng trên 10 lần trong năm 2020 lên gấp đôi.
+
+    select dich_vu_di_kem.ma_dich_vu_di_kem,dich_vu_di_kem.ten_dich_vu_di_kem
+    from dich_vu_di_kem
+	join hop_dong_chi_tiet on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem
+    join hop_dong on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+    where year(hop_dong.ngay_lam_hop_dong) <= 2020 and hop_dong_chi_tiet.so_luong >= 10;
+    
+    set sql_safe_updates = 0;
+    update dich_vu_di_kem
+    set gia = gia * 2 
+    where ma_dich_vu_di_kem in ( select ma_dich_vu_di_kem 
+    from hop_dong_chi_tiet hdct
+    join hop_dong hd on hdct.ma_hop_dong = hd.ma_hop_dong
+    where hdct.so_luong >= 10 and year(hd.ngay_lam_hop_dong) <= 2020
+    group by ma_dich_vu_di_kem
+    );
+    
+    -- 20.	Hiển thị thông tin của tất cả các nhân viên và khách hàng có trong hệ thống, 
+    -- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi. 
+    
+    SELECT
+		nv.ma_nhan_vien,
+        nv.ho_ten,nv.email,
+        nv.so_dien_thoai,
+        nv.ngay_sinh,
+        nv.dia_chi
+    FROM nhan_vien AS nv
+UNION ALL
+    SELECT
+		kh.ma_khach_hang,
+        kh.ho_ten,kh.email,
+        kh.so_dien_thoai,
+        kh.ngay_sinh,
+        kh.dia_chi
+    FROM khach_hang AS kh;
+    
+--  21.	Tạo khung nhìn có tên là v_nhan_vien để lấy được thông tin của
+--  tất cả các nhân viên có địa chỉ là “Hải Châu” và đã từng lập hợp đồng cho một hoặc nhiều khách hàng bất kì với ngày lập hợp đồng là “12/12/2019”.
+
+create view v_nhan_vien as
+select nhan_vien.*
+from nhan_vien
+join hop_dong on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+where nhan_vien.dia_chi like '% Hải Châu' and hop_dong.ngay_lam_hop_dong = '2019-12-12';
+ 
+
+
+select *
+from v_nhan_vien;
+
+-- 22.	Thông qua khung nhìn v_nhan_vien thực hiện cập nhật địa chỉ thành “Liên Chiểu” đối 
+-- với tất cả các nhân viên được nhìn thấy bởi khung nhìn này.
+
+update v_nhan_vien
+set dia_chi = 'Liên Chiểu'
+where dia_chi like '%Yên Bái%';
+
+-- 23.	Tạo Stored Procedure sp_xoa_khach_hang dùng để xóa thông tin của một khách hàng 
+-- nào đó với ma_khach_hang được truyền vào như là 1 tham số của sp_xoa_khach_hang. 
+
+delimiter //
+create procedure sp_xoa_khach_hang (ma_khach_hang int)
+begin
+	delete from khach_hang
+    where khach_hang.ma_khach_hang = ma_khach_hang;
+end //
+delimiter ;
+
+
+-- 24.	Tạo Stored Procedure sp_them_moi_hop_dong dùng để thêm mới vào bảng hop_dong với yêu cầu sp_them_moi_hop_dong phải thực 
+-- hiện kiểm tra tính hợp lệ của dữ liệu bổ sung, với nguyên tắc không được trùng khóa chính và đảm bảo toàn vẹn tham chiếu đến các bảng liên quan.
+
+ 
