@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="landing_page.css">
 </head>
 <body style="font-family: 'Segoe UI'">
-<nav class="navbar navbar-light bg-light">
-    <nav class="container">
-        <a class="navbar-brand" href="https://www.microsoft.com/en-us">
+<nav class="navbar navbar-light bg-light ">
+    <nav class="container-fluid">
+        <a class="navbar-brand col-4" href="https://www.microsoft.com/en-us">
             <img src="logomicrosoft.png"
                  width="130" height="50" alt="">
         </a>
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills col-7">
             <li class="nav-item">
                 <a class="nav-link" href="https://www.microsoft.com/en-us/surface">Surface</a>
             </li>
@@ -80,23 +80,21 @@
         </ul>
     </nav>
 </nav>
-<div class="mt-5">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="Surface_Holiday-hero-v3-color_Pro-9-laptop-mode_sapphire_Laptop-5_sage_Desktop.jpg"
-                 class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block " style="text-align: left ; width: 300px">
-                <h1 class="card-title text-dark mt-5">Laptops designed by Microsoft</h1>
-                <div class="mb-4 text-dark">
-                    Can't-miss deals are live. Save big with Cyber Week deals on Surface laptops,
-                    tablets, and 2-in-1 PCs that come equipped with Windows 11.
-                </div>
-                <div class="link-group">
-                    <a style="text-decoration: none" href="#">Surface Pro 9</a>
-                    <a style="text-decoration: none" href="#">Surface Laptop 5</a>
-                    <a style="text-decoration: none" href="#">Shop Surface deals</a>
-                </div>
-            </div>
+<div class="d-flex align-items-center position-relative">
+    <img-1>
+        <img src="Surface_Holiday-hero-v3-color_Pro-9-laptop-mode_sapphire_Laptop-5_sage_Desktop.jpg"
+             class="d-block w-100" alt="...">
+    </img-1>
+    <div class="container position-absolute offset-1 col-3 col-md-4">
+        <h1>Laptops designed by Microsoft</h1>
+        <div class="mb-1">
+            Can't-miss deals are live. Save big with Cyber Week deals on Surface laptops,
+            tablets, and 2-in-1 PCs that come equipped with Windows 11.
+        </div>
+        <div class="link-group">
+            <a style="text-decoration: none" href="#">Surface Pro 9</a>
+            <a style="text-decoration: none" href="#">Surface Laptop 5</a>
+            <a style="text-decoration: none" href="#">Shop Surface deals</a>
         </div>
     </div>
 </div>
