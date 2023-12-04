@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="320fe10d-7140-4c29-bf82-6ae067536b4a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/exc/bai_tap_calculator/src/main/java/com/example/bai_tap_calculator/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/exc/bai_tap_calculator/src/main/java/com/example/bai_tap_calculator/CalculatorServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/exc/bai_tap_list_customer/src/main/java/com/example/bai_tap_list_customer/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/practice/thuc_hanh_convert/src/main/java/com/example/thuc_hanh_convert/ConvertServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/practice/thuc_hanh_dictionary/src/main/java/com/example/thuc_hanh_dictionary/DictionaryServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_03/ss10_jsp_jstl/practice/thuc_hanh_dictionary/src/main/webapp/dictionary.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_03/ss8_bootstrap/exc/bai_tap_landing_page/landing_page.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_03/ss8_bootstrap/exc/bai_tap_landing_page/landing_page.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_03/ss9_web_application_overview/practice/thuc_hanh_convert_money/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module_03/ss9_web_application_overview/practice/thuc_hanh_convert_money/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +38,7 @@
     "WebServerToolWindowFactoryState": "false",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Codegym/C0823G101-TranKimTieuVi/module_02/ss_02",
+    "last_opened_file_path": "D:/Codegym",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -48,6 +56,7 @@
       <updated>1700051066520</updated>
       <workItem from="1700051070532" duration="23000" />
       <workItem from="1700373679214" duration="957000" />
+      <workItem from="1701662155640" duration="40000" />
     </task>
     <servers />
   </component>
