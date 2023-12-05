@@ -48,13 +48,14 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public void editProduct(Product product, int id) {
+    public void editProduct(int id,Product product) {
         for (Product p: products) {
             if (p.getId() == id){
                 p.setName(product.getName());
                 p.setPrice(product.getPrice());
                 p.setDescription(product.getDescription());
                 p.setProducer(product.getProducer());
+                break;
             }
         }
     }

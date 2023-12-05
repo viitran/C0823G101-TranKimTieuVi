@@ -8,38 +8,36 @@
             rel="stylesheet">
 </head>
 <body>
-<fieldset>
-  <legend>Search Product</legend>
-  <input type="text" name="search" placeholder="enter name product">
-  <input type="submit" value="search">
-</fieldset>
-  <hr>
-<c:if test="${products != null}">
-<h3>Found this product </h3>
-<table class="table">
-    <thead>
-    <tr>
-        <th>STT</th>
-        <th>Ten San Pham</th>
-        <th>Gia</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${products}" var="products" varStatus="loop">
-      <tr>
-        <td>${loop.count}</td>
-        <td><a href="/product-servlet?action=details&id=${products.getId()}">${products.name}</a></td>
-        <td>${products.price}</td>
-        <td><a href="/product-servlet?action=delete&id=${products.getId()}">xoa</a>
-          <a href="/product-servlet?action=edit&id=${products.getId()}">sua</a></td>
-      </tr>
-    </c:forEach>
-    </tbody>
-</table>
-</c:if>
-<c:if test="${products == null}">
-  <h3>Can't Found this product</h3>
-</c:if>
+<form method="post">
+    <fieldset>
+        <legend>Search Product</legend>
+        <input type="text" name="search" placeholder="enter name product">
+        <input type="submit" value="search">
+    </fieldset>
+    <a href="/product-servlet"> back</a>
+    <hr>
+    <h3>Found this product </h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>STT</th>
+            <th>Ten San Pham</th>
+            <th>Gia</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${products}" var="products" varStatus="loop">
+            <tr>
+                <td>${loop.count}</td>
+                <td><a href="/product-servlet?action=details&id=${products.getId()}">${products.name}</a></td>
+                <td>${products.price}</td>
+                <td><a href="/product-servlet?action=delete&id=${products.getId()}">xoa</a>
+                    <a href="/product-servlet?action=edit&id=${products.getId()}">sua</a></td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+</form>
 </body>
 <script
         type="text/javascript"

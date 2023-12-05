@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ProductServlet", value = {"","/product-servlet"})
+@WebServlet(name = "ProductServlet", value = {"", "/product-servlet"})
 public class ProductServlet extends HttpServlet {
 
     private IProductService iProductService = new ProductService();
@@ -33,13 +33,13 @@ public class ProductServlet extends HttpServlet {
                 formDelete(req, resp);
                 break;
             case "edit":
-                formEdit(req,resp);
+                formEdit(req, resp);
                 break;
             case "details":
-                formDetails(req,resp);
+                formDetails(req, resp);
                 break;
             case "search":
-                formSearchProduct(req,resp);
+                formSearchProduct(req, resp);
                 break;
             default:
                 showList(req, resp);
@@ -49,7 +49,7 @@ public class ProductServlet extends HttpServlet {
     private void formSearchProduct(HttpServletRequest req, HttpServletResponse resp) {
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("/search.jsp");
         try {
-            requestDispatcher.forward(req,resp);
+            requestDispatcher.forward(req, resp);
         } catch (ServletException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -61,11 +61,11 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         Product products = iProductService.findById(id);
         RequestDispatcher requestDispatcher;
-        if (products != null){
-            req.setAttribute("products",products);
+        if (products != null) {
+            req.setAttribute("products", products);
             requestDispatcher = req.getRequestDispatcher("/details.jsp");
             try {
-                requestDispatcher.forward(req,resp);
+                requestDispatcher.forward(req, resp);
             } catch (ServletException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
@@ -78,18 +78,17 @@ public class ProductServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
         Product products = iProductService.findById(id);
         RequestDispatcher requestDispatcher;
-        if (products != null){
-            req.setAttribute("products",products);
+        if (products != null) {
+            req.setAttribute("products", products);
             requestDispatcher = req.getRequestDispatcher("/edit.jsp");
             try {
-                requestDispatcher.forward(req,resp);
+                requestDispatcher.forward(req, resp);
             } catch (ServletException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
-
     }
 
     private void formDelete(HttpServletRequest req, HttpServletResponse resp) {
@@ -98,7 +97,7 @@ public class ProductServlet extends HttpServlet {
         RequestDispatcher requestDispatcher;
         if (products != null) {
             req.setAttribute("products", products);
-            requestDispatcher  = req.getRequestDispatcher("/delete.jsp");
+            requestDispatcher = req.getRequestDispatcher("/delete.jsp");
             try {
                 requestDispatcher.forward(req, resp);
             } catch (ServletException e) {
@@ -136,10 +135,10 @@ public class ProductServlet extends HttpServlet {
                 removeProduct(req, resp);
                 break;
             case "edit":
-                editProduct(req,resp);
+                editProduct(req, resp);
                 break;
             case "search":
-                searchByName(req,resp);
+                searchByName(req, resp);
                 break;
         }
     }
@@ -147,11 +146,11 @@ public class ProductServlet extends HttpServlet {
     private void searchByName(HttpServletRequest req, HttpServletResponse resp) {
         String name = req.getParameter("search");
         List<Product> products = iProductService.search(name);
-        if (products !=null){
-            req.setAttribute("products",products);
+        if (products != null) {
+            req.setAttribute("products", products);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/search.jsp");
             try {
-                requestDispatcher.forward(req,resp);
+                requestDispatcher.forward(req, resp);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             } catch (ServletException e) {
@@ -166,25 +165,26 @@ public class ProductServlet extends HttpServlet {
         double price = Double.parseDouble(req.getParameter("price"));
         String description = req.getParameter("description");
         String producer = req.getParameter("producer");
-        Product product = iProductService.findById(id);
-        if (product!= null){
-            product.setName(name);
-            product.setPrice(price);
-            product.setDescription(description);
-            product.setProducer(producer);
-            iProductService.editProduct(product,id);
-            req.setAttribute("product",product);
+        Product products = iProductService.findById(id);
+        if (products != null) {
+            products.setName(name);
+            products.setPrice(price);
+            products.setDescription(description);
+            products.setProducer(producer);
+            iProductService.editProduct(id, products);
+            req.setAttribute("products", products);
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("/edit.jsp");
             try {
-                requestDispatcher.forward(req,resp);
-                resp.sendRedirect("/product-servlet");
+                requestDispatcher.forward(req, resp);
             } catch (ServletException e) {
                 throw new RuntimeException(e);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
+
     }
+
 
     private void removeProduct(HttpServletRequest req, HttpServletResponse resp) {
         int id = Integer.parseInt(req.getParameter("id"));

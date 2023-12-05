@@ -5,53 +5,33 @@
 </head>
 <body>
 <h1>Edit Product</h1>
-<fieldset>
-    <legend>Old product information</legend>
-    <table>
-        <tr>
-            <td>Name</td>
-            <td>${products.getName()}</td>
-        </tr>
-        <tr>
-            <td>Price($)</td>
-            <td>${products.getPrice()}</td>
-        </tr>
-        <tr>
-            <td>Description</td>
-            <td>${products.getDescription()}</td>
-        </tr>
-        <tr>
-            <td>producer</td>
-            <td>${products.getProducer()}</td>
-        </tr>
-    </table>
-</fieldset>
-<hr>
+<form method="post">
 <fieldset>
     <legend>Form update product information</legend>
     <table>
         <tr>
             <td>Name:</td>
-            <td><input type="text" name="name" value="${product.getName()}"></td>
+            <td><input type="text" name="name"  value="${products.getName()}"></td>
         </tr>
         <tr>
             <td>Price($):</td>
-            <td><input type="text" name="price" value="${product.getPrice()}"></td>
+            <td><input type="text" name="price"  value="${products.getPrice()}"></td>
         </tr>
         <tr>
             <td>Description:</td>
-            <td><input type="text" name="description" value="${product.getDescription()}"></td>
+            <td><input type="text" name="description"  value="${products.getDescription()}"></td>
         </tr>
         <tr>
             <td>Producer:</td>
-            <td><input type="text" name="producer" value="${product.getProducer()}"></td>
+            <td><input type="text" name="producer"  value="${products.getProducer()}"></td>
         </tr>
         <tr>
             <td></td>
             <td><input type="submit" value="Confirm"></td>
+            <a href="/product-servlet"> back</a>
         </tr>
     </table>
 </fieldset>
-<a href="/product-servlet"> back</a>
+</form>
 </body>
 </html>

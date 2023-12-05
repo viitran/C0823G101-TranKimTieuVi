@@ -9,6 +9,6 @@ public interface IProductRepository {
     void addNewProduct(Product product);
     Boolean deleteProduct(int id);
     Product findById(int id);
-    void editProduct(Product product,int id);
+    void editProduct(int id,Product product);
     List<Product> search(String name);
 }
