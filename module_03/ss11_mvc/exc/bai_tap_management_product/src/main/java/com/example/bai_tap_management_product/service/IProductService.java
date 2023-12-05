@@ -5,6 +5,10 @@ import com.example.bai_tap_management_product.model.Product;
 import java.util.List;
 
 public interface IProductService {
-
     List<Product> showList();
+    void addNewProduct(Product product);
+    Boolean deleteProduct(int id);
+    Product findById(int id);
+    void editProduct(Product product,int id);
+    List<Product> search( String name);
 }

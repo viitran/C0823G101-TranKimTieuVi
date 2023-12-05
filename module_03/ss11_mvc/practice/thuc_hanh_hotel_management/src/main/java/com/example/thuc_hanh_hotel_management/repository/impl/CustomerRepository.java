@@ -1,6 +1,7 @@
-package com.example.thuc_hanh_hotel_management.repository;
+package com.example.thuc_hanh_hotel_management.repository.impl;
 
 import com.example.thuc_hanh_hotel_management.model.Customer;
+import com.example.thuc_hanh_hotel_management.repository.ICustomerRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,9 +27,7 @@ public class CustomerRepository implements ICustomerRepository {
 
     @Override
     public void editCustomer(int id, Customer customer) {
-        if (customers.get(id).equals(id)){
-
-        }
+        customers.add(id,customer);
     }
 
     @Override

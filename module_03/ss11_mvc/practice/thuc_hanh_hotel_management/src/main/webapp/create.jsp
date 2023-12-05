@@ -11,17 +11,31 @@
     <title>create customer</title>
 </head>
 <body>
+<p>
+  <a href="/customers">Back to customer list</a>
+</p>
 <form method="post">
-  <label>Name</label>
-  <input type="text" width="20px" name="name">
-  <br/>
-  <label>Email</label>
-  <input type="text" width="20px" name="email">
-  <br/>
-  <label>Address</label>
-  <input type="text" width="20px" name="address">
-  <br/>
-  <input type="submit" name="accpect">
+  <fieldset>
+    <legend>Customer information</legend>
+    <table>
+      <tr>
+        <td>Name: </td>
+        <td><input type="text" name="name" id="name"></td>
+      </tr>
+      <tr>
+        <td>Email: </td>
+        <td><input type="text" name="email" id="email"></td>
+      </tr>
+      <tr>
+        <td>Address: </td>
+        <td><input type="text" name="address" id="address"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><input type="submit" value="Create customer"></td>
+      </tr>
+    </table>
+  </fieldset>
 </form>
 </body>
 </html>

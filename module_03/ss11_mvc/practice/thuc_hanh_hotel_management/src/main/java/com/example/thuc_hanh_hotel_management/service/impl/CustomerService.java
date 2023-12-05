@@ -1,13 +1,11 @@
-package com.example.thuc_hanh_hotel_management.service;
+package com.example.thuc_hanh_hotel_management.service.impl;
 
 import com.example.thuc_hanh_hotel_management.model.Customer;
-import com.example.thuc_hanh_hotel_management.repository.CustomerRepository;
+import com.example.thuc_hanh_hotel_management.repository.impl.CustomerRepository;
 import com.example.thuc_hanh_hotel_management.repository.ICustomerRepository;
+import com.example.thuc_hanh_hotel_management.service.ICustomerService;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class CustomerService implements ICustomerService {
 

@@ -26,14 +26,12 @@
             <td><c:out value="${c.name}"/></td>
             <td><c:out value="${c.email}"/></td>
             <td><c:out value="${c.address}"/></td>
+            <td><a href="/customer-servlet?action=edit&id=${c.getId()}">edit</a></td>
+            <td><a href="/customer-servlet?action=delete&id=${c.getId()}">delete</a></td>
         </tr>
     </c:forEach>
 </table>
 <br/>
 <a href="/customer-servlet?action=create">Click de them moi </a>
-<br/>
-<a href="/customer-servlet?action=delete">Click de xoa khach hang theo id</a>
-<br/>
-<td><a href="/customer-servlet?action=edit">Click de sua thong tin khach hang</a>
 </body>
 </html>
