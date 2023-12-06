@@ -18,8 +18,8 @@
     </form>
     <button type="button" class="btn btn-outline-dark">
         <a href="/user-servlet?action=create" style="text-decoration: none">Create</a></button>
-    <form action="/user-servlet">
-    <button type="submit" class="btn btn-outline-warning" name="action" value="sort" >Sort</button>
+    <form>
+    <a type="submit" class="btn btn-outline-warning" href="/user-servlet?action=sort" >Sort</a>
     </form>
 </div>
 <hr/>

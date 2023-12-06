@@ -34,22 +34,20 @@ public class UserServlet extends HttpServlet {
             case "delete":
                 deleteUser(req, resp);
                 break;
-            case "search":
-                search(req, resp);
-                break;
-
         }
     }
 
     private void sort(HttpServletRequest req, HttpServletResponse resp) {
 //        String sort = req.getParameter("sort");
         List<User> user = iUserService.sort();
-        if (user != null) {
-            try {
-                resp.sendRedirect("/user-servlet");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        RequestDispatcher dispatcher = req.getRequestDispatcher("/view.jsp");
+        req.setAttribute("user", user);
+        try {
+            dispatcher.forward(req, resp);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -121,8 +119,10 @@ public class UserServlet extends HttpServlet {
             case "delete":
                 formDelete(req, resp);
                 break;
+            case "search":
+                search(req, resp);
+                break;
             case "sort":
-                System.out.println(action);
                 sort(req, resp);
                 break;
             default:

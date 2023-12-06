@@ -12,11 +12,10 @@ public class UserRepository implements IUserRepository {
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/demo";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "123456";
-
     private static final String INSERT = "insert into user(name,email,country) values(?,?,?);";
     private static final String SELECT = "select * from user;";
     private static final String SEARCH = "select * from `user` where name like ? ";
-    private static final String SELECT_BY_ID = "select id,name,email,country from user where id=?;";
+    private static final String SELECT_BY_ID = "select id,name,email,country from user where id = ?;";
     private static final String DELETE = "delete from `user` where `user`.id = ?;";
     private static final String SORT = "select * from `user` order by `name`;";
     private static final String UPDATE = " update `user` set name = ? , email = ? , country = ? where id = ? ;";
