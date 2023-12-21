@@ -74,8 +74,10 @@ public class ProductController {
     }
 
     @PostMapping ("/search")
-    public String search(@RequestParam String name, Model model){
-        model.addAttribute("products",iProductService.search(name));
-        return "redirect:/search";
+    public String search(@RequestParam("name") String name, Model model){
+        List<Product> products = iProductService.search(name);
+        System.out.println(products.size());
+        model.addAttribute("products",products);
+        return "/search";
     }
 }
