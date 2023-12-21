@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<h3>List student Codegym Da Nang</h3>
+<br/>
+<a th:href="@{create}" type="button" class="btn btn-secondary" data-mdb-ripple-init>Create student</a>
+<a th:href="@{sort}" type="button" class="btn btn-secondary" data-mdb-ripple-init>Sort by age</a>
+<a th:href="@{list-by-gender}" type="button" class="btn btn-secondary" data-mdb-ripple-init>show list by gender</a>
+<hr/>
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>ten</th>
+        <th>gioi tinh</th>
+        <th>tuoi</th>
+        <th>dia chi</th>
+        <th>hoat dong</th>
+    </tr>
+    <tr th:each="students,loop:${students}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${students.getName()}"></td>
+        <td th:text="${students.getGender()}"></td>
+        <td th:text="${students.getAge()}"></td>
+        <td th:text="${students.getAddress()}"></td>
+        <td><a th:href="@{/{id}/edit(id=${students.getId()})}" type="button" class="btn btn-warning" data-mdb-ripple-init>
+            Chỉnh sửa</a>
+            &nbsp;
+            <a th:href="@{/{id}/delete(id=${students.getId()})}" type="button" class="btn btn-danger" data-mdb-ripple-init>
+                Xoá</a>
+        </td>
+    </tr>
+</table>
+<footer th:insert="/layout::footer"></footer>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>
