@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Configuration</title>
+</head>
+<body>
+<h1>Email Configuration</h1>
+<form th:action="@{/config}" th:object="${config}" method="post">
+    <table>
+        <tr>
+            <td>Language:</td>
+            <td> <select th:field="*{language}">
+                <option value="English">English</option>
+                <option value="Vietnamese">Vietnamese</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Chinese">Chinese</option>
+            </select></td>
+        </tr>
+        <tr>
+        <td>Page Size:</td>
+       <td> <select th:field="*{pageSize}">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        emails per page
+       </td>
+        </tr>
+    <tr>
+        <td>Spam filter:</td>
+        <td>
+            <input type="checkbox" name="spamsFilter" id="spamsFilter">Enable spam filter
+        </td>
+    </tr>
+    <tr>
+        <td>Signature:</td>
+        <td><textarea th:field="*{signature}"></textarea></td>
+    </tr>
+        <tr>
+            <td>    <button type="submit">Save Configuration</button>
+            </td>
+            <td>    <button type="submit">Cancel</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<hr/>
+<h2>Language: <span th:text="${config.language}"></span></h2>
+<h2>Page Size: <span th:text="${config.pageSize}"></span></h2>
+<h2>Spams filter: <span th:text="${config.spamsFilter}"></span></h2>
+<h2>Signature: <span th:text="${config.signature}"></span></h2>
+</body>
+</html>
