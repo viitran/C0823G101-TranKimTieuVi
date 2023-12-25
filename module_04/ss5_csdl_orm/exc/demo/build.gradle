@@ -34,10 +34,8 @@ dependencies {
   implementation group: 'nz.net.ultraq.thymeleaf', name: 'thymeleaf-layout-dialect', version: '1.2'
   testImplementation("org.junit.jupiter:junit-jupiter-api:1.0")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:1.0")
-  // hibernate
   implementation group: 'org.hibernate', name: 'hibernate-core', version: '5.4.3.Final'
   implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
-//    JPA
   implementation group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.3.0.Final'
   implementation group: 'org.springframework', name: 'spring-orm', version: '4.3.17.RELEASE'
 

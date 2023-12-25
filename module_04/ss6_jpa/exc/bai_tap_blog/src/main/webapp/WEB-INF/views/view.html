@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+  />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<h3>Blog</h3>
+<br/>
+<form>
+  <table class="table">
+    <thead class="table-light"></thead>
+    <tbody>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+    <tr th:each="blog,loop : ${blog}">
+      <td th:text="${loop.count}"></td>
+      <td th:text="${blog.getName()}"></td>
+      <td th:text="${blog.getAuthor()}"></td>
+      <td><a th:href="@{/{id}/edit(id=${blog.getId()})}">edit</a> -
+        <a th:href="@{/{id}/delete(id=${blog.getId()})}">delete</a>
+        - <a th:href="@{/{id}/details(id=${blog.getId()})}">details</a></td>
+    </tr>
+    </tbody>
+  </table>
+  <a th:href="create">add new blog</a>
+</form>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

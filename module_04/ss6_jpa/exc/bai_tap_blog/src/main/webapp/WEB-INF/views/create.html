@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Create Blog</h3>
+<a th:href="@{/}">Back to list</a>
+<form th:action="@{create}" th:object="${blog}" method="post">
+  <fieldset>
+    <legend>Blog</legend>
+    name : <input type="text" name="name" placeholder="Enter name blog" required>
+    <br/>
+    content : <textarea name="content" placeholder="Enter content" required></textarea>
+    <br/>
+    author : <input type="text" name="author" placeholder="enter author" required>
+    <br/>
+    <input type="submit" value="create">
+  </fieldset>
+</form>
+</body>
+</html>
