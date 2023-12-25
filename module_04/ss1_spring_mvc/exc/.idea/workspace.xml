@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ab4dbb1-67f9-4b8f-8ea4-7dbab2d10733" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/controller/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/model/ProductDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/model/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/repository/BaseGameRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/java/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/webapp/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Case_study/module_03/demo2/src/main/webapp/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/controller/SpendingServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/model/Spending.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/model/SpendingDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/model/SpendingType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/repository/ISpendingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/repository/impl/SpendingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/service/ISpendingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/java/service/impl/SpendingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/webapp/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Exam_module/module_03/exam/src/main/webapp/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/webapp/WEB-INF/views/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/webapp/WEB-INF/views/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_customer_management/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_spring_greeting/src/main/java/com/example/controller/GreetingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_spring_greeting/src/main/webapp/WEB-INF/applicationContext.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_spring_greeting/src/main/webapp/WEB-INF/dispatcher-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../practice/thuc_hanh_spring_greeting/src/main/webapp/WEB-INF/views/hello.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module_02/ss_02/src/ss16_file_java/draft/test" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module_02/ss_02/src/ss16_file_java/draft/test" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module_02/ss_02/src/ss17_binary_file_serialization_java/exc/bai_tap_quan_ly_san_pham/data/input" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module_02/ss_02/src/ss17_binary_file_serialization_java/exc/bai_tap_quan_ly_san_pham/data/input" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../module_03/ss13_jdbc_querying_transaction/exc/bai_tap_goi_mysql_sp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../module_03/ss13_jdbc_querying_transaction/exc/bai_tap_goi_mysql_sp/.idea/gradle.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2ZitnGzRyQc7BxodF3q48VbGZ3x" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Codegym/C0823G101-TranKimTieuVi/module_04/ss1_spring_mvc/exc",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ab4dbb1-67f9-4b8f-8ea4-7dbab2d10733" name="Changes" comment="" />
+      <created>1702916893104</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702916893104</updated>
+      <workItem from="1702916894110" duration="42000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
