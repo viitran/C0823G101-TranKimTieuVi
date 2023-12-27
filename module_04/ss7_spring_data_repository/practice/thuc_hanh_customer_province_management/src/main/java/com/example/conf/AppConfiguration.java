@@ -1,6 +1,7 @@
-package com.example.configuration;
+package com.example.conf;
 
-
+import com.example.fomatter.ProvinceFormatter;
+import com.example.service.impl.ProvinceService;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
@@ -46,7 +48,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
         templateResolver.setApplicationContext(applicationContext);
-        templateResolver.setPrefix("/WEB-INF/views");
+        templateResolver.setPrefix("/WEB-INF");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
@@ -91,7 +93,7 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/student");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/customer_province");
         dataSource.setUsername("root");
         dataSource.setPassword("123456");
         return dataSource;
@@ -111,4 +113,8 @@ public class AppConfiguration implements WebMvcConfigurer, ApplicationContextAwa
         return properties;
     }
 
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(new ProvinceFormatter(applicationContext.getBean(ProvinceService.class)));
+    }
 }
