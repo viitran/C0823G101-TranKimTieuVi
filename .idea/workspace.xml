@@ -5,27 +5,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="320fe10d-7140-4c29-bf82-6ae067536b4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/conf/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/conf/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/controller/BlogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/model/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/repository/BlogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/repository/IBlogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/service/BlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/java/com/example/service/IBlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/webapp/WEB-INF/views/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/bai_tap_blog/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/conf/AppConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/conf/AppInitializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/controller/BlogController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/model/Blog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/repository/BlogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/repository/IBlogRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/service/BlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss6_jpa/exc/blog/src/main/java/com/example/service/IBlogService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_04/ss5_csdl_orm/exc/demo/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss5_csdl_orm/exc/demo/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/demo_spring_boot/src/main/java/com/example/demo_spring_boot/DemoSpringBootApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/demo_spring_boot/src/main/java/com/example/demo_spring_boot/controller/BaoTrapController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/demo_spring_boot/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/src/main/java/com/example/model/Classroom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/conf/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/conf/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/dto/BlogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/service/IGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/service/impl/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/java/com/example/service/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/webapp/WEB-INF/views/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/webapp/WEB-INF/views/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/blog/src/main/webapp/WEB-INF/views/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/dto/BlogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/service/IGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/service/impl/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/service/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/search.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/conf/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/conf/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/controller/ProvinceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/fomatter/ProvinceFormatter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/model/Province.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/repository/IProvinceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/service/IGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/service/IProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/service/impl/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/java/com/example/service/impl/ProvinceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/customer/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/customer/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/customer/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/error_404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/province/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/province/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/practice/thuc_hanh_customer_province_management/src/main/webapp/WEB-INF/province/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/src/main/java/com/example/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/src/main/java/com/example/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/src/main/java/com/example/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss3_views_thymeleaf/exc/bai_tap_them_student/src/main/java/com/example/model/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,21 +83,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codegym&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Codegym/C0823G101-TranKimTieuVi/module_04",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,6 +113,7 @@
       <workItem from="1701747800341" duration="211000" />
       <workItem from="1702863513637" duration="1229000" />
       <workItem from="1703497660431" duration="162000" />
+      <workItem from="1703609378944" duration="12000" />
     </task>
     <servers />
   </component>

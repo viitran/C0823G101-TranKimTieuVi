@@ -63,8 +63,14 @@ public class BlogController {
 
     @GetMapping("/{id}/edit")
     public String update(@PathVariable int id, Model model) {
-        model.addAttribute("blog", iBlogService.findById(id));
+        model.addAttribute("blog", iBlogService.findById(id).get());
         return "/edit";
+    }
+
+    @PostMapping("/edit")
+    public String edit(Blog blog){
+        iBlogService.save(blog);
+        return "redirect:/";
     }
 
 

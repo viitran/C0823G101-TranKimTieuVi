@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+          crossorigin="anonymous">
+</head>
+<body>
+<br/>
+<div style="text-align: center">
+    <a th:href="@{/create}" type="button" class="btn btn-outline-success">Create Song</a>
+</div>
+<br/>
+<table class="table table-striped table-hover">
+    <tr>
+        <th>#</th>
+        <th>Name Song</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>
+    <tr th:each="songs,loop:${song}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${songs.getName()}"></td>
+        <td th:text="${songs.getAuthor()}"></td>
+        <td th:text="${songs.getCategory()}"></td>
+        <td><a th:href="@{/{id}/edit(id=${songs.getId()})}" type="button"
+               class="btn btn-outline-primary">Edit</a>---
+            <a th:href="@{/{id}/delete(id=${songs.getId()})}" type="button"
+               class="btn btn-outline-danger">Delete</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</html>

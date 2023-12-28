@@ -17,7 +17,7 @@
      content : <textarea type="text" placeholder="enter content" th:field="*{content}" required></textarea>
      <br/>
 
-     <select th:field="*{category}">
+     category <select th:field="*{category}">
          <option th:each="cate:${categories}" th:text="${cate.name}" th:value="${cate.id}"></option>
      </select>
  </div>

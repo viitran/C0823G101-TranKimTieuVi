@@ -42,10 +42,4 @@ public class BlogService implements IBlogService {
     public Page<Blog> find(Pageable pageable, String name) {
         return iBlogRepository.findAllByName (pageable, "%" + name + "%");
     }
-
-    @Override
-    public Comparator<Blog> sort(Blog b, Blog b2) {
-        return null;
-    }
-
 }
