@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a th:href="@{/}">Back to list</a>
+<form th:action="@{/details}">
+  <fieldset>
+    <legend>information</legend>
+    <div>
+      <label>Name</label>
+      <input th:value="${blog.getName()}"/>
+    </div>
+    <div>
+      <label >content</label>
+      <textarea th:text="${blog.getContent()}"> </textarea>
+    </div>
+    <div>
+      <label>Date</label>
+      <input th:value="${blog.getbDate()}"/>
+    </div>
+    <div>
+      <label>Category</label>
+      <input  th:value="${blog.getCategory().getName()}"/>
+    </div>
+  </fieldset>
+</form>
+</body>
+</html>

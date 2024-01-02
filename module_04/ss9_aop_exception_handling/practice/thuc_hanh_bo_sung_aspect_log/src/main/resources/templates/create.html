@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<br/>
+<a th:href="@{/}">Back to list</a>
+<form th:action="@{/create}" th:object="${customers}" method="post">
+    <table>
+        <tr>
+            <td>
+                name : <input type="text" placeholder="Enter name blog" th:field="*{name}" required>
+            </td>
+            <td>
+                date : <input type="date" th:field="*{email}" required>
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="create">
+</form>
+
+</body>
+</html>

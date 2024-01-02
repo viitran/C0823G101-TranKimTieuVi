@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<a th:href="@{/}">Back to list</a>
+<form th:action="@{/details}">
+  <fieldset>
+    <legend>information</legend>
+    <div>
+      <label>Name</label>
+      <input th:value="${customer.getName()}"/>
+    </div>
+    <div>
+      <label >Email</label>
+      <input th:text="${customer.getEmail()}">
+    </div>
+  </fieldset>
+</form>
+</body>
+</html>

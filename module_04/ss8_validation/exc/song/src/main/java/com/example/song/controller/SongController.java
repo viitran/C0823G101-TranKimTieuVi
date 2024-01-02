@@ -22,7 +22,7 @@ public class SongController {
     @GetMapping("/")
     public String showList(Model model){
         List<Song> list = (List<Song>) iSongService.findAll();
-        model.addAttribute("songs",list);
+        model.addAttribute("song",list);
         return "/home";
     }
 
@@ -34,11 +34,12 @@ public class SongController {
 
     @PostMapping("/validation")
     public String checkValidation(@Validated @ModelAttribute("song") Song song,
-                                  BindingResult bindingResult) {
+                                  BindingResult bindingResult,Model model) {
         if (bindingResult.hasFieldErrors()) {
             return "/create";
         }
         iSongService.save(song);
+        model.addAttribute("message","Đăng kí thành công");
         return ("/home");
     }
 

@@ -26,6 +26,7 @@ public class Song {
     @NotEmpty(message = "Không được bỏ trống")
     @Pattern(regexp = "^[\\p{L}\\d ]+$", message = "Không chứ kí tự đặt biệt")
     @Pattern(regexp = "^([\\p{Lu}][\\p{Ll}]{1,8})(\\s([\\p{Lu}]|[\\p{Lu}][\\p{Ll}]{1,10})){0,5}$", message = " Thể loại nhập sai")
+    @Pattern(regexp = "^[\\w+[\\s\\,]*]+$", message = "khong duoc phep chua ki tu dac biet ngoai tru dau phay!!")
     private String category;
 
     public Song() {
