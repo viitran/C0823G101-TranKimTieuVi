@@ -49,6 +49,13 @@ public class BlogController {
         return "/home";
     }
 
+    @GetMapping("/category")
+    public String findAllCate(Model model){
+        List<Category> categories =  getAllCategories();
+        model.addAttribute("categories",categories);
+        return "/category";
+    }
+
     @GetMapping("/create")
     public String formCreate(Model model) {
         model.addAttribute("blog", new Blog());

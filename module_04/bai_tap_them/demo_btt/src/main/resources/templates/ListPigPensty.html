@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"><head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+  />
+</head>
+<body>
+<h3>Quản lý chuồng</h3>
+<br/>
+<a th:href="@{/create-cage}" type="button" class="btn btn-outline-secondary"
+        data-mdb-ripple-init data-mdb-ripple-color="dark">Xây thêm chuồng</a>
+<br/>
+<br/>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Tên chuồng Lợn</th>
+  </tr>
+  </thead>
+  <tbody class="table-group-divider table-divider-color">
+  <tr th:each="cage,loop : ${cage}">
+    <td th:text="${loop.count}"></td>
+    <td th:text="${cage.name}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

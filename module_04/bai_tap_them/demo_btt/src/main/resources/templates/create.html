@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+          rel="stylesheet"
+  />
+</head>
+<body>
+<a th:href="@{/home}" type="button" class="btn btn-outline-secondary"
+        data-mdb-ripple-init data-mdb-ripple-color="dark">Quay lại trang chủ</a>
+<form th:object="${pig}" method="post" th:action="@{/create}">
+<fieldset>
+  <legend>Phiếu nhập thông tin nhập khẩu lợn</legend>
+  <label>Tên lợn</label>
+  <input type="text" th:field="*{name}">
+  <br/>
+  <br/>
+  <label>Tuổi</label>
+  <input type="text" th:field="*{age}">
+  <br/>
+  <br/>
+  <label>Trọng lượng</label>
+  <input type="text" th:field="*{weight}">
+  <br/>
+  <br/>
+  <label>Giới tính</label>
+  <input type="text" th:field="*{gender}">
+  <br/>
+  <br/>
+  <label>Chuồng: </label>
+  <select th:field="*{pigPensty}">
+    <option th:each="p:${cage}" th:text="${p.name}" th:value="${p.id}"></option>
+  </select>
+  <br/>
+  <br/>
+  <input type="submit" value="create">
+</fieldset>
+</form>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

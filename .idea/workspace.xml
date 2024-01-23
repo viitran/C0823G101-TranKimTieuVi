@@ -5,37 +5,80 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="320fe10d-7140-4c29-bf82-6ae067536b4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/controller/BorrowBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/BorrowBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IBorrowBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IUserBorrowBookRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IBorrowBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IGenerationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/BorrowBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/listBorrowBooks.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/repository/ICustomerRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/CustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/ICustomerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/IGenerationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/delete.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/edit.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/module_04/ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/java/com/example/song/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/java/com/example/song/controller/SongController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/java/com/example/song/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/java/com/example/song/model/Song.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss8_validation/exc/song/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/controller/CountryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/controller/homeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/model/City.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/model/Country.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/repository/ICityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/repository/ICountryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/service/ICityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/service/ICountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/service/impl/CityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/java/com/example/module_04/service/impl/CountryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/listCountry.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Exam_module/module_04/src/main/resources/templates/views.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/controller/PigController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/model/Pig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/model/PigPensty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/repository/IPigPenstyRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/repository/IPigRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/service/IPigPenstyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/service/IPigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/service/PigPenstyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/java/com/example/demo_btt/service/PigService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/resources/templates/ListPigPensty.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/resources/templates/createPensty.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/bai_tap_them/demo_btt/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/MyBlogApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/controller/BlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/controller/ResfulController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/model/Blog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/repository/IBlogRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/service/IBlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/service/IGenerateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/service/impl/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/java/com/example/myblog/service/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/static/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/category.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/exc/my-blog/src/test/java/com/example/myblog/MyBlogApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/java/com/example/thuc_hanh/controller/SmartphoneController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/java/com/example/thuc_hanh/model/Smartphone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/java/com/example/thuc_hanh/repository/ISmartphoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/java/com/example/thuc_hanh/service/ISmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/java/com/example/thuc_hanh/service/SmartphoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/resources/static/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/resources/static/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuc_hanh/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss12_jquery_ajax/prac/thuchanh.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/category.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_02/ss_02/src/ss1_introduction_java/exc/Currency.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_02/ss_02/src/ss1_introduction_java/exc/Currency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss4_data_binding_form/practice/thuc_hanh_login/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss4_data_binding_form/practice/thuc_hanh_login/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/controller/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/java/com/example/myblog/controller/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/module_04/ss7_spring_data_repository/exc/my-blog/src/main/resources/templates/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,21 +96,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Codegym/C0823G101-TranKimTieuVi/module_04&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Codegym/C0823G101-TranKimTieuVi/module_05",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,6 +128,10 @@
       <workItem from="1703497660431" duration="162000" />
       <workItem from="1703609378944" duration="12000" />
       <workItem from="1704105219622" duration="34000" />
+      <workItem from="1704288706166" duration="1109000" />
+      <workItem from="1705373067197" duration="56000" />
+      <workItem from="1705842838951" duration="415000" />
+      <workItem from="1705856243955" duration="44000" />
     </task>
     <servers />
   </component>

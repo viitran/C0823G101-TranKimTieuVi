@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<h3>Danh sach thanh pho</h3>
+<a th:href="@{/create}" type="button" class="btn btn-outline-secondary"
+   data-mdb-ripple-init data-mdb-ripple-color="dark">Thêm mơi </a>
+<br/>
+<br/>
+<a th:href="@{/country}" type="button" class="btn btn-outline-secondary"
+   data-mdb-ripple-init data-mdb-ripple-color="dark">Danh sach quoc gia</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Thanh Pho</th>
+        <th scope="col">Quoc gia</th>
+        <th scope="col">Hoat dong</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+    <tr th:each="tp,loop:${cities}">
+        <td th:text="${loop.count}"></td>
+        <td><a th:href="@{/{id}/views(id=${tp.id})}" th:text="${tp.ten}"></a></td>
+        <td th:text="${tp.country.name}"></td>
+        <td><a th:href="@{/{id}/edit(id=${tp.id})}" type="button" class="btn btn-outline-secondary"
+               data-mdb-ripple-init data-mdb-ripple-color="dark">Chinh sua</a></td>
+        <td><a th:href="@{/{id}/delete(id=${tp.id})}" type="button" class="btn btn-outline-secondary"
+               data-mdb-ripple-init data-mdb-ripple-color="dark">Xoa</a></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${city}" method="post" style="margin-top: 100px;text-align: center">
+    <fieldset>
+        <legend>form thêm mới</legend>
+        <label>Tên</label>
+        <input type="text" th:field="*{ten}">
+        <br/>
+        <br/>
+        <label>Dien tich</label>
+        <input type="text" th:field="*{dienTich}">
+        <br/>
+        <br/>
+        <label>Dan so</label>
+        <input type="text" th:field="*{danSo}">
+        <br/>
+        <br/>
+        <label>GDP</label>
+        <input type="text" th:field="*{GDP}">
+        <br/>
+        <br/>
+        <label>Gioi thieu</label>
+        <textarea th:field="*{moTa}"></textarea>
+        <br/>
+        <br/>
+        <label>Quoc gia</label>
+        <input th:field="*{country.name}">
+        <br/>
+        <br/>
+        <input type="submit" value="delete">
+        <a th:href="@{/}" type="button">Thoat</a>
+    </fieldset>
+</form>
+
+</body>
+</html>

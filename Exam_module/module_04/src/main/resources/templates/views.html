@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<form th:object="${city}" method="post" style="margin-top: 100px;text-align: center">
+    <fieldset>
+        <legend>Chi tiet thanh pho</legend>
+        <label>Tên</label>
+        <input th:field="*{ten}">
+        <br/>
+        <br/>
+        <label>Dien tich</label>
+        <input th:field="*{dienTich}">
+        <br/>
+        <br/>
+        <label>Dan so</label>
+        <input th:field="*{danSo}">
+        <br/>
+        <br/>
+        <label>GDP</label>
+        <input th:field="*{GDP}">
+        <br/>
+        <br/>
+        <label>Gioi thieu</label>
+        <textarea th:field="*{moTa}"></textarea>
+        <br/>
+        <br/>
+        <label>Quoc gia</label>
+        <input th:field="*{country.name}">
+        <br/>
+        <br/>
+        <a th:href="@{/}" type="button">Thoat</a>
+    </fieldset>
+</form>
+</body>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

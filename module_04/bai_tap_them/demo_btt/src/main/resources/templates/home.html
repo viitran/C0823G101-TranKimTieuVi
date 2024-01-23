@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.min.css"
+            rel="stylesheet"
+    />
+</head>
+<body>
+<h3>Quản lý chuồng</h3>
+<br/>
+<br/>
+<a th:href="@{/create}" type="button" class="btn btn-outline-secondary"
+        data-mdb-ripple-init data-mdb-ripple-color="dark">Thêm mơi lợn</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên Lợn</th>
+        <th scope="col">Trọng Lượng</th>
+        <th scope="col">Tuổi</th>
+        <th scope="col">Giới tính</th>
+        <th scope="col">Chuồng hiện tại</th>
+        <th scope="col">Hành động</th>
+    </tr>
+    </thead>
+    <tbody class="table-group-divider table-divider-color">
+    <tr th:each="p,loop : ${pigs}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${p.name}"></td>
+        <td th:text="${p.weight}"></td>
+        <td th:text="${p.age}"></td>
+        <td th:text="${p.gender}"></td>
+        <td th:text="${p.pigPensty.getName()}"></td>
+        <td><a th:href="@{/{id}/edit(id=${p.id})}" type="button" class="btn btn-outline-secondary"
+               data-mdb-ripple-init data-mdb-ripple-color="dark">Cập nhật</a></td>
+        <td><a type="button"
+               th:attr="onclick=|onDeleteHandler('${p.id}','${p.weight}' )|" class="btn btn-primary" data-mdb-ripple-init data-mdb-modal-init data-mdb-target="#staticBackdrop">
+            Bán
+        </a></a></td>
+    </tr>
+    </tbody>
+</table>
+
+<span th:each="pageNumber : ${#numbers.sequence(1, pigs.totalPages)}">
+    <span th:if="${pigs.number == pageNumber -1}">
+        <a class="btn btn-primary" th:href="@{'/'(page=${pageNumber - 1})}" th:text="${pageNumber}"></a>
+    </span>
+    <span th:if="${pigs.number != pageNumber -1}">
+        <a class="btn btn-light" th:href="@{'/'(page=${pageNumber - 1})}" th:text="${pageNumber}"></a>
+    </span>
+</span>
+
+<div
+        class="modal fade"
+        id="staticBackdrop"
+        data-mdb-backdrop="static"
+        data-mdb-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="/delete" method="post">
+            <div class="modal-body">
+                <input type="hidden" name="action" value="delete">
+                <input type="hidden" name="idDelete" value="idDelete">
+                Bạn có muốn chắc bán con lợn tên <span id="nameDelete"></span>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-secondary" data-mdb-ripple-init data-mdb-dismiss="modal">Huỷ</a>
+                <a type="submit" class="btn btn-primary" data-mdb-ripple-init>Bán</a>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    function onDeleteHandler(id, name) {
+        document.getElementById("idDelete").value = id;
+        document.getElementById("nameDelete").innerHTML = name;
+    }
+</script>
+<script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.1.0/mdb.umd.min.js"
+></script>
+</html>

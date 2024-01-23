@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bdc5da44-c406-4e21-8584-062d04da81b0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/repository/ICartRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/repository/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/ICartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/IGenerationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/impl/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/impl/CategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/java/com/example/btt_01/service/impl/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../bai_tap_them/btt_01/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/controller/ShoppingController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/repository/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/service/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/java/com/example/demo/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/resources/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/resources/templates/error_404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss10_session_cookie/prac/demo/src/main/resources/templates/shop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/config/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../demo/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/config/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/config/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/controller/BorrowBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/BorrowBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IBorrowBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/repository/IUserBorrowBookRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IBorrowBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IGenerationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/BookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/BorrowBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/java/com/example/bai_tap/service/impl/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/exc/bai_tap/src/main/resources/templates/listBorrowBooks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/java/com/example/thuc_hanh_bo_sung_aspect_log/service/IGenerationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/delete.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/details.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9_aop_exception_handling/practice/thuc_hanh_bo_sung_aspect_log/src/main/resources/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/java/com/example/song/controller/SongController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/java/com/example/song/controller/SongController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/java/com/example/song/model/Song.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/java/com/example/song/model/Song.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss8_validation/exc/song/src/main/resources/templates/home.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AppConfiguration" />
+        <option value="AppInitializer" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectId" id="2aOKnIbjKXjSQupArrefylqto98" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Codegym/C0823G101-TranKimTieuVi/module_04/ss7_spring_data_repository/exc/my-blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Codegym\C0823G101-TranKimTieuVi\module_04\ss11_web_service_restful\prac\thuchanh\src\main\java\com\example\thuchanh" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.83" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.83" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : com.example : thuchanh-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="ac2fadd5-8fbb-4845-9cda-04806414cfe9" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="65142" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.example : thuchanh-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="bdc5da44-c406-4e21-8584-062d04da81b0" name="Changes" comment="" />
+      <created>1704184353174</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1704184353174</updated>
+      <workItem from="1704184354196" duration="3400000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
