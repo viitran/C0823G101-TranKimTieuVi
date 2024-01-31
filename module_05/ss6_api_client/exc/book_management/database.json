@@ -1,0 +1,24 @@
+{
+  "books": [
+    {
+      "id": "1",
+      "title": "Cay cam ngot cua toi",
+      "quantity": "3"
+    },
+    {
+      "id": "2",
+      "title": "Ngoi nha bi an",
+      "quantity": "4"
+    },
+    {
+      "id": "3",
+      "title": "Thien tai ben phai, ke dien ben trai",
+      "quantity": "10"
+    },
+    {
+      "id": "d8ac",
+      "title": "",
+      "quantity": ""
+    }
+  ]
+}
