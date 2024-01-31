@@ -26,11 +26,20 @@ export const remove = async (id)=>{
     }
 };
 
-export const findById = async (book)=>{
+export const findById = async (id)=>{
     try {
-        const result = await axios.put(`http://localhost:8080/books/${book.id}`,book);
+        const result = await axios.get(`http://localhost:8080/books/${id}`);
         return result.data;
     } catch (error) {
      console.log(error.message);   
+    }
+}
+
+export const update = async (book)=>{
+    try {
+        const result = await axios.put(`http://localhost:8080/books/${book.id}`, book);
+        return result.data;
+    } catch (error) {
+        console.log(error.message);
     }
 }

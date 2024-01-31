@@ -13,6 +13,7 @@ function ListBook() {
       try {
         await bookService.remove(id);
         navigate("/");
+        // tại sao navigate không ăn ? phải f5 lại mới hiển thị nó đã xoá
       } catch (error) {
         console.log(error);
       }

@@ -1,21 +1,47 @@
 import { Form, Field, Formik } from "formik";
 import { useEffect, useState } from "react";
 import * as bookService from "../Service/BookService";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 function BookUpdate() {
-  const params = useParams();
-  const [book,setBook] = useState();
+  const { id } = useParams();
+  const [book, setBook] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(() =>{
-    const {id} = params;
-    if (params && id) {
-     bookService.findById(id)
-    }
-  })
+  useEffect(() => {
+    const fetchData = async () => {
+      // const { id } = params;
+      // if (params && id) {
+      try {
+        const res = await bookService.findById(id);
+        setBook(res);
+      } catch (error) {
+        console.error(error);
+      }
+      // }
+    };
+
+    fetchData();
+  }, [id]);
 
   return (
     <div>
-      <Formik>
+      <Formik
+      // tại sao phải có dòng 30 mới binding được? 
+      // tại sao kh initialValues = {{book}} mà không binding được ?
+        enableReinitialize={true} 
+        initialValues={{
+          id: book.id,
+          title: book.title,
+          quantity: book.quantity,
+        }}
+        onSubmit={(values) => {
+          const bookUpdate = async (book) => {
+            await bookService.update(book);
+            navigate("/");
+          };
+          bookUpdate(values);
+        }}
+      >
         <div>
           <Form>
             <div className="row g-3 align-items-center">
@@ -29,6 +55,7 @@ function BookUpdate() {
                   className="form-control"
                   id="inputTitleBook"
                   type="text"
+                  name="title"
                 />
               </div>
               <div className="col-auto">
@@ -41,6 +68,7 @@ function BookUpdate() {
                   className="form-control"
                   id="inputQuantity"
                   type="text"
+                  name="quantity"
                 />
               </div>
               <div className="col-auto">
@@ -56,5 +84,3 @@ function BookUpdate() {
   );
 }
 export default BookUpdate;
-
-
