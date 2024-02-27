@@ -1,26 +1,23 @@
 import  {Component} from 'react';
-import "bootstrap/dist/css/bootstrap.css";
 
 class Student extends Component {
     constructor(props) {
         super(props);
         this.state={
             students : [
-                {id:1,Name : "Vi Trần",Age:19,Address: "Côn Đảo"},
-                {id:2,Name : "Vi",Age:19,Address: "280 Trần Hưng Đạo"}
+                {id:1,Name : "Nguyễn Văn A",Age:30,Address: " Hà Nội"}
             ]
         }
     }
     render() {
         return (
-            <div>
-            <h1>Danh sách sinh viên</h1>
+            <>
                 <table>
                     <tr>
                         <td>ID</td>
-                        <td>Tên</td>
-                        <td>Tuổi</td>
-                        <td>Địa chỉ</td>
+                        <td>Name</td>
+                        <td>Age</td>
+                        <td>Address</td>
                     </tr>
                     {this.state.students.map(student =>(
                         <tr key={student.id}>
@@ -31,9 +28,9 @@ class Student extends Component {
                         </tr>
                     ))}
                 </table>
-            </div>
+            </>
         );
     }
 }
 
-export default Student; 
+export default Student;

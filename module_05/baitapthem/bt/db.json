@@ -1,0 +1,76 @@
+{
+  "spotify": [
+    {
+      "id": "1",
+      "title": "Shape of You",
+      "artist": "Ed Sheeran",
+      "composer": "Ed Sheeran",
+      "duration": "3:53",
+      "favorites": 100,
+      "status": 0
+    },
+    {
+      "id": "2",
+      "title": "Gone",
+      "artist": "Rosé",
+      "composer": "Rosé",
+      "duration": "3:41",
+      "favorites": 150,
+      "status": 0
+    },
+    {
+      "id": "3",
+      "title": "People",
+      "artist": "Libianca",
+      "composer": "Libianca",
+      "duration": "3:17",
+      "favorites": 800,
+      "status": 0
+    },
+    {
+      "id": "4",
+      "title": "I love you so",
+      "artist": "The Waltes",
+      "composer": "The Waltes",
+      "duration": "2:40",
+      "favorites": 120,
+      "status": 0
+    },
+    {
+      "id": "ec21",
+      "title": "Đánh đổi",
+      "artist": "Obito ft.MCK",
+      "composer": "Obito",
+      "duration": "03:47",
+      "favorites": "1111",
+      "status": 1
+    },
+    {
+      "id": "6320",
+      "title": "a",
+      "artist": "a",
+      "composer": "a",
+      "duration": "11:01",
+      "favorites": 123,
+      "status": 1
+    },
+    {
+      "id": "7349",
+      "title": "a",
+      "artist": "a",
+      "composer": "a",
+      "duration": "10:11",
+      "favorites": 111,
+      "status": 1
+    },
+    {
+      "id": "8fd1",
+      "title": "b",
+      "artist": "b",
+      "composer": "b",
+      "duration": "11:11",
+      "favorites": 0,
+      "status": 1
+    }
+  ]
+}

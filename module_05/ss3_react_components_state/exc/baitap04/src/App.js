@@ -1,25 +1,50 @@
-import logo from './logo.svg';
+import {Component} from 'react';
 import './App.css';
+import Expand from './Components/ExpandCollapse';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isExpand: false,
+    };
+  }
+
+  open = () => {
+    this.setState({
+      isExpand: true,
+    });
+  };
+
+  close = () => {
+    this.setState({
+      isExpand: false,
+    });
+  };
+
+  render() {
+    let content;
+    let button;
+    if (!this.state.isExpand) {
+      button = <button onClick={this.open}>Mở giới thiệu</button>;
+      return (
+        <div>
+          <h1>Conditional Rendenring</h1>
+          {button}
+        </div>
+      );
+    } else {
+      content = <Expand />;
+      button = <button onClick={this.close}>Đóng giới thiệu</button>;
+      return (
+        <div>
+          <h1>Conditional Rendenring</h1>
+          {button}
+          {content}
+        </div>
+      );
+    }
+  }
 }
 
 export default App;
