@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "id": 1,
+      "title": "Bài viết đầu tiên",
+      "author": "Bard",
+      "content": "Đây là nội dung bài viết đầu tiên.",
+      "tags": ["blog", "thử nghiệm"],
+      "published": "2024-03-04",
+      "image": "image.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Bài viết thứ hai",
+      "author": "Bard",
+      "content": "Đây là nội dung bài viết thứ hai.",
+      "tags": ["blog", "hướng dẫn"],
+      "published": "2024-03-04",
+      "image": "image2.jpg"
+    }
+  ]
+}
