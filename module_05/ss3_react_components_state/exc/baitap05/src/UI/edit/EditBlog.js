@@ -44,9 +44,15 @@ function EditBlog() {
   }, [params]);
 
   const save = (post) => {
-    update(post);
-    toast("Update Success");
-    navigate("/");
+    // bất đồng bộ -> phải sử dụng then
+    // update(post);
+    // toast("Update Success");
+    // navigate("/");
+
+    update(post).then((res) => {
+      toast("Update Success");
+      navigate("/");
+    })
   };
 
   if (!blogs) return <div>Loading.....</div>;

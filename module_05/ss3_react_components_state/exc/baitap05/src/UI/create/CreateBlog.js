@@ -18,9 +18,10 @@ function CreateBlog() {
   };
 
   const create = (blog) => {
-    save(blog);
-    toast("Add new Blog successfully!");
-    navigate("/");
+    save(blog).then((res) => {
+      toast("Add new Blog successfully!");
+      navigate("/");
+    });
   };
 
   function toSlug(input) {

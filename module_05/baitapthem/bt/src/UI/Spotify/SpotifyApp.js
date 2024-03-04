@@ -3,6 +3,7 @@ import * as spo from "../../Services/SpotifyService";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import Header from "../Home/Header";
 import EditModal from "./EditModal";
 function SpotifyApp() {
   const [tracks, setTracks] = useState([]);
@@ -42,8 +43,9 @@ function SpotifyApp() {
 
   return (
     <div>
-      <h3 style={{ textAlign: "center" }}>Spotify</h3>
+    <Header/>
       <button onClick={handleNavigateCreateSpotify}>Đăng ký bài hát</button>
+      {" "}
       <table class="table table-hover">
         <thead>
           <tr>
@@ -64,8 +66,10 @@ function SpotifyApp() {
               <td>{song.duration}</td>
               <td>{song.favorites}</td>
               <td>
-                <button onClick={() => handleShowModalEdit(song.id)}>
-                  {song.status == 0 ? "Công khai" : "Riêng tư"}
+                <button 
+                onClick={() => handleShowModalEdit(song.id)}
+                >
+                  {song.status === 0 ? "Công khai" : "Riêng tư"}
                 </button>
               </td>
               {/* đổi thành button khi ấn vào sẽ là chỉnh sửa public thành private */}

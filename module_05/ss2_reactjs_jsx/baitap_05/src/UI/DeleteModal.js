@@ -17,7 +17,7 @@ function DeleteModal(props) {
         <Modal.Header closeButton>
           <Modal.Title>Thông báo</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Do you want to delete the post with the title: {title}</Modal.Body>
+        <Modal.Body>Are you sure to want to delete the post{title}</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

@@ -15,29 +15,31 @@ const initSearchParams = {
   title: "",
 };
 
+
 function Home() {
   const [show, setShow] = useState(false);
   const [posts, setPosts] = useState([]);
-  const [idDelete, setIdDelete] = useState();
+  const [post, setPost] = useState();
+
   const navigate = useNavigate();
-  
+
   const [searchParam, setSearchParam] = useState(initSearchParams);
 
   const getAll = async (param) => {
-   findAll(param).then((res) => setPosts(res));
+    findAll(param).then((res) => setPosts(res));
   };
-  
+
   useEffect(() => {
     getAll(searchParam);
   }, []);
 
-  const handleShowModalDelete = (id) => {
-    setIdDelete(id);
+  const handleShowModalDelete = (post) => {
+    setPost(post);
     setShow(true);
   };
 
   const onDeleteHandler = () => {
-    remove(idDelete).then((res) => {
+    remove(post.id).then((res) => {
       findAll();
     });
   };
@@ -47,16 +49,15 @@ function Home() {
 
   const handleSearchChange = (e) => {
     const { name, value } = e.target;
-    console.log({ ...searchParam, [name]: value });
+    // console.log({ ...searchParam, [name]: value });
     setSearchParam({ ...searchParam, [name]: value });
-  }
+  };
   const handleSearch = () => {
-    console.log(searchParam);
+    // console.log(searchParam);
     getAll(searchParam);
   };
 
   if (!posts) return <div>loading...</div>;
-
 
   return (
     <>
@@ -75,11 +76,7 @@ function Home() {
               </button>
             </div>
             <div className="col-lg-3">
-              <input
-                type="text"
-                name="title"
-                onChange={handleSearchChange}
-              />
+              <input type="text" name="title" onChange={handleSearchChange} />
               <button onClick={handleSearch}>Search</button>
             </div>
           </div>
@@ -96,7 +93,7 @@ function Home() {
             <tbody>
               {posts.map((post, index) => (
                 <tr key={post.id}>
-                  <th>{index+1}</th>
+                  <th>{index + 1}</th>
                   <td>{post.title}</td>
                   <td>{post.category}</td>
                   <td>{post.updatedAt}</td>
@@ -113,7 +110,7 @@ function Home() {
                       <Button
                         style={{ backgroundColor: "red", border: "none" }}
                         variant="primary"
-                        onClick={() => handleShowModalDelete(post.id)}
+                        onClick={() => handleShowModalDelete(post)}
                       >
                         <DeleteIcon />
                       </Button>
@@ -123,11 +120,15 @@ function Home() {
               ))}
             </tbody>
           </table>
-          <DeleteModal
-            show={show}
-            setShow={setShow}
-            onDeleteHandler={onDeleteHandler}
-          />
+
+          {post && (
+            <DeleteModal
+              show={show}
+              setShow={setShow}
+              onDeleteHandler={onDeleteHandler}
+              title={post.title}
+            />
+          )}
           <ToastContainer
             position="top-right"
             autoClose={5000}

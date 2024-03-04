@@ -1,6 +1,58 @@
 {
-    "":[{
-        
-        
-        }]
+  "clothing": [
+    {
+      "id": "1",
+      "code": "SP001",
+      "name": "áo thun cổ V nam",
+      "date": "2024-02-10",
+      "quantity": 3,
+      "category": {
+        "id": "1",
+        "name": "áo"
+      }
+    },
+    {
+      "id": "2",
+      "code": "SP002",
+      "name": "áo hoodie ",
+      "date": "2024-02-21",
+      "quantity": 5,
+      "category": {
+        "id": 2,
+        "name": "áo hoodie"
+      }
+    },
+    {
+      "id": "3",
+      "code": "SP003",
+      "name": "áo cổ lọ nữ ",
+      "date": "2023-01-01",
+      "quantity": 10,
+      "category": {
+        "id": 3,
+        "name": "áo dài tay"
+      }
+    },
+    {
+      "id": "4",
+      "code": "SP004",
+      "name": "Quần tây ",
+      "date": "2023-02-03",
+      "quantity": 1,
+      "category": {
+        "id": 4,
+        "name": "quần"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": "1",
+      "name": "áo"
+    },
+    {
+      "id": "2",
+      "name": "quần"
+    }
+  ]
 }

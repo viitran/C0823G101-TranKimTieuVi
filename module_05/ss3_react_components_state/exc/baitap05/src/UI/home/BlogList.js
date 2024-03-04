@@ -5,50 +5,49 @@ import Button from "react-bootstrap/Button";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import DeleteModal from "./DeleteModal";
-import SearchIcon from '@mui/icons-material/Search';
-import SwapVertIcon from '@mui/icons-material/SwapVert';
+import SearchIcon from "@mui/icons-material/Search";
+import SwapVertIcon from "@mui/icons-material/SwapVert";
 // -------------
 const initSearchParams = {
-    title: "",
-    sortTitle: "asc"
-}
-
+  title: "",
+  sortTitle: "asc",
+};
 
 function BlogList() {
   const [show, setShow] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const [post, setPost] = useState();
-  const [searchParams,setSearchParam] = useState(initSearchParams);
+  const [searchParams, setSearchParam] = useState(initSearchParams);
   const navigate = useNavigate();
 
-  
 
   const handleSortTitle = () => {
     if (searchParams.sortTitle === "asc") {
       setSearchParam({ ...searchParams, sortTitle: "desc" });
-    } else{
+    } else {
       setSearchParam({ ...searchParams, sortTitle: "asc" });
     }
     const sort = {
-        ...searchParams,
-        sortTitle: searchParams.sortTitle === "asc" ? "desc" : "asc",
+      ...searchParams,
+      sortTitle: searchParams.sortTitle === "asc" ? "desc" : "asc",
     };
     getAll(sort);
-}
+  };
 
   const getAll = (param) => {
     findAll(param).then((result) => {
+      console.log(result);
       setBlogs(result);
     });
   };
 
   useEffect(() => {
     getAll(searchParams);
-  },[searchParams]);
+  }, [searchParams]);
 
-  const handleNavigateCreatePost =() => {
+  const handleNavigateCreatePost = () => {
     navigate("/create");
-}
+  };
 
   const handleShowModalDelete = (blog) => {
     setPost(blog);
@@ -57,21 +56,17 @@ function BlogList() {
 
   const handleDelete = () => {
     remove(post.id).then((res) => {
-      getAll();
+      getAll(searchParams);
     });
   };
 
   const handleSearchChange = (e) => {
     const { name, value } = e.target;
     setSearchParam({ ...blogs, [name]: value });
-  }
+  };
   const handleSearch = () => {
-      getAll(searchParams);
-  }
-
-  
-
-
+    getAll(searchParams);
+  };
   
   return (
     <>
@@ -86,28 +81,30 @@ function BlogList() {
                 onClick={handleNavigateCreatePost}
                 style={{ backgroundColor: "#dfe3bc", border: "none" }}
               >
-                 + Add 
+                + Add
               </button>
             </div>
-
             <div className="col-lg-3">
-              <input
-                type="text"
-                name="title"
-                onChange={handleSearchChange}
-              /> {" "}
-              <button style={{border: "none", 'backgroundColor': "#dfe3bc"}} onClick={handleSearch}><SearchIcon/></button>
+              <input type="text" name="title" onChange={handleSearchChange} />{" "}
+              <button
+                style={{ border: "none", backgroundColor: "#dfe3bc" }}
+                onClick={handleSearch}
+              >
+                <SearchIcon />
+              </button>
             </div>
-
-            </div>
+          </div>
           <table className="table table-hover">
             <thead>
               <tr>
                 <th style={{ background: "rgb(75 85 99)", color: "white" }}>
                   ID
                 </th>
-                <th style={{ background: "rgb(75 85 99)", color: "white" }}  onClick={handleSortTitle} >
-                Title <SwapVertIcon/>
+                <th
+                  style={{ background: "rgb(75 85 99)", color: "white" }}
+                  onClick={handleSortTitle}
+                >
+                  Title <SwapVertIcon />
                 </th>
                 <th style={{ background: "rgb(75 85 99)", color: "white" }}>
                   Category
@@ -144,7 +141,8 @@ function BlogList() {
               ))}
             </tbody>
           </table>
-          
+         
+
           {post && (
             <DeleteModal
               show={show}

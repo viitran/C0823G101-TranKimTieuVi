@@ -58,3 +58,13 @@ code {
 .submit-button:hover {
   background-color: #45a049;
 }
+
+.Image{
+  width: 300px;
+  height: 300px;
+}
+.display{
+display: flex;
+}
+.height{
+width: 130px;}
