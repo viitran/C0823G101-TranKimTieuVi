@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import * as Yup from "yup";
 import * as cate from "../../Services/CategoryServices";
 import * as clo from "../../Services/ClothingServices";
-import { format } from "date-fns";
 function CreateApp() {
   const [categories, setCategories] = useState();
   const navigate = useNavigate();

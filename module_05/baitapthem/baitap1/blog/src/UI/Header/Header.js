@@ -5,17 +5,15 @@ function Header() {
     <>
       <div className="display">
 
-        <div className="col-lg-5 color-picture">
+        <div className="col-lg-2 color-picture">
+          <img src="/img/logo.png" alt="" className="img" />
         </div>
 
-        <div className="col-lg-2 color-picture c">
-          <img src="img/logo.png" alt="" className="img" />
+        <div className="col-lg-3 color-picture"></div>
 
-        </div>
+        <div className="col-lg-7 color-picture">
 
-        <div className="col-lg-5 color-picture">
-
-          {/* <div className="display">
+          <div className="display">
 
           <div className="center col-lg-4">
           <NavLink
@@ -38,14 +36,14 @@ function Header() {
           {" "}
           <div className="center col-lg-4">
           <NavLink
-            to="/edit"
+            to="/charts"
             className='active--link'
           >
-            edit
+            Charts
           </NavLink>
           </div>
           
-          </div> */}
+          </div>
         </div>
       </div>
     </>

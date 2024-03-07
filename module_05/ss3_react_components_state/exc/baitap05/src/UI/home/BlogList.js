@@ -14,13 +14,20 @@ const initSearchParams = {
 };
 
 function BlogList() {
-  const [show, setShow] = useState(false);
-  const [blogs, setBlogs] = useState([]);
-  const [post, setPost] = useState();
-  const [searchParams, setSearchParam] = useState(initSearchParams);
-  const navigate = useNavigate();
+  const [show, setShow] = useState(false); // show modal delete
+
+  const [blogs, setBlogs] = useState([]); // lấy dữ liệu show list
+
+  const [post, setPost] = useState(); // đặt post  =  object để truyèn props / có thể thay post = idDelete
+
+  const [searchParams, setSearchParam] = useState(initSearchParams); // sử dụng để search
+  
+  const navigate = useNavigate(); // sử dụng để chuyển trang là chính
 
 
+/* hàm để sort - có thể sort theo title,date ,... 
+  ở đay đang sort theo title, mặc định là asc
+*/
   const handleSortTitle = () => {
     if (searchParams.sortTitle === "asc") {
       setSearchParam({ ...searchParams, sortTitle: "desc" });
@@ -34,6 +41,8 @@ function BlogList() {
     getAll(sort);
   };
 
+  // hàm lấy dữ liệu findAll có kèm theo tham số param để search
+
   const getAll = (param) => {
     findAll(param).then((result) => {
       console.log(result);
@@ -43,22 +52,27 @@ function BlogList() {
 
   useEffect(() => {
     getAll(searchParams);
-  }, [searchParams]);
+  }, []);
 
   const handleNavigateCreatePost = () => {
     navigate("/create");
   };
 
+  // hàm show modal 
   const handleShowModalDelete = (blog) => {
     setPost(blog);
     setShow(true);
   };
+
+  // trong modal có delete thì đây là hàm để xử lý nút delete
 
   const handleDelete = () => {
     remove(post.id).then((res) => {
       getAll(searchParams);
     });
   };
+
+  // hàm khi có sự thay đổi ở ô search 
 
   const handleSearchChange = (e) => {
     const { name, value } = e.target;
