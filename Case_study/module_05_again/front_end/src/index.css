@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.row {
+  display: flex;
+  justify-content: space-around; /* Tạo khoảng cách đều giữa các nút */
+}
+
+.btn {
+  margin: 10px; /* Tạo khoảng cách 10px xung quanh mỗi nút */
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+}
+.display{
+  display:flex;
+  margin-bottom: 35px;
+}
+
+.table{
+  margin-top: 20px;
+  margin-left: 35px;
+}
+
+.body-emp{
+  margin-top: 35px;
+}
+
+.display-form-create{
+  margin-top: 20px;
+}
+
+.form-create{
+  margin-top: 20px;
+}
+
+.body-cus{
+  margin-top: 30px;
+}
