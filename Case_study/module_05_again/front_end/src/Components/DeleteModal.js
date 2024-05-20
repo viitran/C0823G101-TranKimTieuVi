@@ -21,15 +21,13 @@ function DeleteModal(props) {
         <Modal.Header closeButton>
           <Modal.Title style={{ color: "red" }}>Thông báo</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-            Bạn có chắc chắn muốn sa thải nhân viên này ?!
-        </Modal.Body>
+        <Modal.Body>Bạn có chắc chắn muốn sa thải nhân viên này ?!</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Suy nghĩ lại
+            Hủy
           </Button>
           <Button variant="primary" onClick={handleRemove}>
-            Sa thải
+            Xóa
           </Button>
         </Modal.Footer>
       </Modal>

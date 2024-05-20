@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getAllBook } from "../Services/BookService";
-import { Link } from "react-router-dom";
+import { getAllBook, remove } from "../Services/BookService";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { findAllCate } from "../Services/Category";
+import DeleteModal from "./DeleteModal";
 
 const initValueSearch = {
   title: "",
@@ -14,6 +15,23 @@ function Home() {
   const [books, setBooks] = useState();
   const [search, setSearch] = useState(initValueSearch);
   const [categories, setCategories] = useState();
+  const [show, setShow] = useState(false);
+  const [idDelete, setIdDelete] = useState();
+  const navigate = useNavigate();
+  const handleShowModalDelete = (id) => {
+    setIdDelete(id);
+    setShow(true);
+  };
+
+  const onDeleteHandler = () => {
+    remove(idDelete).then((res) => {
+      findAllBooks();
+    });
+  };
+
+  const handleEditProduct = (id) => {
+    navigate(`/edit/${id}`);
+  };
 
   const findAllBooks = async (param) => {
     getAllBook(search).then((res) => setBooks(res));
@@ -101,23 +119,35 @@ function Home() {
                 <tr key={b.id}>
                   <th>{index + 1}</th>
                   <td>{b.code}</td>
-                  <td>{b.name}</td>
-                  <td>{b.bookCategory.name}</td>
+                  <td>{b.title}</td>
+                  <td>{b.category.name}</td>
                   <td>{b.date}</td>
                   <td>{b.quantity}</td>
                   <td>
-                    <Link to={`/edit/${b.id}`}>
-                      <button className="btn btn-warning"
-                      >Cập nhật</button>
-                    </Link>{" "}
+                    <button
+                      onClick={() => handleEditProduct(b.id)}
+                      className="btn btn-warning"
+                    >
+                      Cập nhật
+                    </button>{" "}
                     <Link>
-                      <button className="btn btn-danger">Xóa</button>
+                      <button
+                        className="btn btn-danger"
+                        onClick={() => handleShowModalDelete(b.id)}
+                      >
+                        Xóa
+                      </button>
                     </Link>
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <DeleteModal
+            show={show}
+            setShow={setShow}
+            onDeleteHandler={onDeleteHandler}
+          />
         </div>
       </div>
       <ToastContainer />

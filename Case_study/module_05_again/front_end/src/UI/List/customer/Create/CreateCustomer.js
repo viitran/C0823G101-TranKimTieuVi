@@ -1,10 +1,13 @@
-import NavHeader from "../../../Common/NavHeader";
-import Header from "../../../Common/Header/Header";
-import Footer from "../../../Common/Footer/Footer";
+import NavHeader from "../../../NavHeader";
+import Header from "../../../Header/Header";
+import Footer from "../../../Footer/Footer";
 import { Form, Formik, Field } from "formik";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { findAllTypeCus } from "../../../../Services/Customer/CustomerService";
+import {
+  createCustomer,
+  findAllTypeCus,
+} from "../../../../Services/Customer/CustomerService";
 function CreateCustomer() {
   const navigate = useNavigate();
   const [type, setType] = useState();
@@ -40,6 +43,16 @@ function CreateCustomer() {
                 gender: "",
                 address: "",
                 customerType: "",
+              }}
+              onSubmit={(values, { setSubmitting }) => {
+                const cus = {
+                  ...values,
+                  customerType: JSON.parse(values.customerType),
+                };
+                createCustomer(cus).then((res) => {
+                  setSubmitting(false);
+                  navigate("/customers");
+                });
               }}
             >
               {({ isSubmitting }) => (
@@ -89,8 +102,8 @@ function CreateCustomer() {
                       <option value="" disabled>
                         Chọn giới tính
                       </option>
-                      <option value="Nam">Nam</option>
-                      <option value="Nữ">Nữ</option>
+                      <option value="false">Nam</option>
+                      <option value="true">Nữ</option>
                     </Field>
                   </div>
 

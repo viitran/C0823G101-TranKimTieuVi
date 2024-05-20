@@ -1,0 +1,19 @@
+
+‡
+java:S1192""KDefine a constant instead of duplicating this literal "redirect:/" 3 times.(äÔ¶½J$1841c0c4-e568-4b0b-af54-c7c3926693ad
+Š
+java:S1192"IDefine a constant instead of duplicating this literal "products" 6 times.(†­ØÿÿÿÿÿJ$47475896-b967-4d73-bd04-40f1544006cb
+~
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞJ$1fbb8160-885a-4ca6-8b5a-3afdac176591
+’
+java:S4144,"VUpdate this method so that its implementation is not identical to "create" on line 32.(¤Ü«ŞJ$cc5d1812-3f18-4e51-8e11-c1d6cc81ff41
+|
+java:S4684 "@Replace this persistent entity with a simple POJO or DTO object.(©ÀÃûJ$5648bc42-0297-4249-82fb-697b38cc6e57
+|
+java:S4684,"@Replace this persistent entity with a simple POJO or DTO object.(¤Ü«ŞJ$a6026342-5091-4fe5-912e-12a25576eb92
+f	java:S1063"+Replace this use of System.out by a logger.(ö¡¹êJ$c2b5dad8-d475-4554-bf33-1cc5e9dbe22f
+
+java:S46849"@Replace this persistent entity with a simple POJO or DTO object.(¼ŞèùøÿÿÿÿJ$e50c46ce-958e-4ceb-84ac-0775d65fbd4e
+f	java:S106L"+Replace this use of System.out by a logger.(ÓüÖ¼J$b04ae245-f1d0-4a04-bbb1-396ad07729b8
+{
+java:S1128"?Remove this unused import 'com.example.service.ProductService'.(¸ŸíªJ$d93c3206-9c60-47c1-9174-02931a117f79

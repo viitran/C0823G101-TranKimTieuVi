@@ -1,8 +1,8 @@
 import "./App.css";
-import { BookCreate } from "./Components/AddBook";
-import BookUpdate from "./Components/Edit";
-import ListBook from "./Components/List";
 import { NavLink, Routes, Route } from "react-router-dom";
+import ListBook from "./UI/Library/LibraryApp";
+import { BookCreate } from './UI/Library/create/CreateBookApp';
+import BookUpdate from './UI/Library/Edit/EditBookApp';
 
 function App() {
   return (

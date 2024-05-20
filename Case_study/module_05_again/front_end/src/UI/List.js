@@ -1,5 +1,5 @@
-import Header from "./Common/Header/Header";
-import NavHeader from "./Common/NavHeader";
+import Header from "./Header/Header";
+import NavHeader from "./NavHeader";
 
 function Manager() {
   return (

@@ -15,21 +15,23 @@ function Edit() {
   const params = useParams();
 
   useEffect(() => {
+    findAllCate().then((res) => 
+    setCategories(res));
+  }, []);
+
+  useEffect(() => {
     const { id } = params;
-    if (id && params) {
+    if (params && id) {
       findById(id).then((res) => {
         const b = {
           ...res,
-          bookCategory: JSON.stringify(res.bookCategory),
+          category: JSON.stringify(res.category),
         };
+        console.log(b);
         setBooks(b);
       });
     }
-  });
-
-  useEffect(() => {
-    findAllCate().then((res) => setCategories(res));
-  }, []);
+  }, [params]);
 
   const handleNavigateBack = () => {
     navigate("/");
@@ -37,7 +39,7 @@ function Edit() {
 
   if (!categories) return <div>loading</div>;
   if (!book) return <div>loading</div>;
-  
+
   return (
     <>
       <div>
@@ -56,7 +58,7 @@ function Edit() {
                   "Mã sách có định dạng như sau: BO-XXXX (X là số)"
                 )
                 .required("Vui lòng nhập đầy đủ thông tin"),
-              name: Yup.string()
+              title: Yup.string()
                 .max(100, "Tên sách không dài quá 100 ký tự")
                 .required("Vui lòng nhập đầy đủ thông tin"),
               quantity: Yup.number()
@@ -67,7 +69,7 @@ function Edit() {
             onSubmit={(values, { setSubmitting }) => {
               const b = {
                 ...values,
-                bookCategory: JSON.parse(values.bookCategory),
+                category: JSON.parse(values.category),
               };
               update(b).then((res) => {
                 setSubmitting(false);
@@ -94,7 +96,7 @@ function Edit() {
                 <br />
                 <div>
                   <label>Tên sách</label>{" "}
-                  <Field name="name" type="text" className="form-control" />
+                  <Field name="title" type="text" className="form-control" />
                   <ErrorMessage
                     name="title"
                     component={"div"}
@@ -104,11 +106,7 @@ function Edit() {
                 <br />
                 <div>
                   <label>Thể loại</label>{" "}
-                  <Field
-                    name="bookCategory"
-                    as="select"
-                    className="form-control"
-                  >
+                  <Field name="category" as="select" className="form-control">
                     <option value="" disabled>
                       Chọn thể loại
                     </option>

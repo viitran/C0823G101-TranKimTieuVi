@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Header from "../../Common/Header/Header";
-import NavHeader from "../../Common/NavHeader";
+import Header from "../../Header/Header";
+import NavHeader from "../../NavHeader";
 import { findAllEmp, remove } from "../../../Services/Employee/EmployeeService";
-import Footer from "../../Common/Footer/Footer";
+import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
 import UpdateIcon from "@mui/icons-material/Update";
 import CancelIcon from "@mui/icons-material/Cancel";

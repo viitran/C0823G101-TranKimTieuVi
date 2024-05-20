@@ -1,6 +1,6 @@
-import Header from "../../Common/Header/Header";
-import NavHeader from "../../Common/NavHeader";
-import Footer from "../../Common/Footer/Footer";
+import Header from "../../Header/Header";
+import NavHeader from "../../NavHeader";
+import Footer from "../../Footer/Footer";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { findAllCustomer } from "../../../Services/Customer/CustomerService";
@@ -64,6 +64,7 @@ function CustomerList() {
             <tr>
               <th scope="col">STT</th>
               <th scope="col">Họ và tên</th>
+              <th scope="col">Giới tính</th>
               <th scope="col">Email</th>
               <th scope="col">Số điện thoại</th>
               <th scope="col">Loại khách</th>
@@ -75,6 +76,7 @@ function CustomerList() {
               <tr key={cus.id}>
                 <th>{index + 1}</th>
                 <td>{cus.name}</td>
+                <td>{cus.gender === 1 ? "Nu" : "Nam"}</td>
                 <td>{cus.email}</td>
                 <td>{cus.phoneNumber}</td>
                 <td>{cus.customerType.name}</td>

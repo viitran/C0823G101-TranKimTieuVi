@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Footer from "../Footer/Footer.js";
+import Footer from "../Common/Footer/Footer.js";
 import { findAll, findAllTags, remove } from "./../../Services/BlogServices";
 import { Link } from "react-router-dom";
 import DeleteModal from "../../Components/DeleteModal.js";

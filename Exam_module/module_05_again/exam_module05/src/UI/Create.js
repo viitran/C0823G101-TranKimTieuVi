@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { findAllCate } from "../Services/Category";
-import { create } from "../Services/BookService";
+import { create, getAllBook } from "../Services/BookService";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import * as Yup from "yup";
@@ -10,7 +10,6 @@ import * as Yup from "yup";
 function Create() {
   const [categories, setCategories] = useState();
   const navigate = useNavigate();
-
   const handleNavigateBack = () => {
     navigate("/");
   };
@@ -33,15 +32,15 @@ function Create() {
           <Formik
             initialValues={{
               code: "",
-              name: "",
+              title: "",
               quantity: "",
               date: "",
-              bookCategory: "",
+              category: "",
             }}
             onSubmit={(values, { setSubmitting }) => {
               const b = {
                 ...values,
-                bookCategory: JSON.parse(values.bookCategory),
+                category: JSON.parse(values.category),
               };
               create(b).then((res) => {
                 toast("Them moi thanh cong");
@@ -57,7 +56,7 @@ function Create() {
                   "Mã sách có định dạng như sau: BO-XXXX (X là số)"
                 )
                 .required("Vui lòng nhập đầy đủ thông tin"),
-              name: Yup.string()
+                title: Yup.string()
                 .max(100, "Tên sách không dài quá 100 ký tự")
                 .required("Vui lòng nhập đầy đủ thông tin"),
               quantity: Yup.number()
@@ -85,7 +84,7 @@ function Create() {
                 <br />
                 <div>
                   <label>Tên sách</label>{" "}
-                  <Field name="name" type="text" className="form-control" />
+                  <Field name="title" type="text" className="form-control" />
                   <ErrorMessage
                     name="title"
                     component={"div"}
@@ -95,7 +94,7 @@ function Create() {
                 <br />
                 <div>
                   <label>Thể loại</label>{" "}
-                  <Field name="bookCategory" as="select" className="form-control">
+                  <Field name="category" as="select" className="form-control">
                     <option value="" disabled>
                       Chọn thể loại
                     </option>

@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import List from "./UI/List";
-import Body from "./UI/Body/Body";
 import EmployeeList from "./UI/List/employee/EmployeeList";
 import CreateEmployee from "./UI/List/employee/Create/CreateEmployee";
 import UpdateEmployee from './UI/List/employee/Update/UpdateEmployee';
 import CustomerList from "./UI/List/customer/CustomerList";
 import CreateCustomer from "./UI/List/customer/Create/CreateCustomer";
+import Body from "./UI/Body/Body";
 
 function App() {
   return (

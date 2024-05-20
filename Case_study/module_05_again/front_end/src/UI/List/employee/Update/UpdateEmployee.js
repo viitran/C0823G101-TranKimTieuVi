@@ -1,6 +1,6 @@
-import NavHeader from "../../../Common/NavHeader";
-import Header from "../../../Common/Header/Header";
-import Footer from "../../../Common/Footer/Footer";
+import NavHeader from "../../../NavHeader";
+import Header from "../../../Header/Header";
+import Footer from "../../../Footer/Footer";
 import { Field } from "formik";
 import { Formik } from "formik";
 import { Form } from "formik";

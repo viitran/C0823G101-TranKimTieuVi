@@ -1,6 +1,6 @@
-import Header from "../../../Common/Header/Header";
-import NavHeader from "../../../Common/NavHeader";
-import Footer from "../../../Common/Footer/Footer";
+import Header from "../../../Header/Header";
+import NavHeader from "../../../NavHeader";
+import Footer from "../../../Footer/Footer";
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import { useEffect, useState } from "react";
