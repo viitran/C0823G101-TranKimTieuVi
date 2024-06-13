@@ -1,0 +1,77 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "Trước khi chúng ta nói lời chia tay",
+      "author": "Phan",
+      "quantity": 20,
+      "description": "là một bức thư tình được viết vào giai đoạn tình yêu đang đơm trái chín. Tác giả Phan nhắn nhủ đến độc giả rằng trước khi nói lời chia tay, hãy để lại một lời nhắc nhỏ trìu mến để dành cho khoảnh khắc chia ly. Cuốn sách nói về những cảm xúc đau đớn và hối tiếc khi chia tay trong tình yêu. Tác phẩm đề cập đến sự hiền dịu, chân thành và quý báu của tình yêu, cũng như ý nghĩa của việc sống và yêu.",
+      "category": {
+        "id": 1,
+        "name": "truyện tranh"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tết ở làng địa ngục",
+      "author": "Thảo Trang",
+      "quantity": 10,
+      "description": "xoay quanh những vụ án kinh hoàng xảy ra tại Làng Địa Ngục, tương truyền là nơi sinh sống của các hậu duệ băng cướp khét tiếng một thời. Các tên cướp sau khi thực hiện hàng loạt tội ác đáng sợ, đã lựa chọn trốn tránh, sống ẩn dật tại một ngôi làng hẻo lánh, nằm giữa những vùng núi hiểm trở",
+      "category": {
+        "id": 3,
+        "name": "kinh dị"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Cây Cam Ngọt Của Tôi",
+      "author": "José Mauro de Vasconcelos",
+      "quantity": 20,
+      "description": " tự truyện về thời thơ ấu của cậu bé Zézé, mang bài học về sự thấu cảm và lòng trắc ẩn. Tiểu thuyết dày 244 trang, do José Mauro de Vasconcelos sáng tác (Nguyễn Bích Lan - Tô Yến Ly dịch). Trong nước, tác phẩm nằm trong top ấn phẩm bán chạy của các đơn vị sách năm 2022",
+      "category": {
+        "id": 4,
+        "name": "tiểu sử"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Doraemon - vũ trụ phiêu lưu ký",
+      "author": "Fujiko Fujio",
+      "quantity": 30,
+      "description": "là bộ phim hoạt hình Doraemon thứ 20 được ra mắt tại Nhật Bản và được chuyển thể thành truyện tranh",
+      "category": {
+        "id": 1,
+        "name": "truyện tranh"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Shin - cậu bé bút chì",
+      "author": "Usui Yoshito",
+      "quantity": "1",
+      "description": "một bộ truyện tranh của tác giả Yoshito Usui, bộ truyện kể về chú nhóc Shin 5 tuổi,với những câu chuyện phiêu lưu cùng với bố mẹ, em gái, chú cún, bạn bè và nhiều người khác.",
+      "category": {
+        "id": 1,
+        "name": "truyện tranh"
+      }
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "truyện tranh"
+    },
+    {
+      "id": 2,
+      "name": "truyện dài"
+    },
+    {
+      "id": 3,
+      "name": "kinh dị"
+    },
+    {
+      "id": 4,
+      "name": "tiểu sử"
+    }
+  ]
+}
